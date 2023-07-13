@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <Header />
+    <Header />
     <Hero />
     <section class="wrapper-description-slider">
       <p class="item-description-slider">
@@ -12,9 +12,10 @@
         <Slider />
         <NuxtLink class="link link_black" to="/">Scroll</NuxtLink>
       </div>
-    </section> -->
-    <div v-for="project in projects" :key="project.id" >
-      <CardRecentWork :title="project.title" :description="project.description" :link="project.link" :background="project.background" />
+    </section>
+    <div v-for="project in projects" :key="project.id">
+      <CardRecentWork :title="project.title" :description="project.description" :link="project.link"
+        :background="project.background" />
     </div>
   </div>
 </template>
@@ -76,4 +77,5 @@ export default {
   p.item-description-slider {
     font-size: 30px;
   }
-}</style>
+}
+</style>

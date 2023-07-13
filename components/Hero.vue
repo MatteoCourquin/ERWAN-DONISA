@@ -51,4 +51,5 @@ export default {
     position: absolute;
     bottom: 8vh;
   }
-}</style>
+}
+</style>

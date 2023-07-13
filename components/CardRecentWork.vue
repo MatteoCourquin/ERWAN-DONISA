@@ -26,17 +26,17 @@ export default {
   mounted() {
     let cards = gsap.utils.toArray('.card-recent-work');
     cards.forEach((card, i) => {
-      gsap.set(card, { y: '100%' }); // Définir la position initiale des cartes
-
       ScrollTrigger.create({
-        animation: gsap.to(card, { y: '0%', ease: 'none' }), // Animation à appliquer à la carte
         trigger: card,
-        start: 'top 80%', // Début de l'animation lorsque le haut de la carte atteint 80% de la fenêtre
-        end: 'top 20%', // Fin de l'animation lorsque le haut de la carte atteint 20% de la fenêtre
+        start: 'bottom bottom',
+        // end: 'top top',
+        pin: true,
+        pinSpacing: false,
         scrub: true,
         snap: 1,
+        // snap: 1 / (cards.length - 1),
         markers: true,
-      });
+      })
     });
   },
 };
@@ -100,4 +100,5 @@ export default {
       margin: 20px 0;
     }
   }
-}</style>
+}
+</style>

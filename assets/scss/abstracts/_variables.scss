@@ -1,25 +1,25 @@
 // 700
 @font-face {
-  font-family: "Termina-Bold";
-  src: url("/fonts/Termina-Bold.otf") format("truetype");
+  font-family: 'Termina-Bold';
+  src: url('/fonts/Termina-Bold.otf') format('truetype');
   font-display: auto;
 }
 // 600
 @font-face {
-  font-family: "Termina-Medium";
-  src: url("/fonts/Termina-Heavy.otf") format("truetype");
+  font-family: 'Termina-Medium';
+  src: url('/fonts/Termina-Heavy.otf') format('truetype');
   font-display: auto;
 }
 //500
 @font-face {
-  font-family: "Termina-Regular";
-  src: url("/fonts/Termina-Demi.otf") format("truetype");
+  font-family: 'Termina-Regular';
+  src: url('/fonts/Termina-Demi.otf') format('truetype');
   font-display: auto;
 }
 // 400
 @font-face {
-  font-family: "Termina-Light";
-  src: url("/fonts/Termina-Regular.otf") format("truetype");
+  font-family: 'Termina-Light';
+  src: url('/fonts/Termina-Regular.otf') format('truetype');
   font-display: auto;
 }
 
@@ -28,13 +28,13 @@ $color-white: #fff;
 $color-black: #000;
 
 // Fonts
-$font-termina-700: "Termina-Bold";
-$font-termina-600: "Termina-Medium";
-$font-termina-500: "Termina-Regular";
-$font-termina-400: "Termina-Light";
+$font-termina-700: 'Termina-Bold';
+$font-termina-600: 'Termina-Medium';
+$font-termina-500: 'Termina-Regular';
+$font-termina-400: 'Termina-Light';
 
 // transitions
-$transition-main: .8s;
+$transition-main: 0.8s;
 
 // Radius
 $radius-main: 25px;

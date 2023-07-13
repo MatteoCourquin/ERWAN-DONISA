@@ -1,4 +1,4 @@
-@mixin absolute ($top, $right, $bottom, $left, $x, $y) {
+@mixin absolute($top, $right, $bottom, $left, $x, $y) {
   position: absolute;
   top: $top;
   right: $right;

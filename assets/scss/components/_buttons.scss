@@ -1,4 +1,4 @@
-.button{
+.button {
   border: 0;
   border-radius: 999px;
   background: $color-white;
@@ -12,17 +12,17 @@
   height: fit-content;
 }
 
-.button-big{
+.button-big {
   padding: 20px 50px;
   font-size: clamp(16px, 3vw, 30px);
 }
 
-.button-medium{
+.button-medium {
   padding: 15px 30px;
   font-size: clamp(16px, 3vw, 20px);
 }
 
-.button-small{
+.button-small {
   padding: 10px 20px;
   font-size: clamp(16px, 3vw, 15px);
 }
