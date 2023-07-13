@@ -14,5 +14,8 @@
     "nuxt": "^3.5.2",
     "sass": "^1.63.3",
     "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2"
   }
 }

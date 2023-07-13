@@ -11,21 +11,36 @@
 </template>
 
 <script>
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'CardRecentWork',
-  props: [
-    'title',
-    'description',
-    'link',
-    'background'
-  ],
+  props: ['title', 'description', 'link', 'background'],
   data() {
-    return {
-    };
+    return {};
   },
-  methods: {}
-}
+  methods: {},
+  mounted() {
+    let cards = gsap.utils.toArray('.card-recent-work');
+    cards.forEach((card, i) => {
+      gsap.set(card, { y: '100%' }); // Définir la position initiale des cartes
+
+      ScrollTrigger.create({
+        animation: gsap.to(card, { y: '0%', ease: 'none' }), // Animation à appliquer à la carte
+        trigger: card,
+        start: 'top 80%', // Début de l'animation lorsque le haut de la carte atteint 80% de la fenêtre
+        end: 'top 20%', // Fin de l'animation lorsque le haut de la carte atteint 20% de la fenêtre
+        scrub: true,
+        snap: 1,
+        markers: true,
+      });
+    });
+  },
+};
+
 
 </script>
 
@@ -37,6 +52,7 @@ export default {
   width: 100%;
   height: 100vh;
   position: relative;
+  top: 0;
   display: flex;
   align-items: flex-end;
 
@@ -56,7 +72,7 @@ export default {
 .card-recent-work-description {
   width: 100%;
   height: 50%;
-  background: linear-gradient(to top, #000000 0%, transparent 100%);
+  // background: linear-gradient(to top, #000000 0%, transparent 100%);
   border-radius: 0 0 $radius-main $radius-main;
   color: white !important;
   padding: clamp(1rem, 6vw, 7rem);
