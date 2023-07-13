@@ -1,8 +1,14 @@
 @mixin absolute ($top, $right, $bottom, $left, $x, $y) {
-    position: absolute;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-    transform: translate($x, $y);
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  transform: translate($x, $y);
+}
+
+@mixin respo-xs {
+  @media (min-width: 575.98px) {
+    @content;
+  }
 }

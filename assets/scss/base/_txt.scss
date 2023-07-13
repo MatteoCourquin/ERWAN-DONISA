@@ -1,28 +1,18 @@
 
+h2{
+  font-family: $font-termina-600;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $color-white;
+}
+p{
+  font-family: $font-termina-400;
+}
+
+
 .link {
   font-family: $font-termina-600;
   font-size: 20px;
-  overflow: hidden;
   text-transform: uppercase;
-  // position: relative;
-  // &::before{  
-  //   transition: $transition-main;
-  //   content: '';
-  //   background: $color-white;
-  //   position: absolute;
-  //   width: 200%;
-  //   height: 100%;
-  //   transform: translateX(-110%);
-  // }
-  // &:hover {
-  //   &::before{
-  //     transform: translateX(110%);
-  //   }
-  // }
-}
-.link_white {
-  color: $color-white;
-}
-.link_black {
   color: $color-black;
 }

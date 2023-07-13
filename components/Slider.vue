@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@import '~/assets/scss/main.scss';
+@import '@/scss/main.scss';
 
 .wrapper-slider {
   position: relative;
@@ -68,4 +68,5 @@ export default {
   border-radius: $radius-main;
   width: 70%;
   height: 60vh;
-}</style>
+}
+</style>

@@ -13,6 +13,10 @@
         <NuxtLink class="link link_black" to="/">Scroll</NuxtLink>
       </div>
     </section>
+    <div v-for="project in projects" :key="project.id">
+      <CardRecentWork :title="project.title" :description="project.description" :link="project.link"
+        :background="project.background" />
+    </div>
   </div>
 </template>
 
@@ -21,7 +25,26 @@ export default {
   name: 'index',
   data() {
     return {
-      
+      projects: [
+        {
+          title: 'Project 1',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          link: '/',
+          background: '~/images/image.jpg'
+        },
+        {
+          title: 'Project 2',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          link: '/',
+          background: '~/images/image.jpg'
+        },
+        {
+          title: 'Project 3',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          link: '/',
+          background: '~/images/image.jpg'
+        },
+      ]
     };
   },
   methods: {}
@@ -29,10 +52,9 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '~/assets/scss/main.scss';
+@import '@/scss/main.scss';
 
-.wrapper-description-slider{
-  top: 100vh;
+.wrapper-description-slider {
   background: $color-white;
   width: 100%;
   height: 200vh;
@@ -40,18 +62,10 @@ export default {
   position: relative;
   grid-template-rows: repeat(2, 1fr);
   color: $color-black !important;
-  &::before{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    border-radius: $radius-main;
-    left: -10vw;
-    top: 0;
-    height: 100%;
-    width: 100vw;
-    background: white;
-  }
-  .item-description-slider{
+  border-radius: $radius-main;
+  padding: 0 $padding-main;
+
+  .item-description-slider {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,5 +73,8 @@ export default {
     flex-direction: column;
     overflow: hidden;
   }
-}
-</style>
+
+  p.item-description-slider {
+    font-size: 30px;
+  }
+}</style>

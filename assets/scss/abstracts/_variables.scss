@@ -39,6 +39,9 @@ $transition-main: .8s;
 // Radius
 $radius-main: 25px;
 
+// padding
+$padding-main: clamp(20px, 10vw, 100px);
+
 // Shadows
 $shadow-m: 0 0 10px rgba(0, 0, 0, 0.2);
 $shadow-xl: 0 0 20px rgba(0, 0, 0, 0.2);
