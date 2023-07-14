@@ -1,8 +1,15 @@
-h2 {
+h1, h2, h3 {
   font-family: $font-termina-600;
-  font-size: 20px;
   text-transform: uppercase;
-  color: $color-white;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+h3 {
+  font-size: clamp(2rem, 5vw, 5rem);
 }
 p {
   font-family: $font-termina-400;
@@ -12,5 +19,10 @@ p {
   font-family: $font-termina-600;
   font-size: 20px;
   text-transform: uppercase;
+}
+.link_black {
   color: $color-black;
+}
+.link_white {
+  color: $color-white;
 }

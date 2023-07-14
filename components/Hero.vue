@@ -1,8 +1,8 @@
 <template>
-  <section class="hero">
-    <h1>DESIGNER /
+  <section class="hero fixed top-0">
+    <h1>DESIGNER /<br>
       ART DIRECTOR</h1>
-    <button class="button button-big">Let's meet</button>
+    <button class="button button_big button_white">Let's meet</button>
     <NuxtLink to="/" class="link link_white">Scroll</NuxtLink>
   </section>
 </template>
@@ -44,7 +44,7 @@ export default {
 
   h1 {
     margin-bottom: 30px;
-    font-size: clamp(2rem, 5vw, 5rem);
+    color: $color-white;
   }
 
   .link {

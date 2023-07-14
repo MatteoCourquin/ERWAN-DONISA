@@ -1,11 +1,11 @@
 <template>
-  <div class="card-recent-work">
+<div class="card-recent-work" :style="{ '--background-image': `url('/images/${urlImage}')` }">
     <div class="card-recent-work-description">
       <div class="description">
         <h2>{{ title }}</h2>
         <p>{{ description }}</p>
       </div>
-      <NuxtLink class="button button-medium link_white" :to="link">View project</NuxtLink>
+      <NuxtLink class="button button_small button_white" :to="link">View</NuxtLink>
     </div>
   </div>
 </template>
@@ -18,26 +18,26 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'CardRecentWork',
-  props: ['title', 'description', 'link', 'background'],
+  props: ['title', 'description', 'link', 'urlImage'],
   data() {
     return {};
   },
   methods: {},
   mounted() {
-    let cards = gsap.utils.toArray('.card-recent-work');
-    cards.forEach((card, i) => {
-      ScrollTrigger.create({
-        trigger: card,
-        start: 'bottom bottom',
-        // end: 'top top',
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-        snap: 1,
-        // snap: 1 / (cards.length - 1),
-        markers: true,
-      })
-    });
+    // let cards = gsap.utils.toArray('.card-recent-work');
+    // cards.forEach((card, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: card,
+    //     start: 'bottom bottom',
+    //     // end: 'top top',
+    //     pin: true,
+    //     pinSpacing: false,
+    //     scrub: true,
+    //     snap: 1,
+    //     // snap: 1 / (cards.length - 1),
+    //     markers: true,
+    //   })
+    // });
   },
 };
 
@@ -55,15 +55,14 @@ export default {
   top: 0;
   display: flex;
   align-items: flex-end;
-
+  
   &::after {
     content: '';
     position: absolute;
     width: 100%;
     height: calc(100% + 25px);
     bottom: 0;
-    z-index: -1;
-    background: url('~/images/image.jpg') no-repeat center center;
+    background: var(--background-image) no-repeat center center;
     background-size: cover;
     border-radius: 0 0 $radius-main $radius-main;
   }
@@ -72,7 +71,8 @@ export default {
 .card-recent-work-description {
   width: 100%;
   height: 50%;
-  // background: linear-gradient(to top, #000000 0%, transparent 100%);
+  background: linear-gradient(to top, #00000090 0%, transparent 100%);
+  z-index: 1;
   border-radius: 0 0 $radius-main $radius-main;
   color: white !important;
   padding: clamp(1rem, 6vw, 7rem);

@@ -1,8 +1,6 @@
 .button {
   border: 0;
   border-radius: 999px;
-  background: $color-white;
-  color: $color-black;
   text-transform: uppercase;
   font-family: $font-termina-500;
   text-decoration: none;
@@ -11,18 +9,25 @@
   white-space: nowrap;
   height: fit-content;
 }
-
-.button-big {
-  padding: 20px 50px;
+.button_white {
+  background: $color-white;
+  color: $color-black;
+}
+.button_black {
+  background: $color-black;
+  color: $color-white;
+}
+.button_big {
+  padding: 18px 70px;
   font-size: clamp(16px, 3vw, 30px);
 }
 
-.button-medium {
-  padding: 15px 30px;
+.button_medium {
+  padding: 15px 60px;
   font-size: clamp(16px, 3vw, 20px);
 }
 
-.button-small {
-  padding: 10px 20px;
+.button_small {
+  padding: 10px 50px;
   font-size: clamp(16px, 3vw, 15px);
 }

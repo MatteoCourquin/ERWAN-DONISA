@@ -1,9 +1,9 @@
 <template>
   <header class="header">
-    <NuxtLink class="link" to="/">Home</NuxtLink>
+    <NuxtLink :class="['link', isDark ? 'link_black' : 'link_white']" to="/">Home</NuxtLink>
     <div @click="isActive = !isActive" :class="['burger-menu-container', isActive && 'active-burger']">
-      <div class="burger-menu-item"></div>
-      <div class="burger-menu-item"></div>
+      <div :class="['burger-menu-item', isDark ? 'bg-black' : 'bg-white']"></div>
+      <div :class="['burger-menu-item', isDark ? 'bg-black' : 'bg-white']"></div>
     </div>
   </header>
 </template>
@@ -11,6 +11,9 @@
 <script>
 export default {
   name: 'Header',
+  props: {
+    isDark: Boolean
+  },
   data() {
     return {
       isActive: false
@@ -25,7 +28,7 @@ export default {
 
 .header {
   z-index: 999;
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
@@ -47,7 +50,6 @@ export default {
     transition: all 0.3s ease-in-out;
     width: 100%;
     height: 2px;
-    backdrop-filter: invert(1) grayscale(1) contrast(9);
   }
 }
 
