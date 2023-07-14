@@ -23,6 +23,7 @@
         <NuxtLink class="button button_medium button_black" to="/">Scroll</NuxtLink>
       </div>
     </section>
+    <Footer />
   </div>
 </template>
 
@@ -77,6 +78,7 @@ export default {
 .view-more {
   padding: $padding-main;
   border-radius: 0 0 $radius-main $radius-main;
+  z-index: 1;
 
   &::after {
     content: '';

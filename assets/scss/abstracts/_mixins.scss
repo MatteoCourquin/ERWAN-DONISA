@@ -8,7 +8,7 @@
 }
 
 @mixin respo-xs {
-  @media (min-width: 575.98px) {
+  @media (min-width: 640px) {
     @content;
   }
 }

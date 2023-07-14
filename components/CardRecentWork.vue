@@ -74,7 +74,6 @@ export default {
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
   z-index: 1;
   border-radius: 0 0 $radius-main $radius-main;
-  color: white !important;
   padding: clamp(1rem, 6vw, 7rem);
   display: flex;
   flex-direction: column;

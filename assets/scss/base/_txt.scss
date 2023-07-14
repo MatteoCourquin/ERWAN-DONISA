@@ -1,4 +1,4 @@
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $font-termina-600;
   text-transform: uppercase;
 }
@@ -11,14 +11,20 @@ h2 {
 h3 {
   font-size: clamp(2rem, 5vw, 5rem);
 }
+h4 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
 p {
   font-family: $font-termina-400;
 }
 
 .link {
-  font-family: $font-termina-600;
+  font-family: $font-termina-400;
   font-size: 20px;
   text-transform: uppercase;
+  &::hover {
+    text-decoration: underline;
+  }
 }
 .link_black {
   color: $color-black;
