@@ -13,6 +13,9 @@ module.exports = {
       padding: {
         paddingMain: "clamp(20px, 10vw, 100px)"
       },
+      margin: {
+        marginMain: "clamp(20px, 10vw, 100px)"
+      },
       borderRadius: {
         radiusMain: "25px"
       }

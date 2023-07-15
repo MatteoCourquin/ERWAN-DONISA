@@ -1,26 +1,24 @@
 <template>
   <div id="page-index">
+    <img class="fixed top-0 left-0 w-full h-full object-cover" src="/images/background-hero.png" alt="background" />
     <Header :isDark="false" />
     <Hero />
-    <section class="wrapper-description-slider bg-white w-full grid grid-rows-2 relative z-10 !text-black">
-      <p class="px-paddingMain flex justify-center items-center text-center flex-col overflow-hidden text-3xl">
+    <section class="rounded-radiusMain bg-white w-full grid grid-rows-2 relative z-[100] !text-black">
+      <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
       </p>
-      <div class="flex justify-center items-center text-center flex-col overflow-hidden">
-        <h2>MY SERVICES</h2>
-        <Slider class="my-16"/>
-        <NuxtLink class="link link_black" to="/">Scroll</NuxtLink>
-      </div>
+      <Slider />
     </section>
     <section>
       <div v-for="(project, index) in projects" :key="index">
-        <CardRecentWork :style="{ zIndex: 9 - index }" :title="project.title" :description="project.description"
+        <CardRecentWork :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description"
           :link="project.link" :urlImage="project.urlImage" />
       </div>
-      <div class="view-more relative bg-white flex items-center justify-center flex-col text-center">
+      <div
+        class="view-more z-10 rounded-b-radiusMain p-paddingMain relative bg-white flex items-center justify-center flex-col text-center">
         <h3 class="text-black mb-10">Check the others</h3>
-        <NuxtLink class="button button_medium button_black" to="/">Scroll</NuxtLink>
+        <NuxtLink class="button button_medium button_black" to="/">more</NuxtLink>
       </div>
     </section>
     <Footer />
@@ -28,6 +26,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'index',
   data() {
@@ -61,33 +60,25 @@ export default {
 <style lang='scss'>
 @import '@/scss/main.scss';
 
+@supports (-webkit-overflow-scrolling: touch) {
+  #page-index {
+    background-attachment: scroll
+  }
+}
+
 #page-index {
   position: relative;
-  background: url('~/images/background-hero.png') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
   padding-top: 100vh;
 }
 
-.wrapper-description-slider {
-  height: 200vh;
-  border-radius: $radius-main;
-}
-
-.view-more {
-  padding: $padding-main;
-  border-radius: 0 0 $radius-main $radius-main;
+.view-more::after {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background-color: $color-white;
   z-index: 1;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: 0;
-    width: 100%;
-    height: 25px;
-    background-color: $color-white;
-    z-index: 1;
-  }
 }
 </style>
