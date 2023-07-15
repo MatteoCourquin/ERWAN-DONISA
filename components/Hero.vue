@@ -4,7 +4,7 @@
     <h1 class="text-white mb-8">DESIGNER /<br>
       ART DIRECTOR</h1>
     <button class="button button_big button_white">Let's meet</button>
-    <button @click="scroll" class="absolute bottom-[11vh] sm:bottom-[8vh] link sm:self-end	 link_white">Scroll</button>
+    <button @click="scroll" class="link link_white link_underline absolute bottom-[11vh] sm:bottom-[8vh] sm:self-end">Scroll</button>
   </section>
 </template>
 

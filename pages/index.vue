@@ -2,6 +2,7 @@
   <div id="page-index">
     <img class="fixed top-0 left-0 w-full h-full object-cover" src="/images/background-hero.png" alt="background" />
     <Header :isDark="false" />
+    <HeaderMobile :is-dark="false" />
     <Hero />
     <section class="rounded-radiusMain bg-white w-full grid grid-rows-2 relative z-[100] !text-black">
       <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">

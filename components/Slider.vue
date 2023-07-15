@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <button @click="scrollLeft" class="link link_black">Scroll</button>
+    <button @click="scrollLeft" class="link link_black link_underline">Scroll</button>
   </section>
 </template>
 
