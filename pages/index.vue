@@ -3,13 +3,13 @@
     <Header :isDark="false" />
     <Hero />
     <section class="wrapper-description-slider bg-white w-full grid grid-rows-2 relative z-10 !text-black">
-      <p class="flex justify-center items-center text-center flex-col overflow-hidden text-3xl">
+      <p class="px-paddingMain flex justify-center items-center text-center flex-col overflow-hidden text-3xl">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
       </p>
       <div class="flex justify-center items-center text-center flex-col overflow-hidden">
         <h2>MY SERVICES</h2>
-        <Slider />
+        <Slider class="my-16"/>
         <NuxtLink class="link link_black" to="/">Scroll</NuxtLink>
       </div>
     </section>
@@ -72,7 +72,6 @@ export default {
 .wrapper-description-slider {
   height: 200vh;
   border-radius: $radius-main;
-  padding: 0 $padding-main;
 }
 
 .view-more {
