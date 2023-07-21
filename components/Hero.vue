@@ -4,26 +4,28 @@
     <h1 class="text-white mb-8">DESIGNER /<br>
       ART DIRECTOR</h1>
     <button class="button button_big button_white">Let's meet</button>
-    <button @click="scroll" class="link link_white link_underline absolute bottom-[11vh] sm:bottom-[8vh] sm:self-end">Scroll</button>
+    <button @click="scroll"
+      class="flex items-center gap-2 link link_white link_underline absolute bottom-[11vh] sm:bottom-[8vh] sm:self-end">
+      <Arrow :isDark="false" orientation="bottom" />
+      Scroll
+    </button>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Hero',
+  name: "Hero",
   data() {
-    return {
-
-    };
+    return {};
   },
   methods: {
     scroll() {
       window.scrollTo({
         top: window.innerHeight,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     }
-  }
+  },
 };
 </script>
 

@@ -22,7 +22,7 @@
         </li>
       </ul>
     </nav>
-    <div class="flex flex-col justify-center items-end gap-4">
+    <div class="hidden lg:flex flex-col justify-center items-end gap-4">
       <a href="" class="hover:opacity-70">
         <svg :class="['h-8', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
@@ -83,15 +83,6 @@ export default {
 
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
-
-.dark-gradient {
-  background: linear-gradient(180deg, hsla(0, 0%, 0%, 100%), hsla(0, 0%, 0%, 90%), hsla(0, 0%, 0%, 80%), hsla(0, 0%, 0%, 70%), hsla(0, 0%, 0%, 60%), hsla(0, 0%, 0%, 50%), hsla(0, 0%, 0%, 40%), hsla(0, 0%, 0%, 30%), hsla(0, 0%, 0%, 17%), hsla(0, 0%, 0%, 6%), hsla(0, 0%, 0%, 0%));
-  // background: linear-gradient(180deg, hsla(0, 0%, 0%, 90%), hsla(0, 0%, 11%, 90%), hsla(0, 0%, 19%, 80%), hsla(0, 0%, 28%, 70%), hsla(0, 0%, 37%, 60%), hsla(0, 0%, 47%, 50%), hsla(0, 0%, 57%, 40%), hsla(0, 0%, 67%, 30%), hsla(0, 0%, 78%, 20%), hsla(0, 0%, 89%, 10%), hsla(0, 0%, 100%, 0));
-}
-
-.light-gradient {
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 90%), hsla(0, 0%, 100%, 90%), hsla(0, 0%, 100%, 80%), hsla(0, 0%, 100%, 70%), hsla(0, 0%, 100%, 60%), hsla(0, 0%, 100%, 50%), hsla(0, 0%, 100%, 40%), hsla(0, 0%, 100%, 30%), hsla(0, 0%, 100%, 20%), hsla(0, 0%, 100%, 10%), hsla(0, 0%, 100%, 0));
-}
 
 .active-burger.burger-menu-container {
   .burger-menu-item:nth-child(1) {

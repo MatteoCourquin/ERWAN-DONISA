@@ -2,9 +2,9 @@
   <section class="flex justify-center items-center min-h-screen text-center flex-col overflow-hidden py-paddingMain">
     <h2>MY SERVICES</h2>
     <div class="my-16 relative w-full">
-      <div ref="slider" class="slider w-full overflow-x-scroll scroll-smooth flex flex-row gap-8">
+      <div ref="slider" @scroll="isScrollEnd" class="px-paddingMain slider w-full overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
-          class="first-of-type:ml-marginMain last-of-type:mr-marginMain relative overflow-hidden border border-black grid grid-rows-2 w-[70%] min-w-[280px] max-w-xs h-[60vh] min-h-[600px] rounded-radiusMain shrink-0 flex-nowrap"
+          class="relative overflow-hidden border border-black grid grid-rows-2 w-[70%] min-w-[280px] max-w-xs h-[60vh] min-h-[600px] rounded-radiusMain shrink-0 flex-nowrap"
           v-for="(project, index) in projects" :key="index">
           <div class="flex p-4 py-16 items-center flex-col">
             <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ project.title }}</h4>
@@ -19,7 +19,10 @@
         </div>
       </div>
     </div>
-    <button @click="scrollLeft" class="link link_black link_underline">Scroll</button>
+    <button @click="scrollLeft" class="flex items-center gap-2 link link_black link_underline">
+      Scroll
+      <Arrow :isDark="true" :orientation="endScroll ? 'bottom' : 'right'" />
+    </button>
   </section>
 </template>
 
@@ -28,6 +31,7 @@ export default {
   name: 'Slider',
   data() {
     return {
+      endScroll: false,
       projects: [
         {
           title: 'Super Project',
@@ -81,6 +85,10 @@ export default {
     };
   },
   methods: {
+    isScrollEnd() {
+      const container = this.$refs.slider;
+      this.endScroll = container.scrollLeft + container.clientWidth >= container.scrollWidth - 100
+    },
     scrollLeft() {
       const container = this.$refs.slider;
       container.scrollLeft + container.clientWidth >= container.scrollWidth - 1 ? container.scrollTo({ left: 0 }) : container.scrollTo({ left: container.scrollLeft + container.clientWidth })
