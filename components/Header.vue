@@ -3,8 +3,7 @@
     :class="['z-[900] fixed top-0 left-0 w-screen h-36 py-14 px-paddingMain hidden lg:flex justify-between items-start transition-all duration-300', scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
     <div :class="['-z-10 absolute left-0 top-0 w-screen h-52', isDark ? 'light-gradient' : 'dark-gradient']"></div>
     <p @click="changeLanguage" :class="['link w-11 link_underline', isDark ? 'link_black' : 'link_white']" to="/">
-      {{ language
-      }}</p>
+      {{ language }}</p>
     <nav class="flex gap-[5vw]">
       <ul>
         <li>
@@ -60,10 +59,14 @@
 export default {
   name: 'Header',
   props: {
-    isDark: Boolean,
+    isDark: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {
+      // isDark: true,
       isBackground: false,
       language: 'Eng',
       prevScrollPos: 0,

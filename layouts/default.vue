@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header :isDark="false" />
-    <HeaderMobile :is-dark="false" />
+    <Header :isDark="isDarkMode" />
+    <HeaderMobile :isDark="isDarkMode" />
     <main>
       <slot />
     </main>
@@ -9,6 +9,17 @@
   </div>
 </template>
 
-<style lang='scss'>
-@import '@/scss/main.scss';
+<script>
+export default {
+  props: {
+    isDarkMode: {
+      type: Boolean,
+      default: false,
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+@import "@/scss/main.scss";
 </style>

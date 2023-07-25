@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Contact</h1>
+    <h1>Work</h1>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Contact',
+  name: 'Work',
   data() {
     return {};
   },
@@ -17,5 +17,5 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@import '@/scss/main.scss';
+  
 </style>

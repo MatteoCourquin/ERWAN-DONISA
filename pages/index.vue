@@ -24,8 +24,8 @@
 
 <script>
 export default {
-  layout: 'default',
   name: 'index',
+  layout: 'default',
   data() {
     return {
       projects: [
