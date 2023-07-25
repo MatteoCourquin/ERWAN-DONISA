@@ -1,6 +1,8 @@
 <template>
-  <header :class="['lg:hidden z-[900] fixed top-0 left-0 w-screen py-14 px-paddingMain flex justify-between items-center transition-all', !isActive && scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
-    <NuxtLink :class="['link link_underline', isDark ? 'link_black' : 'link_white', isActive ? 'invisible' : 'block']"
+  <header
+    :class="['lg:hidden z-[900] fixed top-0 left-0 w-screen py-14 px-paddingMain flex justify-between items-center transition-all duration-300', !isActive && scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
+    <NuxtLink
+      :class="['link link_underline transition-all', isDark ? 'link_black' : 'link_white', isActive ? 'invisible opacity-0' : 'block opacity-100']"
       to="/">Home</NuxtLink>
     <div @click="isActive = !isActive"
       :class="['w-10 h-5 flex flex-col justify-between cursor-pointer burger-menu-container', isActive && 'active-burger']">
@@ -14,19 +16,31 @@
     :class="['menu flex flex-col justify-center items-center gap-10 fixed lg:hidden transition-all duration-300 top-0 w-screen h-screen bg-black z-[800]', isActive ? 'translate-y-0' : '-translate-y-full', !isActive && scrollDirection ? 'scroll-direction' : '']">
     <ul>
       <li>
-        <NuxtLink to="/about-me" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">About
-          me</NuxtLink>
+        <NuxtLink to="/about-me" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Home
+        </NuxtLink>
       </li>
     </ul>
     <ul>
       <li>
-        <NuxtLink to="/my-work" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">My work
+        <NuxtLink to="/work" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Work
+        </NuxtLink>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <NuxtLink to="/about" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">About
         </NuxtLink>
       </li>
     </ul>
     <ul>
       <li>
         <NuxtLink to="/contact" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Contact
+        </NuxtLink>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <NuxtLink to="/service" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Service
         </NuxtLink>
       </li>
     </ul>
@@ -111,6 +125,7 @@ export default {
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 100%), hsla(0, 0%, 0%, 90%), hsla(0, 0%, 0%, 80%), hsla(0, 0%, 0%, 70%), hsla(0, 0%, 0%, 60%), hsla(0, 0%, 0%, 50%), hsla(0, 0%, 0%, 40%), hsla(0, 0%, 0%, 30%), hsla(0, 0%, 0%, 17%), hsla(0, 0%, 0%, 6%), hsla(0, 0%, 0%, 0%));
   }
 }
+
 .menu.scroll-direction {
   &::after {
     transform: translateY(-300px);

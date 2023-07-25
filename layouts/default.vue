@@ -1,21 +1,14 @@
 <template>
   <div>
-    
+    <Header :isDark="false" />
+    <HeaderMobile :is-dark="false" />
+    <main>
+      <slot />
+    </main>
+    <Footer />
   </div>
 </template>
 
-<script>
-
-export default {
-  name: 'default',
-  data() {
-    return {};
-  },
-  methods: {}
-}
-
-</script>
-
-<style scoped lang='scss'>
-  
+<style lang='scss'>
+@import '@/scss/main.scss';
 </style>

@@ -1,10 +1,7 @@
 <template>
-  <div id="page-index">
-    <img class="fixed top-0 left-0 w-full h-full object-cover" src="/images/background-hero.png" alt="background" />
-    <Header :isDark="false" />
-    <HeaderMobile :is-dark="false" />
-    <Hero />
-    <section class="rounded-radiusMain bg-white w-full grid grid-rows-2 relative z-[100] !text-black">
+  <div>
+    <Hero class="sticky top-0" />
+    <section class="rounded-radiusMain relative bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
@@ -22,13 +19,12 @@
         <NuxtLink class="button button_medium button_black" to="/">more</NuxtLink>
       </div>
     </section>
-    <Footer />
   </div>
 </template>
 
 <script>
-
 export default {
+  layout: 'default',
   name: 'index',
   data() {
     return {
@@ -54,23 +50,12 @@ export default {
       ]
     };
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
 <style lang='scss'>
 @import '@/scss/main.scss';
-
-@supports (-webkit-overflow-scrolling: touch) {
-  #page-index {
-    background-attachment: scroll
-  }
-}
-
-#page-index {
-  position: relative;
-  padding-top: 100vh;
-}
 
 .view-more::after {
   content: '';

@@ -1,9 +1,10 @@
 <template>
-<div class="card-recent-work" :style="{ '--background-image': `url('/images/${urlImage}')` }">
-    <div class="card-recent-work-description">
-      <div class="description">
+  <div class="card-recent-work rounded-b-radiusMain w-full h-screen relative flex items-end"
+    :style="{ '--background-image': `url('/images/${urlImage}')` }">
+    <div class="card-recent-work-description w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-center sm:flex-row sm:justify-between">
+      <div class="w-full sm:w-2/3 text-center sm:text-left">
         <h2>{{ title }}</h2>
-        <p>{{ description }}</p>
+        <p class="my-5">{{ description }}</p>
       </div>
       <NuxtLink class="button button_small button_white" :to="link">View</NuxtLink>
     </div>
@@ -47,57 +48,19 @@ export default {
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
 
-.card-recent-work {
-  border-radius: 0 0 $radius-main $radius-main;
+.card-recent-work::after {
+  content: '';
+  position: absolute;
   width: 100%;
-  height: 100vh;
-  position: relative;
-  top: 0;
-  display: flex;
-  align-items: flex-end;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: calc(100% + 25px);
-    bottom: 0;
-    background: var(--background-image) no-repeat center center;
-    background-size: cover;
-    border-radius: 0 0 $radius-main $radius-main;
-  }
+  height: calc(100% + 25px);
+  bottom: 0;
+  background: var(--background-image) no-repeat center center;
+  background-size: cover;
+  border-radius: 0 0 $radius-main $radius-main;
 }
 
 .card-recent-work-description {
-  width: 100%;
-  height: 50%;
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
-  z-index: 1;
-  border-radius: 0 0 $radius-main $radius-main;
   padding: clamp(1rem, 6vw, 7rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @include respo-xs {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .description {
-    width: 100%;
-    text-align: center;
-
-    @include respo-xs {
-      text-align: left;
-      width: 60%;
-    }
-
-    p {
-      margin: 20px 0;
-    }
-  }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <section
-    class="hero flex justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-screen px-paddingMain fixed top-0">
+    class="hero flex z-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-screen px-paddingMain">
+    <img class="absolute -z-10 top-0 left-0 w-full h-full object-cover" src="/images/background-hero.png"
+      alt="background" />
     <h1 class="text-white mb-8">DESIGNER /<br>
       ART DIRECTOR</h1>
     <button class="button button_big button_white">Let's meet</button>

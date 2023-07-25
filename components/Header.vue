@@ -1,6 +1,6 @@
 <template>
   <header
-    :class="['z-[900] fixed top-0 left-0 w-screen h-36 py-14 px-paddingMain hidden lg:flex justify-between items-start transition-all', scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
+    :class="['z-[900] fixed top-0 left-0 w-screen h-36 py-14 px-paddingMain hidden lg:flex justify-between items-start transition-all duration-300', scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
     <div :class="['-z-10 absolute left-0 top-0 w-screen h-52', isDark ? 'light-gradient' : 'dark-gradient']"></div>
     <NuxtLink @click="changeLanguage" :class="['link w-11 link_underline', isDark ? 'link_black' : 'link_white']" to="/">
       {{ language
