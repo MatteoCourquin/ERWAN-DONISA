@@ -2,18 +2,23 @@
   <header
     :class="['z-[900] fixed top-0 left-0 w-screen h-36 py-14 px-paddingMain hidden lg:flex justify-between items-start transition-all duration-300', scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
     <div :class="['-z-10 absolute left-0 top-0 w-screen h-52', isDark ? 'light-gradient' : 'dark-gradient']"></div>
-    <NuxtLink @click="changeLanguage" :class="['link w-11 link_underline', isDark ? 'link_black' : 'link_white']" to="/">
+    <p @click="changeLanguage" :class="['link w-11 link_underline', isDark ? 'link_black' : 'link_white']" to="/">
       {{ language
-      }}</NuxtLink>
+      }}</p>
     <nav class="flex gap-[5vw]">
       <ul>
         <li>
-          <NuxtLink to="/about" :class="['link', isDark ? 'link_black' : 'link_white']">About me</NuxtLink>
+          <NuxtLink to="/" :class="['link', isDark ? 'link_black' : 'link_white']">Home</NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/my-work" :class="['link', isDark ? 'link_black' : 'link_white']">My work</NuxtLink>
+          <NuxtLink to="/work" :class="['link', isDark ? 'link_black' : 'link_white']">Work</NuxtLink>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <NuxtLink to="/about" :class="['link', isDark ? 'link_black' : 'link_white']">About</NuxtLink>
         </li>
       </ul>
       <ul>
@@ -23,7 +28,7 @@
       </ul>
     </nav>
     <div class="hidden lg:flex flex-col justify-center items-end gap-4">
-      <a href="" class="hover:opacity-70">
+      <a href="https://www.instagram.com/erwand.design/" target="_blank" class="hover:opacity-70">
         <svg :class="['h-8', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path
@@ -31,7 +36,7 @@
           </path>
         </svg>
       </a>
-      <a href="" class="hover:opacity-70">
+      <a href="https://www.linkedin.com/in/erwan-donisa/" target="_blank" class="hover:opacity-70">
         <svg :class="['h-8', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path
@@ -39,7 +44,7 @@
           </path>
         </svg>
       </a>
-      <a href="" class="hover:opacity-70">
+      <a href="https://www.behance.net/erwandonisa" class="hover:opacity-70">
         <svg :class="['h-8', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path

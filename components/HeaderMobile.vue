@@ -1,9 +1,11 @@
 <template>
   <header
     :class="['lg:hidden z-[900] fixed top-0 left-0 w-screen py-14 px-paddingMain flex justify-between items-center transition-all duration-300', !isActive && scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
-    <NuxtLink
-      :class="['link link_underline transition-all', isDark ? 'link_black' : 'link_white', isActive ? 'invisible opacity-0' : 'block opacity-100']"
-      to="/">Home</NuxtLink>
+    <NuxtLink to="/" :class="['link link_underline', isDark ? 'link_black' : 'link_white', isActive ? 'hidden' : 'block']">Home</NuxtLink>
+    <p
+      @click="changeLanguage"
+      :class="['link link_underline transition-all', isDark ? 'link_black' : 'link_white', isActive ? 'block' : 'hidden']"
+      to="/">{{ language }}</p>
     <div @click="isActive = !isActive"
       :class="['w-10 h-5 flex flex-col justify-between cursor-pointer burger-menu-container', isActive && 'active-burger']">
       <div :class="['transition-all duration-300 w-full h-[2px] burger-menu-item', isDark ? 'bg-black' : 'bg-white']">
@@ -16,7 +18,7 @@
     :class="['menu flex flex-col justify-center items-center gap-10 fixed lg:hidden transition-all duration-300 top-0 w-screen h-screen bg-black z-[800]', isActive ? 'translate-y-0' : '-translate-y-full', !isActive && scrollDirection ? 'scroll-direction' : '']">
     <ul>
       <li>
-        <NuxtLink to="/about-me" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Home
+        <NuxtLink to="/" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Home
         </NuxtLink>
       </li>
     </ul>
@@ -38,15 +40,9 @@
         </NuxtLink>
       </li>
     </ul>
-    <ul>
-      <li>
-        <NuxtLink to="/service" :class="['link !text-4xl font-termina-700', isDark ? 'link_black' : 'link_white']">Service
-        </NuxtLink>
-      </li>
-    </ul>
     <ul class="flex absolute bottom-24 justify-start items-center gap-4">
       <li>
-        <a href="" class="hover:opacity-70">
+        <a href="https://www.instagram.com/erwand.design/" target="_blank" class="hover:opacity-70">
           <svg :class="['h-12', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24">
             <path
@@ -56,7 +52,7 @@
         </a>
       </li>
       <li>
-        <a href="" class="hover:opacity-70">
+        <a href="https://www.linkedin.com/in/erwan-donisa/" target="_blank" class="hover:opacity-70">
           <svg :class="['h-12', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24">
             <path
@@ -66,7 +62,7 @@
         </a>
       </li>
       <li>
-        <a href="" class="hover:opacity-70">
+        <a href="https://www.behance.net/erwandonisa" target="_blank" class="hover:opacity-70">
           <svg :class="['h-12', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24">
             <path
@@ -95,6 +91,9 @@ export default {
     };
   },
   methods: {
+    changeLanguage() {
+      this.language === 'Eng' ? this.language = 'Fra' : this.language = 'Eng';
+    },
     isScrollDown() {
       const isScrollingDown = window.pageYOffset > this.prevScrollPos;
       this.prevScrollPos = window.pageYOffset;

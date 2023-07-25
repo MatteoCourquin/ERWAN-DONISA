@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Hero class="sticky top-0" />
+  <div id="page-index">
+    <Hero class="fixed top-0" />
     <section class="rounded-radiusMain relative bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
@@ -56,6 +56,10 @@ export default {
 
 <style lang='scss'>
 @import '@/scss/main.scss';
+
+#page-index{
+  padding-top: 100vh;
+}
 
 .view-more::after {
   content: '';
