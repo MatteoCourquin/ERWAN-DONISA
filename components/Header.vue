@@ -1,8 +1,7 @@
 <template>
   <header
-    :class="['z-[900] fixed top-0 left-0 w-screen h-36 py-14 px-paddingMain hidden lg:flex justify-between items-start transition-all duration-300', scrollDirection ? '-translate-y-[300px]' : 'translate-x-0']">
-    <div :class="['-z-10 absolute left-0 top-0 w-screen h-52', isDark ? 'light-gradient' : 'dark-gradient']"></div>
-    <p @click="changeLanguage" :class="['link w-11 link_underline', isDark ? 'link_black' : 'link_white']" to="/">
+    class='z-[900] hidden sm:flex absolute top-0 w-screen h-36 py-14 px-paddingMain md:justify-between justify-center items-start'>
+    <p @click="changeLanguage" :class="['link w-11 link_underline hidden lg:flex', isDark ? 'link_black' : 'link_white']" to="/">
       {{ language }}</p>
     <nav class="flex gap-[5vw]">
       <ul>
@@ -26,7 +25,7 @@
         </li>
       </ul>
     </nav>
-    <div class="hidden lg:flex flex-col justify-center items-end gap-4">
+    <div class="hidden md:flex flex-col justify-center items-end gap-4">
       <a href="https://www.instagram.com/erwand.design/" target="_blank" class="hover:opacity-70">
         <svg :class="['h-8', isDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
@@ -66,7 +65,6 @@ export default {
   },
   data() {
     return {
-      // isDark: true,
       isBackground: false,
       language: 'Eng',
       prevScrollPos: 0,
@@ -77,14 +75,14 @@ export default {
     changeLanguage() {
       this.language === 'Eng' ? this.language = 'Fra' : this.language = 'Eng';
     },
-    isScrollDown() {
-      const isScrollingDown = window.pageYOffset > this.prevScrollPos;
-      this.prevScrollPos = window.pageYOffset;
-      this.scrollDirection = isScrollingDown;
-    }
+    // isScrollDown() {
+    //   const isScrollingDown = window.pageYOffset > this.prevScrollPos;
+    //   this.prevScrollPos = window.pageYOffset;
+    //   this.scrollDirection = isScrollingDown;
+    // }
   },
   mounted() {
-    window.addEventListener('scroll', () => this.isScrollDown());
+    // window.addEventListener('scroll', () => this.isScrollDown());
   },
 };
 </script>

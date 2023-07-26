@@ -18,6 +18,9 @@ module.exports = {
       },
       borderRadius: {
         radiusMain: "25px"
+      },
+      inset: {
+        insetMain: "clamp(20px, 10vw, 100px)",
       }
     },
   },

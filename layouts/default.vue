@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :isDark="isDarkMode" />
-    <HeaderMobile :isDark="isDarkMode" />
+    <Burger/>
     <main>
       <slot />
     </main>

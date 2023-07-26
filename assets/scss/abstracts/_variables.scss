@@ -51,11 +51,11 @@ $shadow-xl: 0 0 20px rgba(0, 0, 0, 0.2);
 $spacing-xl: 20px;
 $spacing-m: 10px;
 
-// Gradient
-.dark-gradient {
-  background: linear-gradient(180deg, hsla(0, 0%, 0%, 100%), hsla(0, 0%, 0%, 90%), hsla(0, 0%, 0%, 80%), hsla(0, 0%, 0%, 70%), hsla(0, 0%, 0%, 60%), hsla(0, 0%, 0%, 50%), hsla(0, 0%, 0%, 40%), hsla(0, 0%, 0%, 30%), hsla(0, 0%, 0%, 17%), hsla(0, 0%, 0%, 6%), hsla(0, 0%, 0%, 0%));
-  // background: linear-gradient(180deg, hsla(0, 0%, 0%, 90%), hsla(0, 0%, 11%, 90%), hsla(0, 0%, 19%, 80%), hsla(0, 0%, 28%, 70%), hsla(0, 0%, 37%, 60%), hsla(0, 0%, 47%, 50%), hsla(0, 0%, 57%, 40%), hsla(0, 0%, 67%, 30%), hsla(0, 0%, 78%, 20%), hsla(0, 0%, 89%, 10%), hsla(0, 0%, 100%, 0));
+// Backdrop Filter
+.backdrop-filter {
+  backdrop-filter: invert(100%) grayscale(1) contrast(9);
 }
-.light-gradient {
-  background: linear-gradient(180deg, hsla(0, 0%, 100%, 90%), hsla(0, 0%, 100%, 90%), hsla(0, 0%, 100%, 80%), hsla(0, 0%, 100%, 70%), hsla(0, 0%, 100%, 60%), hsla(0, 0%, 100%, 50%), hsla(0, 0%, 100%, 40%), hsla(0, 0%, 100%, 30%), hsla(0, 0%, 100%, 20%), hsla(0, 0%, 100%, 10%), hsla(0, 0%, 100%, 0));
+
+.shadow-inner {
+  box-shadow: inset 0 0 10px rgba(140, 140, 140, 0.05), inset 0 0 10px rgba(140, 140, 140, 0.05) !important;
 }
