@@ -2,7 +2,7 @@
   <div id="page-index">
     <Hero />
     <section
-      class="anim-curtain-section sticky rounded-radiusMain bottom-0 min-h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
+      class="anim-curtain-section sticky rounded-radiusMain bottom-0 h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
@@ -57,11 +57,11 @@ export default {
           scrollTrigger: {
             trigger: el,
             start: 'top bottom',
-            // end: 'top bottom',
-            markers: true,
+            // markers: true,
+            toggleActions: 'play none none reverse',
           },
         });
-        tl.to(el, { opacity: 1, position: 'sticky'});
+        tl.to(el, { position: 'sticky'});
       });
     }
   },
@@ -79,7 +79,7 @@ export default {
 }
 
 .anim-curtain-section {
-  opacity: 0;
+  position: relative;
 }
 
 .view-more::after {

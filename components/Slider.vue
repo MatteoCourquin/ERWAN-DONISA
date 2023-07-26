@@ -1,16 +1,17 @@
 <template>
-  <section class="flex justify-center items-center min-h-screen text-center flex-col overflow-hidden py-paddingMain">
+  <section class="flex justify-center items-center h-full text-center flex-col overflow-hidden py-paddingMain">
     <h2>MY SERVICES</h2>
     <div class="my-16 relative w-full">
-      <div ref="slider" @scroll="isScrollEnd" class="px-paddingMain slider w-full overflow-x-scroll scroll-smooth flex flex-row gap-8">
+      <div ref="slider" @scroll="isScrollEnd"
+        class="px-paddingMain slider w-full overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
-          class="relative overflow-hidden border border-black grid grid-rows-2 w-[70%] min-w-[280px] max-w-xs h-[60vh] min-h-[600px] rounded-radiusMain shrink-0 flex-nowrap"
+          class="card-slider relative overflow-hidden border border-black flex flex-col w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(project, index) in projects" :key="index">
-          <div class="flex p-4 py-16 items-center flex-col">
+          <div class="flex p-4 py-[5vh] items-center flex-col h-fit">
             <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ project.title }}</h4>
             <p>{{ project.description }}</p>
           </div>
-          <div class="relative">
+          <div class="card-slider-item-bottom relative w-full h-full">
             <img class="absolute top-0 object-cover h-full w-full" :src="`/images/${project.urlImage}`"
               alt="description product">
             <NuxtLink :to="project.link"

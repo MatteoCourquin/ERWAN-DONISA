@@ -1,5 +1,5 @@
 <template>
-  <div class="card-recent-work rounded-b-radiusMain w-full h-screen min-h-screen flex items-end"
+  <div class="card-recent-work rounded-b-radiusMain w-full h-screen flex items-end"
     :style="{ '--background-image': `url('/images/${urlImage}')` }">
     <div
       class="card-recent-work-description px-paddingMain w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-center sm:flex-row sm:justify-between">
@@ -23,23 +23,6 @@ export default {
   props: ['title', 'description', 'link', 'urlImage'],
   data() {
     return {};
-  },
-  methods: {},
-  mounted() {
-    // let cards = gsap.utils.toArray('.card-recent-work');
-    // cards.forEach((card, i) => {
-    //   ScrollTrigger.create({
-    //     trigger: card,
-    //     start: 'bottom bottom',
-    //     // end: 'top top',
-    //     pin: true,
-    //     pinSpacing: false,
-    //     scrub: true,
-    //     snap: 1,
-    //     // snap: 1 / (cards.length - 1),
-    //     markers: true,
-    //   })
-    // });
   },
 };
 

@@ -2,7 +2,7 @@
   <div>
     <Header :isDark="isDarkMode" />
     <Burger/>
-    <main class="pb-[70vh]">
+    <main class="pb-[80vh]">
       <slot />
     </main>
     <Footer />

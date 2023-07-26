@@ -21,7 +21,7 @@ module.exports = {
       },
       inset: {
         insetMain: "clamp(20px, 10vw, 100px)",
-      }
+      },
     },
   },
   plugins: [],
