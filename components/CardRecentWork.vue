@@ -1,7 +1,8 @@
 <template>
-  <div class="card-recent-work rounded-b-radiusMain w-full h-screen relative flex items-end"
+  <div class="card-recent-work rounded-b-radiusMain w-full h-screen min-h-screen flex items-end"
     :style="{ '--background-image': `url('/images/${urlImage}')` }">
-    <div class="card-recent-work-description px-paddingMain w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-center sm:flex-row sm:justify-between">
+    <div
+      class="card-recent-work-description px-paddingMain w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-center sm:flex-row sm:justify-between">
       <div class="w-full sm:w-2/3 text-center sm:text-left">
         <h2>{{ title }}</h2>
         <p class="my-5">{{ description }}</p>
@@ -48,19 +49,12 @@ export default {
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
 
-.card-recent-work::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: calc(100% + 25px);
-  bottom: 0;
+.card-recent-work {
   background: var(--background-image) no-repeat center center;
   background-size: cover;
-  border-radius: 0 0 $radius-main $radius-main;
 }
 
 .card-recent-work-description {
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
-  // padding: clamp(1rem, 6vw, 7rem);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <footer :class="['footer w-screen fixed bottom-0 p-paddingMain bg-black', isScrollBottom ? 'block' : 'hidden']">
+  <footer :class="['footer w-screen fixed bottom-0 p-paddingMain bg-black z-0', isScrollBottom ? 'block' : 'hidden']">
     <div class="flex grow justify-between gap-[20vw]">
       <div class="flex flex-col gap-5 w-full items-center sm:items-start relative max-w-2xl">
         <h4 class="text-center sm:text-left">We should<br>work together</h4>
