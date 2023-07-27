@@ -56,6 +56,10 @@ $spacing-m: 10px;
   backdrop-filter: invert(100%) grayscale(1) contrast(9);
 }
 
+.bounce-transition {
+  transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+}
+
 .shadow-inner {
   box-shadow: inset 0 0 10px rgba(140, 140, 140, 0.05), inset 0 0 10px rgba(140, 140, 140, 0.05) !important;
 }

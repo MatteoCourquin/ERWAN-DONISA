@@ -1,6 +1,6 @@
 <template>
   <section
-    :class="['hero-background fixed top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-screen px-paddingMain -pt-[144px]', isBackground ? 'flex' : 'invisible']">
+    :class="['hero-background fixed top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100vh] px-paddingMain -pt-[144px]', isBackground ? 'flex' : 'invisible']">
     <h1 class="text-white mb-8">DESIGNER /<br>
       ART DIRECTOR</h1>
     <button class="button button_big button_white">Let's meet</button>

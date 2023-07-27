@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header :isDark="isDarkMode" />
-    <Burger/>
+    <Burger />
     <main class="pb-[80vh]">
       <slot />
     </main>
