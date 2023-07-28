@@ -1,5 +1,5 @@
 <template>
-  <footer :class="['footer w-screen h-[80vh] fixed bottom-0 p-paddingMain bg-black z-0', isScrollBottom ? 'block' : 'hidden']">
+  <footer :class="['sticky bottom-0 w-screen h-fit p-paddingMain bg-black z-0', isScrollBottom ? 'block' : 'hidden']">
     <div class="flex grow justify-between gap-[20vw]">
       <div class="flex flex-col gap-5 w-full items-center sm:items-start relative max-w-2xl">
         <h4 class="text-center sm:text-left">We should<br>work together</h4>
@@ -16,7 +16,7 @@
             <NuxtLink class="link link_white" to="/about">About</NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link link_white" to="/my-work">Work</NuxtLink>
+            <NuxtLink class="link link_white" to="/work">Work</NuxtLink>
           </li>
           <li>
             <NuxtLink class="link link_white" to="/contact">Contact</NuxtLink>

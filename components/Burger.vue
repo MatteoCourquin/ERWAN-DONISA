@@ -11,29 +11,29 @@
     </div>
     <nav
       :class="['menu flex flex-col justify-center items-center gap-10 pb-16 transition-all duration-300 fixed top-0 right-0 w-screen h-screen delay-150', isActive ? 'opacity-1' : 'opacity-0 invisible']">
-      <p @click="changeLanguage" class='absolute top-14 md:top-20 left-insetMain link link_underline transition-all link_white'
+      <p @click="changeLanguage" class='absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain link link_underline transition-all link_white'
         to="/">{{ language }}</p>
       <ul>
         <li>
-          <NuxtLink to="/" :class="['link !text-4xl font-termina-700 link_white']">Home
+          <NuxtLink @click="toggleActive" to="/" :class="['link !text-4xl font-termina-700 link_white']">Home
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/work" :class="['link !text-4xl font-termina-700 link_white']">Work
+          <NuxtLink @click="toggleActive" to="/work" :class="['link !text-4xl font-termina-700 link_white']">Work
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/about" :class="['link !text-4xl font-termina-700 link_white']">About
+          <NuxtLink @click="toggleActive" to="/about" :class="['link !text-4xl font-termina-700 link_white']">About
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/contact" :class="['link !text-4xl font-termina-700 link_white']">Contact
+          <NuxtLink @click="toggleActive" to="/contact" :class="['link !text-4xl font-termina-700 link_white']">Contact
           </NuxtLink>
         </li>
       </ul>

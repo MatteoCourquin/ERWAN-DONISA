@@ -11,7 +11,10 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
+  mounted() {
+    useHeaderDark().value = true;
+  },
 }
 
 </script>

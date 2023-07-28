@@ -57,7 +57,6 @@ export default {
           scrollTrigger: {
             trigger: el,
             start: 'top bottom',
-            // markers: true,
             toggleActions: 'play none none reverse',
           },
         });
@@ -66,6 +65,7 @@ export default {
     }
   },
   mounted() {
+    useHeaderDark().value = false;
     this.animOpacity();
   },
 };

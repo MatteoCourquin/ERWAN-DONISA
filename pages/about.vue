@@ -6,15 +6,16 @@
 </template>
 
 <script>
-
 export default {
   name: 'About',
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
+  mounted() {
+    useHeaderDark().value = true;
+  },
 }
-
 </script>
 
 <style scoped lang='scss'></style>
