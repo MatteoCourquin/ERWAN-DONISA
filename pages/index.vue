@@ -60,7 +60,7 @@ export default {
             toggleActions: 'play none none reverse',
           },
         });
-        tl.to(el, { position: 'sticky'});
+        tl.to(el, { position: 'sticky' });
       });
     }
   },

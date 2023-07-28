@@ -2,16 +2,20 @@
   <header
     :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center shadow-inner rounded-full w-20 h-20 md:w-20 md:h-20 transition-all delay-200 bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active w-20 h-20 md:w-20 md:h-20 bg-black' : 'border bg-white']">
     <div @click="toggleActive" class="z-10 w-20 h-20 md:w-20 md:h-20 flex justify-center items-center cursor-pointer">
-      <div :class="['w-8 h-[13px] flex flex-col items-center justify-between burger-menu-container', isActive && 'active-burger']">
-        <div :class="['transition-all duration-300 rounded-full w-full h-[2px] burger-menu-item', isActive ? 'bg-white' : 'bg-black']">
+      <div
+        :class="['w-8 h-[13px] flex flex-col items-center justify-between burger-menu-container', isActive && 'active-burger']">
+        <div
+          :class="['transition-all duration-300 rounded-full w-full h-[2px] burger-menu-item', isActive ? 'bg-white' : 'bg-black']">
         </div>
-        <div :class="['transition-all duration-300 rounded-full w-full h-[2px] burger-menu-item', isActive ? 'bg-white' : 'bg-black']">
+        <div
+          :class="['transition-all duration-300 rounded-full w-full h-[2px] burger-menu-item', isActive ? 'bg-white' : 'bg-black']">
         </div>
       </div>
     </div>
     <nav
       :class="['menu flex flex-col justify-center items-center gap-10 pb-16 transition-all duration-300 fixed top-0 right-0 w-screen h-screen delay-150', isActive ? 'opacity-1' : 'opacity-0 invisible']">
-      <p @click="changeLanguage" class='absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain link link_underline transition-all link_white'
+      <p @click="changeLanguage"
+        class='absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain link link_underline transition-all link_white'
         to="/">{{ language }}</p>
       <ul>
         <li>
@@ -88,6 +92,7 @@ export default {
   },
   methods: {
     toggleActive() {
+      // this.isActive == false ? this.isActive = true : setTimeout(this.isActive = false, 200);
       this.isActive = !this.isActive;
       this.isActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto';
     },
@@ -120,7 +125,7 @@ export default {
     content: '';
     position: fixed;
     background: black;
-    transition: all 0.5s cubic-bezier(.66,0,.35,1);
+    transition: all 0.5s cubic-bezier(.66, 0, .35, 1);
     border-radius: 50%;
     width: 200vw;
     height: 200vw;

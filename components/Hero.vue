@@ -21,16 +21,16 @@ export default {
     };
   },
   methods: {
+    checkedScroll() {
+      const scrolledDistance = window.scrollY || window.pageYOffset;
+      this.isBackground = scrolledDistance <= window.innerHeight * 1.2
+    },
     scroll() {
       window.scrollTo({
         top: window.innerHeight,
         behavior: "smooth"
       });
-    },
-    checkedScroll() {
-      const scrolledDistance = window.scrollY || window.pageYOffset;
-      this.isBackground = scrolledDistance <= window.innerHeight * 1.2
-    },
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.checkedScroll)
@@ -40,6 +40,7 @@ export default {
 
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
+
 .hero-background {
   background-image: url('/images/background-hero.jpg');
   background-size: cover;

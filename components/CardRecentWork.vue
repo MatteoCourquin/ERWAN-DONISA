@@ -4,8 +4,8 @@
     <div
       class="card-recent-work-description px-paddingMain py-[10vh] w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-end sm:items sm:flex-row sm:justify-between">
       <div class="w-full sm:w-2/3 text-center sm:text-left">
-        <h2>{{ title }}</h2>
-        <p class="my-5">{{ description }}</p>
+        <h2 :class="[!showDescription && 'pb-5 sm:pb-0']">{{ title }}</h2>
+        <p class="my-5" v-if="showDescription">{{ description }}</p>
       </div>
       <NuxtLink class="button button_small button_white" :to="link">View</NuxtLink>
     </div>
@@ -20,7 +20,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'CardRecentWork',
-  props: ['title', 'description', 'link', 'urlImage'],
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    link: {
+      type: String,
+      required: true,
+    },
+    urlImage: {
+      type: String,
+      required: true,
+    },
+    showDescription: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {};
   },
