@@ -1,6 +1,6 @@
 <template>
   <header
-    :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center shadow-inner rounded-full w-20 h-20 md:w-20 md:h-20 transition-all delay-200 bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active w-20 h-20 md:w-20 md:h-20 bg-black' : 'border bg-white']">
+    :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center rounded-full w-20 h-20 md:w-20 md:h-20 transition-all bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active w-20 h-20 md:w-20 md:h-20 bg-black' : 'border bg-white shadow-inner']">
     <div @click="toggleActive" class="z-10 w-20 h-20 md:w-20 md:h-20 flex justify-center items-center cursor-pointer">
       <div
         :class="['w-8 h-[13px] flex flex-col items-center justify-between burger-menu-container', isActive && 'active-burger']">
@@ -92,7 +92,6 @@ export default {
   },
   methods: {
     toggleActive() {
-      // this.isActive == false ? this.isActive = true : setTimeout(this.isActive = false, 200);
       this.isActive = !this.isActive;
       this.isActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto';
     },

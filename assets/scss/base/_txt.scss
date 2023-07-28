@@ -50,3 +50,14 @@ p {
 .link_white {
   color: $color-white;
 }
+
+input, select, textarea {
+  border: 1px solid $color-black;
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+  font-family: $font-termina-400;
+  white-space: nowrap;
+  &::placeholder {
+    color: #9BA3AF;
+  }
+}
