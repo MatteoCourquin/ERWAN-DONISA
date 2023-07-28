@@ -1,6 +1,6 @@
 <template>
   <header
-    :class="['z-[900] header fixed top-8 md:top-14 right-insetMain flex justify-center items-center shadow-inner rounded-full w-20 h-20 md:w-20 md:h-20 transition-all delay-200 bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active w-20 h-20 md:w-20 md:h-20 bg-black' : 'border bg-white']">
+    :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center shadow-inner rounded-full w-20 h-20 md:w-20 md:h-20 transition-all delay-200 bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active w-20 h-20 md:w-20 md:h-20 bg-black' : 'border bg-white']">
     <div @click="toggleActive" class="z-10 w-20 h-20 md:w-20 md:h-20 flex justify-center items-center cursor-pointer">
       <div :class="['w-8 h-[13px] flex flex-col items-center justify-between burger-menu-container', isActive && 'active-burger']">
         <div :class="['transition-all duration-300 rounded-full w-full h-[2px] burger-menu-item', isActive ? 'bg-white' : 'bg-black']">

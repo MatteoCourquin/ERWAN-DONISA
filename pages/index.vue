@@ -31,21 +31,21 @@ export default {
       projects: [
         {
           title: 'Project 1',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Nulla facilisi. Sed euismod, nunc vel aliquam aliquet, nisl nunc aliquet nunc, quis aliquam nunc nunc nec nunc.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image1.jpg'
         },
         {
           title: 'Project 2',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          description: 'Delectus odio sed nesciunt eveniet placeat nobis corrupti aliquam blanditiis assumenda animi architecto illum ipsa.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image2.jpg'
         },
         {
           title: 'Project 3',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus odio sed nesciunt eveniet placeat nobis corrupti aliquam blanditiis assumenda animi architecto illum ipsa, saepe, ad nemo modi atque accusamus debitis, dolorum autem aspernatur! Neque, mollitia fugiat nostrum veritatis aspernatur exercitationem.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image3.jpg'
         },
       ]
     };

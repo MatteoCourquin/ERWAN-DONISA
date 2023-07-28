@@ -5,17 +5,18 @@
       <div ref="slider" @scroll="isScrollEnd"
         class="px-paddingMain slider w-full overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
-          class="card-slider relative overflow-hidden border border-black flex flex-col w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
+          class="relative overflow-hidden border border-black flex flex-col justify-between w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(project, index) in projects" :key="index">
-          <div class="flex p-4 py-[5vh] items-center flex-col h-fit">
+          <div class="flex p-4 py-[5vh] shrink overflow-hidden items-center flex-col">
             <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ project.title }}</h4>
-            <p>{{ project.description }}</p>
+            <p class="overflow-hidden">{{ project.description }}</p>
           </div>
-          <div class="card-slider-item-bottom relative w-full h-full">
-            <img class="absolute top-0 object-cover h-full w-full" :src="`/images/${project.urlImage}`"
+          <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
+            <img class="absolute top-0 object-cover w-full h-full" :src="`/images/${project.urlImage}`"
               alt="description product">
-            <NuxtLink :to="project.link"
-              class="absolute bottom-8 left-1/2 -translate-x-1/2 button button_small button_white">learn more</NuxtLink>
+            <div class="py-8 z-10">
+              <NuxtLink :to="project.link" class="button button_small button_white">learn more</NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -35,52 +36,40 @@ export default {
       endScroll: false,
       projects: [
         {
-          title: 'Super Project',
+          title: 'Lorme project',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image1.jpg'
         },
         {
-          title: 'Project super',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          title: 'Ipsome Dolor sit',
+          description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
           link: '/',
-          urlImage: 'image.jpg'
-        },
-        {
-          title: 'super project',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-          link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image2.jpg'
         },
         {
           title: 'Superoject',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image3.jpg'
         },
         {
-          title: 'Superoject',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          title: 'Nunc vulputate libero',
+          description: 'Ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate mattis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus odio sed nesciunt eveniet placeat nobis corrupti.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image4.jpg'
         },
         {
-          title: 'Superoject',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          title: 'Lorem ipsum dolor sit',
+          description: 'Sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
           link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image5.jpg'
         },
         {
-          title: 'Superoject',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          title: 'Consectetur adipiscing elit',
+          description: 'Lorem sit amet, consectetur adipiscing elit. Nunc vulputate velit interdum, ac aliquet odio mattis.',
           link: '/',
-          urlImage: 'image.jpg'
-        },
-        {
-          title: 'Superoject',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-          link: '/',
-          urlImage: 'image.jpg'
+          urlImage: 'image6.jpg'
         },
       ]
     };

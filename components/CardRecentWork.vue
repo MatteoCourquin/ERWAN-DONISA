@@ -1,8 +1,8 @@
 <template>
-  <div class="card-recent-work rounded-b-radiusMain w-full h-screen flex items-end"
+  <div class="card-recent-work rounded-b-radiusMain w-full h-screen min-h-fit flex items-end"
     :style="{ '--background-image': `url('/images/${urlImage}')` }">
     <div
-      class="card-recent-work-description px-paddingMain w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-center sm:flex-row sm:justify-between">
+      class="card-recent-work-description px-paddingMain py-[10vh] w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-end sm:items sm:flex-row sm:justify-between">
       <div class="w-full sm:w-2/3 text-center sm:text-left">
         <h2>{{ title }}</h2>
         <p class="my-5">{{ description }}</p>
@@ -25,7 +25,6 @@ export default {
     return {};
   },
 };
-
 
 </script>
 
