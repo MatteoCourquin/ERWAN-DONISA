@@ -1,11 +1,8 @@
-<script setup>
-const isHeaderDark = useHeaderDark();
-</script>
-
 <template>
   <header
     class='z-[900] hidden sm:flex absolute top-0 w-screen h-36 py-14 px-paddingMain md:justify-between justify-center items-start'>
-    <p @click="changeLanguage" :class="['link w-11 link_underline hidden lg:flex', isHeaderDark ? 'link_black' : 'link_white']" to="/">
+    <p @click="language = language === 'FRA' ? 'ENG' : 'FRA'"
+      :class="['link w-11 link_underline hidden lg:flex', isHeaderDark ? 'link_black' : 'link_white']" to="/">
       {{ language }}</p>
     <nav class="flex gap-[5vw]">
       <ul>
@@ -58,22 +55,21 @@ const isHeaderDark = useHeaderDark();
   </header>
 </template>
 
+<script setup>
+const language = useLanguage()
+const isHeaderDark = useHeaderDark();
+</script>
 <script>
 export default {
   name: 'Header',
   data() {
     return {
       isBackground: false,
-      language: 'Eng',
       prevScrollPos: 0,
       scrollDirection: false,
     };
   },
-  methods: {
-    changeLanguage() {
-      this.language === 'Eng' ? this.language = 'Fra' : this.language = 'Eng';
-    },
-  },
+  methods: {},
 };
 </script>
 
