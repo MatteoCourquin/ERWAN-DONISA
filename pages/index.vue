@@ -9,9 +9,11 @@
       </p>
       <Slider />
     </section>
-    <CardRecentWork class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
-      :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description" :link="project.link"
-      :urlImage="project.urlImage" />
+    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0" :style="{ zIndex: 99 - index }" >
+      <CardRecentWork v-if="index < 3" :title="project.title"
+        :description="project.description" :link="`projects/${project.title.replace(/\s+/g, '-').toLowerCase()}`"
+        :urlImage="project.urlImage" />
+    </div>
     <section
       class="anim-curtain-section sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">Check the others</h3>
@@ -20,6 +22,9 @@
   </div>
 </template>
 
+<script setup>
+const projects = useProjects();
+</script>
 <script>
 import { gsap } from 'gsap';
 
@@ -27,28 +32,7 @@ export default {
   name: 'index',
   layout: 'default',
   data() {
-    return {
-      projects: [
-        {
-          title: 'Project 1',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Nulla facilisi. Sed euismod, nunc vel aliquam aliquet, nisl nunc aliquet nunc, quis aliquam nunc nunc nec nunc.',
-          link: '/',
-          urlImage: 'image1.jpg'
-        },
-        {
-          title: 'Project 2',
-          description: 'Delectus odio sed nesciunt eveniet placeat nobis corrupti aliquam blanditiis assumenda animi architecto illum ipsa.',
-          link: '/',
-          urlImage: 'image2.jpg'
-        },
-        {
-          title: 'Project 3',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus odio sed nesciunt eveniet placeat nobis corrupti aliquam blanditiis assumenda animi architecto illum ipsa, saepe, ad nemo modi atque accusamus debitis, dolorum autem aspernatur! Neque, mollitia fugiat nostrum veritatis aspernatur exercitationem.',
-          link: '/',
-          urlImage: 'image3.jpg'
-        },
-      ]
-    };
+    return {};
   },
   methods: {
     animOpacity() {

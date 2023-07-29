@@ -1,9 +1,9 @@
 <template>
-  <footer :class="['sticky bottom-0 -z-10 w-screen h-fit p-paddingMain bg-black', isScrollBottom ? 'block' : 'hidden']">
+  <footer :class="['sticky bottom-0 z-0 w-screen h-fit p-paddingMain bg-black', isScrollBottom ? 'block' : 'hidden']">
     <div class="flex grow justify-between gap-[20vw]">
       <div class="flex flex-col gap-5 w-full items-center sm:items-start relative max-w-2xl">
         <h4 class="text-center sm:text-left">We should<br>work together</h4>
-        <button class="button button_medium button_red">Let's go</button>
+        <NuxtLink to="/contact" class="button button_medium button_red">Let's go</NuxtLink>
         <NuxtLink class="link link_white link_underline self-end !text-sm" to="/">pick</NuxtLink>
       </div>
       <nav class="hidden sm:block">

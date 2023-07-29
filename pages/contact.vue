@@ -1,13 +1,13 @@
 <template>
   <div>
-    <section class="sticky top-0 -z-10 pt-44 pb-16 text-white w-screen flex flex-col items-center text-center">
+    <section class="pt-44 pb-16 sticky top-0 text-white w-screen flex flex-col items-center text-center">
       <h1>LET’S WORK<br> TOGETHER</h1>
       <button @click="scroll" class="flex items-center gap-2 link link_white link_underline">
         <Arrow :isDark="false" orientation="bottom" />
         Scroll
       </button>
     </section>
-    <section class="bg-white z-[300] w-screen py-[10vh] px-paddingMain rounded-radiusMain text-black">
+    <section class="bg-white z-[300] sticky w-screen py-[10vh] px-paddingMain rounded-radiusMain text-black">
       <h2 class="pb-5">Contact</h2>
       <p>If you’re looking for any information or general questions use my details below or the contact form.</p>
 

@@ -3,9 +3,9 @@
     <h2>MY SERVICES</h2>
     <div class="my-16 relative w-full">
       <div ref="slider" @scroll="isScrollEnd"
-        class="px-paddingMain slider w-full overflow-x-scroll scroll-smooth flex flex-row gap-8">
+        class="px-paddingMain slider w-full snap-mandatory snap-x overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
-          class="relative overflow-hidden border border-black flex flex-col justify-between w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
+          class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(project, index) in projects" :key="index">
           <div class="flex p-4 py-[5vh] shrink overflow-hidden items-center flex-col">
             <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ project.title }}</h4>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-black">
+  <div class="text-black z-10 sticky bottom-0">
     <section class="flex pt-44 flex-col h-screen bg-white text-center overflow-hidden">
       <div class="px-paddingMain pb-16">
         <h1 class="">Hey, i'm <br>Erwan Donisa</h1>
