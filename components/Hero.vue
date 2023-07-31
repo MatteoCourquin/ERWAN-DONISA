@@ -3,12 +3,9 @@
     :class="['hero-background fixed top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100vh] px-paddingMain', isBackground ? 'flex' : 'invisible']">
     <h1 class="text-white mb-8">DESIGNER /<br>
       ART DIRECTOR</h1>
-    <NuxtLink to="/contact" class="button button_big button_white">Let's meet</NuxtLink>
-    <button @click="scroll"
-      class="flex items-center gap-2 link link_white link_underline absolute bottom-[15vh] sm:bottom-[8vh] sm:self-end">
-      <Arrow :isDark="false" orientation="bottom" />
-      Scroll
-    </button>
+    <BaseButton @click="$router.push('/work')" size='big' color="white">Let's meet</BaseButton>
+    <ButtonScroll :isDark="false" orientation="bottom"
+      class="flex items-center !absolute gap-2 link link_white link_underline bottom-[15vh] sm:bottom-[8vh] sm:self-end" />
   </section>
 </template>
 
@@ -25,12 +22,6 @@ export default {
       const scrolledDistance = window.scrollY || window.pageYOffset;
       this.isBackground = scrolledDistance <= window.innerHeight * 1.2
     },
-    scroll() {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth"
-      });
-    }
   },
   mounted() {
     window.addEventListener('scroll', this.checkedScroll)

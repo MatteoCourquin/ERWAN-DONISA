@@ -3,10 +3,7 @@
     <section
       class="px-paddingMain z-[200] relative pt-44 pb-16 rounded-b-radiusMain bg-white text-black flex flex-col items-center text-center">
       <h1>My work</h1>
-      <button @click="scroll" class="flex w-fit items-center gap-2 link link_black link_underline">
-        <Arrow :isDark="true" orientation="bottom" />
-        Scroll
-      </button>
+      <ButtonScroll :isDark="true" orientation="bottom" />
     </section>
     <CardRecentWork class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
       :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description" :link="`projects/${project.title.replace(/\s+/g, '-').toLowerCase()}`"

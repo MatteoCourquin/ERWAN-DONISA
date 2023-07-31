@@ -6,25 +6,22 @@
         class="px-paddingMain slider w-full snap-mandatory snap-x overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
           class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
-          v-for="(project, index) in projects" :key="index">
-          <div class="flex p-4 py-[5vh] shrink overflow-hidden items-center flex-col">
-            <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ project.title }}</h4>
-            <p class="overflow-hidden">{{ project.description }}</p>
+          v-for="(service, index) in services" :key="index">
+          <div class="flex p-4 py-[5vh] h-full shrink overflow-hidden items-center justify-center flex-col">
+            <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ service.title }}</h4>
+            <p class="description-slider overflow-hidden">{{ service.description }}</p>
           </div>
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
-            <img class="absolute top-0 object-cover w-full h-full" :src="`/images/${project.urlImage}`"
+            <img class="absolute top-0 object-cover w-full h-full" :src="`/images/${service.urlImage}`"
               alt="description product">
             <div class="py-8 z-10">
-              <NuxtLink :to="project.link" class="button button_small button_white">learn more</NuxtLink>
+              <BaseButton @click="$router.push(service.link)" size='small' color="white">Let's meet</BaseButton>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button @click="scrollLeft" class="flex items-center gap-2 link link_black link_underline">
-      Scroll
-      <Arrow :isDark="true" :orientation="endScroll ? 'bottom' : 'right'" />
-    </button>
+    <ButtonScroll :isDark="true" orientation="right" :onClick="scrollRight" />
   </section>
 </template>
 
@@ -34,21 +31,21 @@ export default {
   data() {
     return {
       endScroll: false,
-      projects: [
+      services: [
         {
-          title: 'Lorme project',
+          title: 'Brand identity',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
           link: '/',
           urlImage: 'image1.jpg'
         },
         {
-          title: 'Ipsome Dolor sit',
+          title: 'Product Design',
           description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
           link: '/',
           urlImage: 'image2.jpg'
         },
         {
-          title: 'Superoject',
+          title: 'Illustrations',
           description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
           link: '/',
           urlImage: 'image3.jpg'
@@ -79,7 +76,7 @@ export default {
       const container = this.$refs.slider;
       this.endScroll = container.scrollLeft + container.clientWidth >= container.scrollWidth - 100
     },
-    scrollLeft() {
+    scrollRight() {
       const container = this.$refs.slider;
       container.scrollLeft + container.clientWidth >= container.scrollWidth - 1 ? container.scrollTo({ left: 0 }) : container.scrollTo({ left: container.scrollLeft + container.clientWidth })
     },
@@ -90,6 +87,14 @@ export default {
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
 
+.description-slider{
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
 .slider::-webkit-scrollbar {
   display: none;
 }

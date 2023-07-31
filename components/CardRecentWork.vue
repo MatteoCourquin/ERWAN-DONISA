@@ -7,7 +7,7 @@
         <h2 :class="[!showDescription && 'pb-5 sm:pb-0']">{{ title }}</h2>
         <p class="my-5" v-if="showDescription">{{ description }}</p>
       </div>
-      <NuxtLink class="button button_small button_white" :to="link">View</NuxtLink>
+      <BaseButton @click="$router.push(link)" size='small' color="white">View</BaseButton>
     </div>
   </div>
 </template>
@@ -59,5 +59,13 @@ export default {
 
 .card-recent-work-description {
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
 }
 </style>

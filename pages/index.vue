@@ -17,7 +17,7 @@
     <section
       class="anim-curtain-section sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">Check the others</h3>
-      <NuxtLink class="button button_medium button_black" to="/">more</NuxtLink>
+      <BaseButton @click="$router.push('/work')" size='medium' color="black">more</BaseButton>
     </section>
   </div>
 </template>

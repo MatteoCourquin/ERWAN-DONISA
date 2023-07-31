@@ -2,7 +2,7 @@
   <header
     :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center rounded-full w-20 h-20 transition-all bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active bg-black' : '']">
     <div @mousemove="(e) => moveMagnet(e, 1)" @mouseout="(e) => resetMagnet(e)" @click="toggleActive"
-      :class="['z-10 w-20 h-20 flex justify-center items-center cursor-pointer shadow-inner rounded-full active border', isActive ? 'bg-black border-white' : 'bg-white']">
+      :class="['z-10 w-20 h-20 flex justify-center items-center cursor-pointer shadow-inner rounded-full active border', isActive ? 'bg-black border-black' : 'bg-white']">
       <div @mousemove="(e) => moveMagnet(e, 0.4)" @mouseout="(e) => resetMagnet(e)"
         class="w-20 h-20 flex justify-center items-center rounded-full">
         <div
@@ -19,7 +19,7 @@
     <nav
       :class="['menu flex flex-col justify-center items-center gap-10 pb-16 transition-all duration-300 fixed top-0 right-0 w-screen h-screen delay-150', isActive ? 'opacity-1' : 'opacity-0 invisible']">
       <p @click="language = language === 'FRA' ? 'ENG' : 'FRA'"
-        class='absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain link link_underline transition-all link_white'>
+        class='!absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain link link_underline transition-all link_white'>
         {{ language }}</p>
       <ul>
         <li>
@@ -102,12 +102,19 @@ export default {
     resetMagnet(event) {
       gsap.to(event.currentTarget, 1, { x: 0, y: 0 })
     },
+    isTouchDevice() {
+      return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+    },
     moveMagnet(event, speed) {
-      var bounding = event.currentTarget.getBoundingClientRect()
-      gsap.to(event.currentTarget, 1, {
-        x: (((event.clientX - bounding.left) / event.currentTarget.offsetWidth) - 0.5) * (30 * speed),
-        y: (((event.clientY - bounding.top) / event.currentTarget.offsetHeight) - 0.5) * (30 * speed),
-      })
+      if (!this.isTouchDevice()) {
+        var bounding = event.currentTarget.getBoundingClientRect()
+        gsap.to(event.currentTarget, 1, {
+          x: (((event.clientX - bounding.left) / event.currentTarget.offsetWidth) - 0.5) * (30 * speed),
+          y: (((event.clientY - bounding.top) / event.currentTarget.offsetHeight) - 0.5) * (30 * speed),
+        })
+      }
     },
     toggleActive() {
       this.isActive = !this.isActive;

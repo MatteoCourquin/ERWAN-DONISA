@@ -1,4 +1,9 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-termina-600;
   text-transform: uppercase;
 }
@@ -37,27 +42,51 @@ p {
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
-  &::hover {
-    text-decoration: underline;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    transition: width 0.3s;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
   }
 }
 .link_underline {
   text-decoration: underline;
+  &::after {
+    display: none;
+  }
 }
 .link_black {
   color: $color-black;
+  &::after {
+    background: $color-black;
+  }
 }
 .link_white {
   color: $color-white;
+  &::after {
+    background: $color-white;
+  }
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   border: 1px solid $color-black;
   border-radius: 0.5rem;
   padding: 10px 20px;
   font-family: $font-termina-400;
+  background: white;
   white-space: nowrap;
   &::placeholder {
-    color: #9BA3AF;
+    color: #9ba3af;
   }
 }

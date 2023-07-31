@@ -22,15 +22,15 @@
           <h3>Next Project</h3>
           <p>({{ nextProject.title }})</p>
         </div>
-        <NuxtLink class="button button_white button_medium" :to="`/projects/${nextProject.title.replace(/\s+/g, '-').toLowerCase()}`">
+        <BaseButton @click="$router.push(`/projects/${nextProject.title.replace(/\s+/g, '-').toLowerCase()}`)"
+          size='medium' color="white">
           <svg height="40" viewBox="0 0 310 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="309.351" height="60" rx="30" fill="white" />
+            <rect width="309.351" height="60" rx="30" fill="transparent" />
             <path
               d="M184.061 31.0607C184.646 30.4749 184.646 29.5251 184.061 28.9393L174.515 19.3934C173.929 18.8076 172.979 18.8076 172.393 19.3934C171.808 19.9792 171.808 20.9289 172.393 21.5147L180.879 30L172.393 38.4853C171.808 39.0711 171.808 40.0208 172.393 40.6066C172.979 41.1924 173.929 41.1924 174.515 40.6066L184.061 31.0607ZM125 31.5L183 31.5L183 28.5L125 28.5L125 31.5Z"
-              fill="#1D1E1B" />
+              fill="black" />
           </svg>
-
-        </NuxtLink>
+        </BaseButton>
       </section>
     </section>
   </div>

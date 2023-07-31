@@ -2,10 +2,7 @@
   <div>
     <section class="pt-44 pb-16 sticky top-0 text-white w-screen flex flex-col items-center text-center">
       <h1>LET’S WORK<br> TOGETHER</h1>
-      <button @click="scroll" class="flex items-center gap-2 link link_white link_underline">
-        <Arrow :isDark="false" orientation="bottom" />
-        Scroll
-      </button>
+      <ButtonScroll :isDark="false" orientation="bottom" />
     </section>
     <section class="bg-white z-[300] sticky w-screen py-[10vh] px-paddingMain rounded-radiusMain text-black">
       <h2 class="pb-5">Contact</h2>
@@ -47,9 +44,7 @@
           <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
           <option value="Web Design">Web Design</option>
           <option value="Web Development">Web Development</option>
-          <option value="Web Design & Development">Web Design & Development</option>
-          <option value="Web Design & Development">Web Design & Development</option>
-          <option value="Web Design & Development">Web Design & Development</option>
+          <option value="branding">Branding</option>
         </select>
       </div>
       <div class="wrapper-input">
@@ -63,9 +58,7 @@
           <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
           <option value="Web Design">Web Design</option>
           <option value="Web Development">Web Development</option>
-          <option value="Web Design & Development">Web Design & Development</option>
-          <option value="Web Design & Development">Web Design & Development</option>
-          <option value="Web Design & Development">Web Design & Development</option>
+          <option value="branding">Branding</option>
         </select>
       </div>
 
@@ -87,7 +80,7 @@
         <input type="tel" name="phone" id="phone" placeholder="06 00 00 00 00">
       </div> -->
 
-      <button class="button button_medium button_red my-5 !capitalize md:!w-fit !w-full">Submit</button>
+      <BaseButton class=" my-5 md:!w-fit !w-full" @click="console.log('submit')" size='medium' color="red">Submit</BaseButton>
 
       <p class="pb-4">Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
         aliquet odio
@@ -105,14 +98,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-    scroll() {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth"
-      });
-    }
-  },
+  methods: {},
   mounted() {
     useHeaderDark().value = false;
   },
