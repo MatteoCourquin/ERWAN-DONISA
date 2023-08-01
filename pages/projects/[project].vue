@@ -3,7 +3,7 @@
     <section
       :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center items-center flex-col', isBackground ? 'flex' : 'invisible']"
       :style="{ '--background-image': `url('/images/${project.urlImage}')` }">
-      <h1>{{ project.title }}</h1>
+      <h1 class="z-10">{{ project.title }}</h1>
     </section>
     <section class="sticky bottom-0 bg-white z-10 rounded-radiusMain min-h-[200vh] overflow-hidden">
       <div class="py-[10vh] text-black text-center px-paddingMain">
@@ -89,5 +89,16 @@ export default {
 .hero-project {
   background: var(--background-image) no-repeat center center;
   background-size: cover;
+  &::after{
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.4;
+  };
 }
 </style>

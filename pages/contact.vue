@@ -15,72 +15,74 @@
       <h4 class="label-title text-xs !pb-0">Phone</h4>
       <a href="tel:0658415260" class="link link_black link_underline !text-sm">+33 6 58 41 52 60</a>
 
-      <h4 class="label-title">How can i help you ?</h4>
-      <div class="wrapper-input">
-        <!-- checkbox -->
-        <div class="flex gap-2">
-          <input type="checkbox" id="branding" name="branding" value="Web Design">
-          <label for="branding">Branding</label>
+      <form ref="form">
+        <h4 class="label-title">How can i help you ?</h4>
+        <div class="wrapper-input">
+          <!-- checkbox -->
+          <div class="flex gap-2">
+            <input ref="branding" type="checkbox" id="branding" name="branding" value="Branding">
+            <label for="branding">Branding</label>
+          </div>
+          <div class="flex gap-2">
+            <input ref="productDesign" type="checkbox" id="product-design" name="product-design" value="Product Design">
+            <label for="product-design">Product Design</label>
+          </div>
+          <div class="flex gap-2">
+            <input ref="illustration" type="checkbox" id="illustration" name="illustration" value="Illustration">
+            <label for="illustration">Illustration</label>
+          </div>
+          <div class="flex gap-2">
+            <input ref="webDesign" type="checkbox" id="web-design" name="web-design" value="Web Design">
+            <label for="web-design">Web Design</label>
+          </div>
         </div>
-        <div class="flex gap-2">
-          <input type="checkbox" id="product-design" name="product-design" value="Web Design">
-          <label for="product-design">Product Design</label>
+        <h4 class="label-title">What's your budget ?</h4>
+        <!-- <div class="wrapper-input">
+          <input ref="budget" type='range' id='budget' name='budget' />
+        </div> -->
+        <div class="wrapper-input">
+          <select ref="budget" name="budget" id="services">
+            <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
+            <option value="- 1 000">- 1 000</option>
+            <option value="1 000 - 10 000">1 000 - 10 000</option>
+            <option value="+ 10 000">+ 10 000</option>
+          </select>
         </div>
-        <div class="flex gap-2">
-          <input type="checkbox" id="illustration" name="illustration" value="Web Design">
-          <label for="illustration">Illustration</label>
+        <div class="wrapper-input">
+          <label for="description">Description of the project (optional)</label>
+          <textarea ref="description" name="description" id="description" cols="30" rows="10"
+            placeholder="Tell me everything..."></textarea>
         </div>
-        <div class="flex gap-2">
-          <input type="checkbox" id="web-design" name="web-design" value="Web Design">
-          <label for="web-design">Web Design</label>
+        <h4 class="label-title">Extra Services</h4>
+        <div class="wrapper-input">
+          <select ref="extraService" name="services" id="services">
+            <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
+            <option value="Web Design">Web Design</option>
+            <option value="Web Development">Web Development</option>
+            <option value="branding">Branding</option>
+          </select>
         </div>
-      </div>
+        <h4 class="label-title">Personal Details</h4>
+        <div class="wrapper-input">
+          <label for="name">Full Name</label>
+          <input ref="name" type="text" name="name" id="name" placeholder="John Smith">
+        </div>
+        <div class="wrapper-input">
+          <label for="mail">Email Adresse</label>
+          <input ref="email" type="email" name="mail" id="mail" placeholder="john.smith@example.com">
+        </div>
+        <div class="wrapper-input">
+          <label for="work">How did you find my work ?</label>
+          <input ref="work" type="text" name="work" id="work" placeholder="Lorem, ipsum dolor...">
+        </div>
+        <!-- <div class="wrapper-input">
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" id="phone" placeholder="06 00 00 00 00">
+        </div> -->
+      </form>
 
-      <h4 class="label-title">What's your budget ?</h4>
-      <!-- <label for='budget'></label>
-      <input type='range' id='budget' name='budget'/> -->
-      <div class="wrapper-input">
-        <select name="services" id="services">
-          <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
-          <option value="Web Design">Web Design</option>
-          <option value="Web Development">Web Development</option>
-          <option value="branding">Branding</option>
-        </select>
-      </div>
-      <div class="wrapper-input">
-        <label for="description">Description of the project (optional)</label>
-        <textarea name="description" id="description" cols="30" rows="10" placeholder="Tell me everything..."></textarea>
-      </div>
-
-      <h4 class="label-title">Extra Services</h4>
-      <div class="wrapper-input">
-        <select name="services" id="services">
-          <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
-          <option value="Web Design">Web Design</option>
-          <option value="Web Development">Web Development</option>
-          <option value="branding">Branding</option>
-        </select>
-      </div>
-
-      <h4 class="label-title">Personal Details</h4>
-      <div class="wrapper-input">
-        <label for="name">Full Name</label>
-        <input type="text" name="name" id="name" placeholder="John Smith">
-      </div>
-      <div class="wrapper-input">
-        <label for="mail">Email Adresse</label>
-        <input type="email" name="mail" id="mail" placeholder="john.smith@example.com">
-      </div>
-      <div class="wrapper-input">
-        <label for="work">How did you find my work ?</label>
-        <input type="text" name="work" id="work" placeholder="Lorem, ipsum dolor...">
-      </div>
-      <!-- <div class="wrapper-input">
-        <label for="phone">Phone</label>
-        <input type="tel" name="phone" id="phone" placeholder="06 00 00 00 00">
-      </div> -->
-
-      <BaseButton class=" my-5 md:!w-fit !w-full" @click="console.log('submit')" size='medium' color="red">Submit</BaseButton>
+      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' color="red">Submit
+      </BaseButton>
 
       <p class="pb-4">Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
         aliquet odio
@@ -92,13 +94,41 @@
 </template>
 
 <script>
+import emailjs from '@emailjs/browser';
 
 export default {
   name: 'Contact',
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    submit() {
+      const typeOfProject = [];
+      this.$refs.branding.checked && typeOfProject.push(this.$refs.branding.value)
+      this.$refs.productDesign.checked && typeOfProject.push(this.$refs.productDesign.value)
+      this.$refs.illustration.checked && typeOfProject.push(this.$refs.illustration.value)
+      this.$refs.webDesign.checked && typeOfProject.push(this.$refs.webDesign.value)
+
+      const templateParams = {
+        typeOfProject: typeOfProject.join(', '),
+        budget: this.$refs.budget.value,
+        description: this.$refs.description.value,
+        extraService: this.$refs.extraService.value,
+        name: this.$refs.name.value,
+        email: this.$refs.email.value,
+        work: this.$refs.work.value,
+      };
+
+      emailjs.send('service_2axnhxs', 'template_omcrnoe', templateParams, 'vCwrcXR-qeUW1Qo4c')
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          this.$refs.form.reset();
+
+        }, (err) => {
+          console.log('FAILED...', err);
+        });
+    }
+  },
   mounted() {
     useHeaderDark().value = false;
   },
