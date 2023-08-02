@@ -1,9 +1,7 @@
 <template>
   <header
     class='z-[900] hidden sm:flex absolute top-0 w-screen h-36 py-14 px-paddingMain md:justify-between justify-center items-start'>
-    <p @click="language = language === 'FRA' ? 'ENG' : 'FRA'"
-      :class="['link w-11 link_underline hidden lg:flex', isHeaderDark ? 'link_black' : 'link_white']" to="/">
-      {{ language }}</p>
+    <Language class="hidden lg:block" />
     <nav class="flex gap-[5vw]">
       <ul>
         <li>
@@ -56,7 +54,6 @@
 </template>
 
 <script setup>
-const language = useLanguage()
 const isHeaderDark = useHeaderDark();
 </script>
 <script>
