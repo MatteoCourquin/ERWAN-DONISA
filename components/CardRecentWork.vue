@@ -1,13 +1,13 @@
 <template>
-  <div class="card-recent-work rounded-b-radiusMain w-full h-screen min-h-fit flex items-end"
-    :style="{ '--background-image': `url('/images/${urlImage}')` }">
+  <div class="card-recent-work w-full overflow-hidden h-screen min-h-fit flex items-end rounded-b-radiusMain">
+    <div class="parallax-image" :style="{ '--background-image': `url('/images/${urlImage}')` }"></div>
     <div
-      class="card-recent-work-description px-paddingMain py-[10vh] w-full h-1/2 z-10 rounded-b-radiusMain flex flex-col items-center justify-end sm:items sm:flex-row sm:justify-between">
+      class="card-recent-work-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end sm:items sm:flex-row sm:justify-between">
       <div class="w-full sm:w-2/3 text-center sm:text-left">
         <h2 :class="[!showDescription && 'pb-5 sm:pb-0']">{{ title }}</h2>
         <p class="my-5" v-if="showDescription">{{ description }}</p>
       </div>
-      <BaseButton @click="$router.push(link)" size='small' color="white">View</BaseButton>
+      <BaseButton @click="$router.push(link)" size="small" color="white">View</BaseButton>
     </div>
   </div>
 </template>
@@ -45,6 +45,29 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    !useTouchDevive().value && this.initParallax();
+  },
+  methods: {
+    initParallax() {
+      gsap.utils.toArray('.parallax-image').forEach((image, index) => {
+        gsap.set(image, { transformOrigin: 'center' });
+        gsap.timeline({
+          scrollTrigger: {
+            id: `parallax-trigger-${index}`,
+            trigger: image,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+            onUpdate: (self) => {
+              const translateY = -(self.progress - 0.5) * 100 * (index === 2 ? 0.25 : 0.1);
+              gsap.set(image, { y: `${translateY}%` });
+            },
+          },
+        });
+      });
+    },
+  },
 };
 
 </script>
@@ -53,6 +76,17 @@ export default {
 @import '@/scss/main.scss';
 
 .card-recent-work {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-image {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  transform: translateY(0%);
   background: var(--background-image) no-repeat center center;
   background-size: cover;
 }

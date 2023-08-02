@@ -102,13 +102,8 @@ export default {
     resetMagnet(event) {
       gsap.to(event.currentTarget, 1, { x: 0, y: 0 })
     },
-    isTouchDevice() {
-      return (('ontouchstart' in window) ||
-        (navigator.maxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0));
-    },
     moveMagnet(event, speed) {
-      if (!this.isTouchDevice()) {
+      if (!useTouchDevive().value) {
         var bounding = event.currentTarget.getBoundingClientRect()
         gsap.to(event.currentTarget, 1, {
           x: (((event.clientX - bounding.left) / event.currentTarget.offsetWidth) - 0.5) * (30 * speed),
