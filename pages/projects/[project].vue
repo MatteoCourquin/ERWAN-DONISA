@@ -2,7 +2,7 @@
   <div id="page-project">
     <section
       :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center items-center flex-col', isBackground ? 'flex' : 'invisible']"
-      :style="{ '--background-image': `url('/images/${project.urlImage}')` }">
+      :style="{ '--background-image': `url('https:${project.image}')` }">
       <h1 class="z-10">{{ project.title }}</h1>
     </section>
     <section class="sticky bottom-0 bg-white z-10 rounded-radiusMain min-h-[200vh] overflow-hidden">
@@ -12,12 +12,12 @@
       </div>
       <div class="flex flex-wrap gap-5 gallery px-paddingMain pb-[10vh]">
         <div class="rounded-lg overflow-hidden h-[500px] grow" v-for="(image, index) in project.images" :key="index">
-          <img class="h-full w-full object-cover" :src="`/images/${image}`" alt="project image">
+          <img class="h-full w-full object-cover" :src="`https:${image}`" alt="project image">
         </div>
       </div>
       <section
         class="next-project rounded-radiusMain text-center py-[10vh] flex flex-col justify-between items-center z-10 h-[50vh] w-screen"
-        :style="{ '--background-image-next-project': `url('/images/${nextProject.urlImage}')` }">
+        :style="{ '--background-image-next-project': `url('https:${nextProject.image}')` }">
         <div>
           <h3>Next Project</h3>
           <p>({{ nextProject.title }})</p>

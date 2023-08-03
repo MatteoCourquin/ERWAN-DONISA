@@ -12,7 +12,7 @@
     <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
       :style="{ zIndex: 99 - index }">
       <CardRecentWork v-if="index < 3" :title="project.title" :description="project.description"
-        :urlImage="project.urlImage" />
+        :urlImage="project.image" />
     </div>
     <section
       class="anim-curtain-section sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">

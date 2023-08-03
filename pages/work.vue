@@ -7,7 +7,7 @@
     </section>
     <CardRecentWork class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
       :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description"
-      :urlImage="project.urlImage" :showDescription="false" />
+      :urlImage="project.image" :showDescription="false" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="card-recent-work w-full overflow-hidden h-screen min-h-fit flex items-end rounded-b-radiusMain">
-    <div class="parallax-image" :style="{ '--background-image': `url('/images/${urlImage}')` }"></div>
+    <div class="parallax-image" :style="{ '--background-image': `url('https:${urlImage}')` }"></div>
     <div
       class="card-recent-work-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end sm:items sm:flex-row sm:justify-between">
       <div class="w-full sm:w-2/3 text-center sm:text-left">

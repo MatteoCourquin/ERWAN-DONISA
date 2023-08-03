@@ -121,11 +121,9 @@ export default {
 
       emailjs.send('service_2axnhxs', 'template_omcrnoe', templateParams, 'vCwrcXR-qeUW1Qo4c')
         .then((response) => {
-          console.log('SUCCESS!', response.status, response.text);
           this.$refs.form.reset();
-
         }, (err) => {
-          console.log('FAILED...', err);
+          throw new Error(err);
         });
     }
   },
