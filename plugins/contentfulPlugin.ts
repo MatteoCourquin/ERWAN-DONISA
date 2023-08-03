@@ -1,4 +1,5 @@
-import { createClient } from 'contentful'
+import pkg from 'contentful';
+const { createClient } = pkg;
 
 export default defineNuxtPlugin(() => {
   return {
