@@ -7,7 +7,8 @@
         <h2 :class="[!showDescription && 'pb-5 sm:pb-0']">{{ title }}</h2>
         <p class="my-5" v-if="showDescription">{{ description }}</p>
       </div>
-      <BaseButton @click="$router.push(link)" size="small" color="white">View</BaseButton>
+      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="small"
+        color="white">View</BaseButton>
     </div>
   </div>
 </template>
@@ -26,10 +27,6 @@ export default {
       required: true,
     },
     description: {
-      type: String,
-      required: true,
-    },
-    link: {
       type: String,
       required: true,
     },

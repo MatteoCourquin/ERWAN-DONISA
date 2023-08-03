@@ -3,7 +3,7 @@
     <section class="flex pt-44 flex-col h-screen bg-white text-center overflow-hidden">
       <div class="px-paddingMain pb-16">
         <h1 class="">Hey, i'm <br>Erwan Donisa</h1>
-        <p>The Designer you was looking for</p>
+        <p>The Designer you were looking for</p>
       </div>
       <img class="object-cover w-screen h-full" src="/images/background3.jpg">
     </section>

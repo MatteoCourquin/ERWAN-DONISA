@@ -2,10 +2,10 @@
   <div ref="cube" :class="['cube', language == 'FRA' ? 'rotate' : '']"
     @click="language = language === 'FRA' ? 'ENG' : 'FRA'">
     <div class="face front">
-      <p class="link link_white link_underline">ENG</p>
+      <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">ENG</p>
     </div>
     <div class="face top">
-      <p class="link link_white link_underline">FRA</p>
+      <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">FRA</p>
     </div>
   </div>
 </template>
@@ -17,6 +17,10 @@ const language = useLanguage()
 export default {
   name: 'Language',
   props: {
+    isDark: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {};

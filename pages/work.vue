@@ -6,13 +6,13 @@
       <ButtonScroll :isDark="true" orientation="bottom" />
     </section>
     <CardRecentWork class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
-      :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description" :link="`projects/${project.title.replace(/\s+/g, '-').toLowerCase()}`"
+      :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description"
       :urlImage="project.urlImage" :showDescription="false" />
   </div>
 </template>
 
 <script setup>
-  const projects = useProjects();
+const projects = useProjects();
 </script>
 <script>
 import { gsap } from 'gsap';

@@ -9,9 +9,9 @@
       </p>
       <Slider />
     </section>
-    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0" :style="{ zIndex: 99 - index }" >
-      <CardRecentWork v-if="index < 3" :title="project.title"
-        :description="project.description" :link="`projects/${project.title.replace(/\s+/g, '-').toLowerCase()}`"
+    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
+      :style="{ zIndex: 99 - index }">
+      <CardRecentWork v-if="index < 3" :title="project.title" :description="project.description"
         :urlImage="project.urlImage" />
     </div>
     <section
