@@ -1,6 +1,6 @@
 <template>
   <header
-    class='z-[900] hidden sm:flex absolute top-0 w-screen h-36 py-14 px-paddingMain md:justify-between justify-center items-start'>
+    class='z-[900] hidden sm:flex absolute top-0 w-full h-36 py-14 px-paddingMain md:justify-between justify-center items-start'>
     <Language class="hidden lg:block" :isDark="isHeaderDark" />
     <nav class="flex gap-[5vw]">
       <ul>

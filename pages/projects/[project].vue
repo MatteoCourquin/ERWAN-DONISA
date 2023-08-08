@@ -1,5 +1,5 @@
 <template>
-  <div id="page-project">
+  <div id="page-project" v-if="project">
     <section
       :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center items-center flex-col', isBackground ? 'flex' : 'invisible']"
       :style="{ '--background-image': `url('https:${project.image}')` }">
@@ -61,6 +61,9 @@ export default {
     window.addEventListener('scroll', this.checkedScroll)
     useHeaderDark().value = false;
   },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.checkedScroll)
+  },
 }
 </script>
 
@@ -89,7 +92,8 @@ export default {
 .hero-project {
   background: var(--background-image) no-repeat center center;
   background-size: cover;
-  &::after{
+
+  &::after {
     content: '';
     z-index: 0;
     position: absolute;
@@ -99,6 +103,8 @@ export default {
     height: 100%;
     background: black;
     opacity: 0.4;
-  };
+  }
+
+  ;
 }
 </style>

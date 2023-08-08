@@ -1,12 +1,12 @@
 <template>
   <header
-    :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center rounded-full w-20 h-20 transition-all bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active bg-black' : '']">
-    <div @mousemove="(e) => moveMagnet(e, 1)" @mouseout="(e) => resetMagnet(e)" @click="toggleActive"
-      :class="['z-10 w-20 h-20 flex justify-center items-center cursor-pointer shadow-inner rounded-full active border', isActive ? 'bg-black border-black' : 'bg-white']">
+    :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center rounded-full w-16 h-16 sm:w-20 sm:h-20 transition-all bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active bg-black' : '']">
+    <div @mousemove="(e) => moveMagnet(e, 1)" @mouseout="(e) => resetMagnet(e)" @click="this.isActive = !this.isActive"
+      :class="['z-10 w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center cursor-pointer shadow-inner rounded-full active border', isActive ? 'bg-black border-black' : 'bg-white']">
       <div @mousemove="(e) => moveMagnet(e, 0.4)" @mouseout="(e) => resetMagnet(e)"
-        class="w-20 h-20 flex justify-center items-center rounded-full">
+        class="w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center rounded-full">
         <div
-          :class="['w-8 h-[13px] flex flex-col items-center justify-between burger-menu-container', isActive && 'active-burger']">
+          :class="['w-6 h-[12px] sm:w-8 sm:h-[13px] flex flex-col items-center justify-between burger-menu-container', isActive && 'active-burger']">
           <div
             :class="['transition-all duration-300 rounded-full w-full h-[2px] burger-menu-item', isActive ? 'bg-white' : 'bg-black']">
           </div>
@@ -21,25 +21,25 @@
       <Language class="!absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain" />
       <ul>
         <li>
-          <NuxtLink @click="toggleActive" to="/" :class="['link !text-4xl font-termina-700 link_white']">Home
+          <NuxtLink @click="this.isActive = !this.isActive" to="/" :class="['link !text-4xl font-termina-700 link_white']">Home
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="toggleActive" to="/work" :class="['link !text-4xl font-termina-700 link_white']">Work
+          <NuxtLink @click="this.isActive = !this.isActive" to="/work" :class="['link !text-4xl font-termina-700 link_white']">Work
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="toggleActive" to="/about" :class="['link !text-4xl font-termina-700 link_white']">About
+          <NuxtLink @click="this.isActive = !this.isActive" to="/about" :class="['link !text-4xl font-termina-700 link_white']">About
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="toggleActive" to="/contact" :class="['link !text-4xl font-termina-700 link_white']">Contact
+          <NuxtLink @click="this.isActive = !this.isActive" to="/contact" :class="['link !text-4xl font-termina-700 link_white']">Contact
           </NuxtLink>
         </li>
       </ul>
@@ -106,10 +106,6 @@ export default {
         })
       }
     },
-    toggleActive() {
-      this.isActive = !this.isActive;
-      this.isActive ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto';
-    },
     checkScrolled() {
       const scrolledDistance = window.scrollY || window.pageYOffset;
       this.isScrolled = scrolledDistance >= window.innerHeight * 0.4;
@@ -117,6 +113,9 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.checkScrolled)
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.checkScrolled)
   },
 };
 </script>

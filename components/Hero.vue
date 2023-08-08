@@ -52,6 +52,9 @@ export default {
     window.addEventListener('scroll', this.checkedScroll)
     // this.animateText()
   },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.checkedScroll)
+  },
 };
 </script>
 

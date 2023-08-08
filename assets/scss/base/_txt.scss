@@ -36,6 +36,9 @@ p {
   font-family: $font-termina-400 !important;
 }
 
+.description {
+  font-size: clamp(1rem, 2vw, 1.8rem);
+}
 .link {
   font-family: $font-termina-400;
   font-size: 20px;

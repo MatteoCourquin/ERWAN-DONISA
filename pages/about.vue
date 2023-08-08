@@ -1,9 +1,9 @@
 <template>
   <div class="text-black z-10 sticky bottom-0">
     <section class="flex pt-44 flex-col h-screen bg-white text-center overflow-hidden">
-      <div class="px-paddingMain pb-16">
-        <h1 class="">Hey, i'm <br>Erwan Donisa</h1>
-        <p>The Designer you were looking for</p>
+      <div class="sm:px-paddingMain pb-16">
+        <h1 class="whitespace-nowrap text-center">Hey, i'm <br>Erwan Donisa</h1>
+        <p class="description">The Designer you were<br class="lg:hidden"> looking for</p>
       </div>
       <img class="object-cover w-screen h-full" src="/images/background3.jpg">
     </section>

@@ -3,7 +3,7 @@
     <Hero />
     <section
       class="anim-curtain-section sticky rounded-radiusMain bottom-0 h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
-      <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">
+      <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl lg:text-5xl lg:w-3/4 mx-auto">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
       </p>
@@ -15,7 +15,7 @@
         :urlImage="project.image" />
     </div>
     <section
-      class="anim-curtain-section sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
+      class="anim-curtain-section sticky bottom-0 w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">Check the others</h3>
       <BaseButton @click="$router.push('/work')" size='medium' color="black">more</BaseButton>
     </section>
