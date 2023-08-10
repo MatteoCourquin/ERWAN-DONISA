@@ -41,7 +41,7 @@
           </path>
         </svg>
       </a>
-      <a href="https://www.behance.net/erwandonisa" class="hover:opacity-70">
+      <a href="https://www.behance.net/erwandonisa" target="_blank" class="hover:opacity-70">
         <svg :class="['h-8', isHeaderDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path

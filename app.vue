@@ -7,29 +7,30 @@
 </template>
 
 <script setup>
-const { $client } = useNuxtApp()
-const language = useLanguage();
-let projects = [];
 
-const fetchData = async () => {
+const fetchData = async ($client, language) => {
   const data = await $client.getEntries({ content_type: 'project' });
-  projects = data.items.map((item) => {
-    const isEnglish = language.value === "ENG";
-    return {
-      title: item.fields.title,
-      description: isEnglish ? item.fields.descriptionEnglish : item.fields.descriptionFrench,
-      image: item.fields.coverImage.fields.file.url,
-      images: item.fields.projectImages.map((image) => {
-        return image.fields.file.url
-      }),
-    };
-  });
-  useProjects().value = projects;
+  const isEnglish = language.value === 'ENG';
+
+  return data.items.map((item) => ({
+    title: item.fields.title,
+    description: isEnglish ? item.fields.descriptionEnglish : item.fields.descriptionFrench,
+    image: item.fields.coverImage.fields.file.url,
+    images: item.fields.projectImages.map((image) => image.fields.file.url),
+  }));
 };
 
-fetchData();
+const { $client } = useNuxtApp();
+const language = useLanguage();
+const projects = useProjects();
+
+fetchData($client, language).then((data) => {
+  projects.value = data;
+});
 
 watch(() => language.value, () => {
-  fetchData();
+  fetchData($client, language).then((data) => {
+    projects.value = data;
+  });
 });
 </script>
