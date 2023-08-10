@@ -1,6 +1,6 @@
 <template>
   <div id="page-project">
-    <section
+    <section v-if="project"
       :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center items-center flex-col', isBackground ? 'flex' : 'invisible']"
       :style="{ '--background-image': `url('https:${project.image}')` }">
       <h1 class="z-10">{{ project.title }}</h1>
@@ -15,7 +15,7 @@
           <img class="h-full w-full object-cover" :src="`https:${image}`" alt="project image">
         </div>
       </div>
-      <section
+      <section v-if="nextProject"
         class="next-project rounded-radiusMain text-center py-[10vh] flex flex-col justify-between items-center z-10 h-[50vh] w-screen"
         :style="{ '--background-image-next-project': `url('https:${nextProject.image}')` }">
         <div>
@@ -39,10 +39,12 @@
 <script setup>
 const route = useRoute();
 const projects = useProjects();
-const project = projects.value.find((project) => project.title.replace(/\s+/g, '-').toLowerCase() === route.params.project);
-const currentIndex = projects.value.findIndex((project) => project.title.replace(/\s+/g, '-').toLowerCase() === route.params.project);
+const formattedProjectTitle = route.params.project.replace(/\s+/g, '-').toLowerCase();
+const project = projects.value.find((p) => p.title.replace(/\s+/g, '-').toLowerCase() === formattedProjectTitle);
+const currentIndex = projects.value.findIndex((p) => p.title.replace(/\s+/g, '-').toLowerCase() === formattedProjectTitle);
 const nextProject = currentIndex === projects.value.length - 1 ? projects.value[0] : projects.value[currentIndex + 1];
 </script>
+
 <script>
 export default {
   name: '',
@@ -89,7 +91,8 @@ export default {
 .hero-project {
   background: var(--background-image) no-repeat center center;
   background-size: cover;
-  &::after{
+
+  &::after {
     content: '';
     z-index: 0;
     position: absolute;
@@ -99,6 +102,8 @@ export default {
     height: 100%;
     background: black;
     opacity: 0.4;
-  };
+  }
+
+  ;
 }
 </style>
