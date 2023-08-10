@@ -1,10 +1,8 @@
-// import { createClient } from "contentful";
-// import dotenv from 'dotenv';
-// dotenv.config();
+import { createClient } from "contentful";
 
-// const client = createClient({
-//   space: process.env.SPACE_ID,
-// 	accessToken: process.env.ACCESS_TOKEN
-// });
+const client = createClient({
+  space: "cse6m1hgf7gu",
+	accessToken: "JpDWdG38G4U0BDSaarW_GX8-mqXc-Z3ab8byBrxmNWc"
+});
 
-// export { client }
+export { client }
