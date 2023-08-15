@@ -1,14 +1,14 @@
 <template>
-  <div class="card-recent-work w-full overflow-hidden h-screen min-h-fit flex items-end rounded-b-radiusMain">
+  <div class="w-full relative overflow-hidden h-screen min-h-fit flex items-end rounded-b-radiusMain">
     <div class="parallax-image" :style="{ '--background-image': `url('https:${urlImage}')` }"></div>
     <div
-      class="card-recent-work-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end sm:items sm:flex-row sm:justify-between">
-      <div class="w-full sm:w-2/3 text-center sm:text-left">
-        <h2 :class="[!showDescription && 'pb-5 sm:pb-0']">{{ title }}</h2>
+      :class="['card-project-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end', showDescription ? 'sm:flex-row sm:justify-between' : 'sm:flex-col']">
+      <div :class="['', showDescription ? 'w-full sm:w-2/3 text-center sm:text-left' : 'text-center']">
+        <h2 :class="!showDescription && 'pb-5'">{{ title }}</h2>
         <p class="my-5" v-if="showDescription">{{ description }}</p>
       </div>
-      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="small"
-        color="white">View</BaseButton>
+      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="small" color="white"
+        class="!w-full sm:!w-auto">View</BaseButton>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: 'CardRecentWork',
+  name: 'CardProject',
   props: {
     title: {
       type: String,
@@ -72,11 +72,6 @@ export default {
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
 
-.card-recent-work {
-  position: relative;
-  overflow: hidden;
-}
-
 .parallax-image {
   position: absolute;
   top: -10%;
@@ -88,9 +83,8 @@ export default {
   background-size: cover;
 }
 
-.card-recent-work-description {
+.card-project-description {
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
-
   p {
     overflow: hidden;
     text-overflow: ellipsis;

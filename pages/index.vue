@@ -3,13 +3,13 @@
     <Hero />
     <section
       class="anim-curtain-section sticky rounded-radiusMain bottom-0 h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
-      <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl">
+      <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl lg:text-5xl lg:w-3/4 mx-auto">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
       </p>
       <Slider />
     </section>
-    <CardRecentWork :title="project.title" :description="project.description" :urlImage="project.image"
+    <CardProject :title="project.title" :description="project.description" :urlImage="project.image"
       v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
       :style="{ zIndex: 99 - index }" />
     <section
