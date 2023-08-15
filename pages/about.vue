@@ -9,7 +9,9 @@
     </section>
     <section class="bg-white text-center rounded-b-radiusMain px-paddingMain py-[10vh]">
       <h2 class="pb-8">Who I am</h2>
-      <p class="pb-paddingMain">Bexy Glow needed a tone of voice as confident as their visual identity. We positioned them as modern, fun-loving and empowered, using descriptive adjectives, idioms and figurative language to engage their clientele and accentuate their striking products.</p>
+      <p class="pb-paddingMain">Bexy Glow needed a tone of voice as confident as their visual identity. We positioned them
+        as modern, fun-loving and empowered, using descriptive adjectives, idioms and figurative language to engage their
+        clientele and accentuate their striking products.</p>
       <img class="rounded-lg object-cover w-screen h-[60vh]" src="/images/background-hero.jpg">
     </section>
   </div>

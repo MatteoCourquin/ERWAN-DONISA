@@ -5,7 +5,7 @@
       <h1>My work</h1>
       <ButtonScroll :isDark="true" orientation="bottom" />
     </section>
-    <CardRecentWork class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
+    <CardProject class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
       :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description"
       :urlImage="project.image" :showDescription="false" />
   </div>
@@ -34,6 +34,9 @@ export default {
         tl.to(el, { position: 'sticky' });
       });
     }
+  },
+  updated() {
+    this.animOpacity();
   },
   mounted() {
     useHeaderDark().value = true;

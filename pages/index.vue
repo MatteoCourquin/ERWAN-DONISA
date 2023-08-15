@@ -9,7 +9,7 @@
       </p>
       <Slider />
     </section>
-    <CardRecentWork :title="project.title" :description="project.description" :urlImage="project.image"
+    <CardProject :title="project.title" :description="project.description" :urlImage="project.image"
       v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
       :style="{ zIndex: 99 - index }" />
     <section
