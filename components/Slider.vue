@@ -5,7 +5,7 @@
       <div ref="slider" @scroll="isScrollEnd"
         class="px-paddingMain slider w-full snap-mandatory snap-x overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
-          class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[70%] min-w-[280px] max-h-[600px] max-w-xs h-[60vh] min-h-[400px] rounded-radiusMain"
+          class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[35vw] shrink-0 min-w-[280px] max-h-[600px] max-w-[350px] h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(service, index) in services" :key="index">
           <div class="flex p-4 py-[5vh] h-full shrink overflow-hidden items-center justify-center flex-col">
             <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ service.title }}</h4>
@@ -92,7 +92,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 .slider::-webkit-scrollbar {

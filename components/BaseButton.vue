@@ -97,16 +97,16 @@ export default {
 
 .button_big {
   padding: 18px 70px;
-  font-size: clamp(16px, 3vw, 25px);
+  font-size: clamp(16px, 2.2vw, 23px);
 }
 
 .button_medium {
   padding: 15px 60px;
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(16px, 2vw, 18px);
 }
 
 .button_small {
   padding: 10px 50px;
-  font-size: clamp(16px, 3vw, 15px);
+  font-size: clamp(16px, 2vw, 15px);
 }
 </style>

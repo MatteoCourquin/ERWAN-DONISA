@@ -5,9 +5,15 @@
       <h1>My work</h1>
       <ButtonScroll :isDark="true" orientation="bottom" />
     </section>
-    <CardProject class="anim-curtain-section sticky bottom-0" v-for="(project, index) in projects" :key="index"
-      :style="{ zIndex: 99 - index }" :title="project.title" :description="project.description"
-      :urlImage="project.image" :showDescription="false" />
+    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
+      :style="{ zIndex: 99 - index }">
+      <CardProject v-if="index < showProject" :title="project.title" :description="project.description" :urlImage="project.image"
+        :showDescription="false" />
+    </div>
+    <section
+      class="anim-curtain-section sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
+      <BaseButton @click="showProject = showProject + 3" size='medium' color="black">more</BaseButton>
+    </section>
   </div>
 </template>
 
@@ -19,7 +25,9 @@ import { gsap } from 'gsap';
 export default {
   name: 'Work',
   data() {
-    return {};
+    return {
+      showProject: 3,
+    };
   },
   methods: {
     animOpacity() {
