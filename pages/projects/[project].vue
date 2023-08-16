@@ -8,7 +8,7 @@
           :style="{ '--background-image': `url('https:${project.image}')` }">
           <h1 class="z-10">{{ project.title }}</h1>
         </section>
-        <section class="sticky bottom-0 bg-white z-10 rounded-radiusMain min-h-[200vh] overflow-hidden">
+        <section class="sticky bottom-0 bg-white z-10 rounded-radiusMain overflow-hidden">
           <div class="py-[10vh] text-black text-center px-paddingMain">
             <h2 class="mb-10">{{ project.title }}</h2>
             <p>{{ project.description }}</p>

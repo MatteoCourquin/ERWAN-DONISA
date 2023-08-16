@@ -3,15 +3,17 @@
     <Hero />
     <section
       class="anim-curtain-section sticky rounded-radiusMain bottom-0 h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
-      <p class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl lg:text-5xl lg:w-3/4 mx-auto">
+      <p
+        class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl lg:text-5xl lg:w-3/4 mx-auto">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
         mattis.
       </p>
       <Slider />
     </section>
-    <CardProject :title="project.title" :description="project.description" :urlImage="project.image"
-      v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
-      :style="{ zIndex: 99 - index }" />
+    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
+      :style="{ zIndex: 99 - index }">
+      <CardProject v-if="index < 3" :title="project.title" :description="project.description" :urlImage="project.image" />
+    </div>
     <section
       class="anim-curtain-section sticky bottom-0 w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">Check the others</h3>
