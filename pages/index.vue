@@ -10,10 +10,11 @@
       </p>
       <Slider />
     </section>
-    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
-      :style="{ zIndex: 99 - index }">
-      <CardProject v-if="index < 3" :title="project.title" :description="project.description" :urlImage="project.image" />
-    </div>
+      <div v-for="(project, index) in projects" :key="index" class="sticky bottom-0 anim-curtain-section"
+        :style="{ zIndex: 99 - index }">
+        <CardProject v-if="index < 3" :title="project.title" :description="project.description"
+          :urlImage="project.coverImage" />
+      </div>
     <section
       class="anim-curtain-section sticky bottom-0 w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">Check the others</h3>
