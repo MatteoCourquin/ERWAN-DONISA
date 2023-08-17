@@ -9,15 +9,21 @@
 <script setup>
 
 const fetchData = async ($client, language) => {
-  const data = await $client.getEntries({ content_type: 'project' });
-  const isEnglish = language.value === 'ENG';
+  try {
+    const data = await $client.getEntries({ content_type: 'project' });
+    const isEnglish = language.value === 'ENG';
 
-  return data.items.map((item) => ({
-    title: item.fields.title,
-    description: isEnglish ? item.fields.descriptionEnglish : item.fields.descriptionFrench,
-    image: item.fields.coverImage.fields.file.url,
-    images: item.fields.projectImages.map((image) => image.fields.file.url),
-  }));
+    return data.items.map((item) => ({
+      title: item.fields.title,
+      description: isEnglish ? item.fields.descriptionEnglish : item.fields.descriptionFrench,
+      coverImage: item.fields.coverImage.fields.file.url,
+      imagesDesktop: item.fields.projectImagesDesktop ? item.fields.projectImagesDesktop.map((image) => image.fields.file.url) : [],
+      imagesMobile: item.fields.projectImagesMobile ? item.fields.projectImagesMobile.map((image) => image.fields.file.url) : [],
+    }));
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
 };
 
 const { $client } = useNuxtApp();

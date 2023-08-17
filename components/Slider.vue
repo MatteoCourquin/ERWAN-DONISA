@@ -34,7 +34,7 @@ export default {
       services: [
         {
           title: 'Brand identity',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          description: "Découvrez l'art de la transformation visuelle. Avec mes services je vous créerais une image de marque sur mesure.",
           link: '/',
           urlImage: 'image1.jpg'
         },

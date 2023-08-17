@@ -7,7 +7,7 @@
     </section>
     <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section sticky bottom-0"
       :style="{ zIndex: 99 - index }">
-      <CardProject v-if="index < showProject" :title="project.title" :description="project.description" :urlImage="project.image"
+      <CardProject v-if="index < showProject" :title="project.title" :description="project.description" :urlImage="project.coverImage"
         :showDescription="false" />
     </div>
     <section
