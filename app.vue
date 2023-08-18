@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtLayout>
-      <NuxtPage/>
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
@@ -17,8 +17,8 @@ const fetchData = async ($client, language) => {
       title: item.fields.title,
       description: isEnglish ? item.fields.descriptionEnglish : item.fields.descriptionFrench,
       coverImage: item.fields.coverImage.fields.file.url,
-      imagesDesktop: item.fields.projectImagesDesktop ? item.fields.projectImagesDesktop.map((image) => image.fields.file.url) : [],
-      imagesMobile: item.fields.projectImagesMobile ? item.fields.projectImagesMobile.map((image) => image.fields.file.url) : [],
+      imagesDesktop: item.fields.projectImagesDesktop.map((image) => image.fields.file.url),
+      imagesMobile: item.fields.projectImagesMobile.map((image) => image.fields.file.url),
     }));
   } catch (error) {
     console.error('Error fetching data:', error);
