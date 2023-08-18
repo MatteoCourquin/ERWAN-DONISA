@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-
 const fetchData = async ($client, language) => {
   try {
     const data = await $client.getEntries({ content_type: 'project' });

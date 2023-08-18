@@ -4,7 +4,7 @@
       <div
         v-if="project.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase()">
         <section
-          :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center min-[100vh]: items-center flex-col', isBackground ? 'flex' : 'invisible']"
+          :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center min-[100vh]: items-center flex-col', isBackground ? 'flex' : 'invisible', load ? 'active' : '']"
           :style="{ '--background-image': `url('https:${project.coverImage}')` }">
           <h1 class="z-10">{{ project.title }}</h1>
         </section>
@@ -21,14 +21,14 @@
               <img class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image">
             </div>
           </div>
-          <section
-            class="next-project rounded-radiusMain text-center py-[10vh] flex flex-col justify-between items-center z-10 h-[50vh] w-screen"
+          <section v-if="nextProject"
+            class="next-project relative overflow-hidden rounded-radiusMain text-center py-[10vh] flex flex-col justify-between items-center z-10 h-[50vh] w-screen"
             :style="{ '--background-image-next-project': `url('https:${nextProject.coverImage}')` }">
-            <div>
+            <div class="z-20">
               <h3>Next Project</h3>
               <p>({{ nextProject.title }})</p>
             </div>
-            <BaseButton ref="button" @mouseenter="active = true" @mouseleave="active = false"
+            <BaseButton class="z-20" ref="button" @mouseenter="active = true" @mouseleave="active = false"
               @click="$router.push(`/projects/${nextProject.title.replace(/\s+/g, '-').toLowerCase()}`)" size='medium'
               color="white">
               <svg :class="active ? 'hidden' : 'black'" height="40" viewBox="0 0 310 60" fill="none"
@@ -56,8 +56,12 @@
 <script setup>
 const route = useRoute();
 const projects = useProjects();
-const currentIndex = projects.value.findIndex((p) => p.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase());
-const nextProject = currentIndex === projects.value.length - 1 ? projects.value[0] : projects.value[currentIndex + 1];
+let currentIndex = projects.value.findIndex((p) => p.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase());
+let nextProject = currentIndex === projects.value.length - 1 ? projects.value[0] : projects.value[currentIndex + 1];
+watchEffect(() => {
+  currentIndex = projects.value.findIndex((p) => p.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase());
+  nextProject = currentIndex === projects.value.length - 1 ? projects.value[0] : projects.value[currentIndex + 1];
+});
 </script>
 
 <script>
@@ -67,6 +71,7 @@ export default {
     return {
       active: false,
       isBackground: true,
+      load: false
     };
   },
   methods: {
@@ -78,6 +83,11 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.checkedScroll)
     useHeaderDark().value = false;
+    setTimeout(() => {
+      this.load = true;
+    }, .5);
+
+
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.checkedScroll)
@@ -105,6 +115,25 @@ export default {
 .next-project {
   background: var(--background-image-next-project) no-repeat center center;
   background-size: cover;
+
+  &::after {
+    content: '';
+    transition: opacity 3s ease-in-out;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.2;
+  }
+}
+
+.hero-project.active {
+  &::after {
+    opacity: 0.4;
+  }
 }
 
 .hero-project {
@@ -113,6 +142,7 @@ export default {
 
   &::after {
     content: '';
+    transition: opacity 3s ease-in-out;
     z-index: 0;
     position: absolute;
     top: 0;
@@ -120,7 +150,7 @@ export default {
     width: 100%;
     height: 100%;
     background: black;
-    opacity: 0.4;
+    opacity: 0;
   }
 
   ;
