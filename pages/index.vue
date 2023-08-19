@@ -2,7 +2,7 @@
   <div id="page-index">
     <Hero />
     <section
-      class="sticky bottom-0 anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
+      class="bottom-0 anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p
         class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl lg:text-5xl lg:w-3/4 mx-auto">
         Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
@@ -10,13 +10,13 @@
       </p>
       <Slider />
     </section>
-    <div v-for="(project, index) in projects" :key="index" class="sticky bottom-0 anim-curtain-section"
+    <div v-for="(project, index) in projects" :key="index" class="bottom-0 anim-curtain-section"
       :style="{ zIndex: 99 - index }">
       <CardProject v-if="index < 3" :title="project.title" :description="project.description"
         :urlImage="project.coverImage" />
     </div>
     <div
-      class="sticky bottom-0 anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
+      class="bottom-0 anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">Check the others</h3>
       <BaseButton @click="$router.push('/work')" size='medium' color="black">more</BaseButton>
     </div>
@@ -43,9 +43,8 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: el,
-            start: 'top bottom',
-            end: 'bottom top',
-            markers: true,
+            start: '-20% bottom',
+            end: '20% top',
             toggleActions: 'play reverse play reverse',
           },
         });
