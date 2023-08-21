@@ -1,6 +1,10 @@
 <template>
   <section class="flex justify-center items-center h-full text-center flex-col overflow-hidden py-paddingMain">
-    <h2>MY SERVICES</h2>
+    <h2>
+      {{ language == 'FRA' ?
+        "MES SERVICES"
+        :
+        "MY SERVICES" }}</h2>
     <div class="my-16 relative w-full">
       <div ref="slider" @scroll="isScrollEnd"
         class="px-paddingMain slider w-full snap-mandatory snap-x overflow-x-scroll scroll-smooth flex flex-row gap-8">
@@ -15,7 +19,12 @@
             <img class="absolute top-0 object-cover w-full h-full" :src="`/images/${service.urlImage}`"
               alt="description product">
             <div class="py-8 z-10">
-              <BaseButton @click="$router.push(service.link)" size='small' color="white">Let's meet</BaseButton>
+              <BaseButton @click="$router.push(service.link)" size='small' color="white">
+                {{ language == 'FRA' ?
+                  "En savoir plus"
+                  :
+                  "Learn more" }}
+              </BaseButton>
             </div>
           </div>
         </div>
@@ -25,6 +34,9 @@
   </section>
 </template>
 
+<script setup>
+const language = useLanguage();
+</script>
 <script>
 export default {
   name: 'Slider',
@@ -87,7 +99,7 @@ export default {
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
 
-.description-slider{
+.description-slider {
   height: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -95,6 +107,7 @@ export default {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
+
 .slider::-webkit-scrollbar {
   display: none;
 }

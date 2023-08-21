@@ -5,22 +5,22 @@
     <nav class="flex gap-[5vw]">
       <ul>
         <li>
-          <NuxtLink to="/" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">Home</NuxtLink>
+          <NuxtLink to="/" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">{{ language == "FRA" ? 'Home' : 'Home' }}</NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/work" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">Work</NuxtLink>
+          <NuxtLink to="/work" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">{{ language == "FRA" ? 'Projets' : 'Projects' }}</NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/about" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">About</NuxtLink>
+          <NuxtLink to="/about" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">{{ language == "FRA" ? 'À propos' : 'About' }}</NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink to="/contact" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">Contact</NuxtLink>
+          <NuxtLink to="/contact" :class="['link', isHeaderDark ? 'link_black' : 'link_white']">{{ language == "FRA" ? 'Contact' : 'Contact' }}</NuxtLink>
         </li>
       </ul>
     </nav>
@@ -55,6 +55,7 @@
 
 <script setup>
 const isHeaderDark = useHeaderDark();
+const language = useLanguage()
 </script>
 <script>
 export default {

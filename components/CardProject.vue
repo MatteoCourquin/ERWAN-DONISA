@@ -8,11 +8,17 @@
         <p class="my-5" v-if="showDescription">{{ description }}</p>
       </div>
       <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="small" color="white"
-        class="!w-full sm:!w-auto">View</BaseButton>
+        class="!w-full sm:!w-auto">{{ language == 'FRA' ?
+          "Voir"
+          :
+          "View" }}</BaseButton>
     </div>
   </div>
 </template>
 
+<script setup>
+const language = useLanguage()
+</script>
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -85,6 +91,7 @@ export default {
 
 .card-project-description {
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
+
   p {
     overflow: hidden;
     text-overflow: ellipsis;

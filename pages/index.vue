@@ -5,8 +5,10 @@
       class="bottom-0 anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p
         class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl lg:text-5xl lg:w-3/4 mx-auto">
-        Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
-        mattis.
+        {{ language == 'FRA' ?
+          "Mon job, donner vie à votre marque à travers chaque création. Pour faire de vous la référence de votre domaine."
+          :
+          "My job is to bring your brand to life with every creation.To make you the benchmark in your field." }}
       </p>
       <Slider />
     </section>
@@ -17,14 +19,23 @@
     </div>
     <div
       class="bottom-0 anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
-      <h3 class="text-black mb-10">Check the others</h3>
-      <BaseButton @click="$router.push('/work')" size='medium' color="black">more</BaseButton>
+      <h3 class="text-black mb-10">
+        {{ language == 'FRA' ?
+          "EN SAVOIR PLUS"
+          :
+          "CHECK THE OTHERS" }}
+      </h3>
+      <BaseButton @click="$router.push('/work')" size='medium' color="black">{{ language == 'FRA' ?
+          "Plus"
+          :
+          "More" }}</BaseButton>
     </div>
   </div>
 </template>
 
 <script setup>
 const projects = useProjects();
+const language = useLanguage();
 </script>
 <script>
 import { gsap } from 'gsap';

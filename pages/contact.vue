@@ -1,22 +1,37 @@
 <template>
   <div>
     <section class="pt-44 pb-16 sticky top-0 text-white w-screen flex flex-col items-center text-center">
-      <h1>LET’S WORK<br> TOGETHER</h1>
+      <h1>{{ language == 'FRA' ?
+        "COLLABORONS ENSEMBLE"
+        :
+        "LET’S WORK TOGETHER" }}</h1>
       <ButtonScroll :isDark="false" orientation="bottom" />
     </section>
     <section class="bg-white z-[300] sticky w-screen py-[10vh] px-paddingMain rounded-radiusMain text-black">
       <h2 class="pb-5">Contact</h2>
-      <p>If you’re looking for any information or general questions use my details below or the contact form.</p>
+      <p v-if="language == 'FRA'">
+        Vous aimez ce que je fais ou vous souhaitez que l'on travaille ensemble ? <br>
+        Faites-le-moi savoir en remplissant les champs ci-dessous. Je me ferai un plaisir de vous répondre.
+      </p>
+      <p v-if="language == 'ENG'">Do you like what I do or would you like to work with me?<br>
+        Let me know by filling in the fields below. I'll be happy to get back to you.
+      </p>
 
       <h4 class="label-title text-xs !pb-0">Email</h4>
       <a href="mailto:donisaerwan@gmail.com"
         class="link link_black link_underline !lowercase !text-sm">donisaerwan@gmail.com</a>
 
-      <h4 class="label-title text-xs !pb-0">Phone</h4>
+      <h4 class="label-title text-xs !pb-0">{{ language == 'FRA' ?
+          "Téléphone"
+          :
+          "Phone" }}</h4>
       <a href="tel:0658415260" class="link link_black link_underline !text-sm">+33 6 58 41 52 60</a>
 
       <form ref="form">
-        <h4 class="label-title">How can i help you ?</h4>
+        <h4 class="label-title">{{ language == 'FRA' ?
+          "Comment puis-je vous aider ?"
+          :
+          "How can i help you ?" }}</h4>
         <div class="wrapper-input">
           <!-- checkbox -->
           <div class="flex gap-2">
@@ -36,27 +51,36 @@
             <label for="web-design">Web Design</label>
           </div>
         </div>
-        <h4 class="label-title">What's your budget ?</h4>
+        <h4 class="label-title">{{ language == 'FRA' ?
+          "Quel est votre budget ?"
+          :
+          "What's your budget ?" }}</h4>
         <!-- <div class="wrapper-input">
           <input ref="budget" type='range' id='budget' name='budget' />
         </div> -->
         <div class="wrapper-input">
           <select ref="budget" name="budget" id="services">
-            <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
+            <option class="!text-[#9BA3AF]" value="default">{{ language === "FRA" ? "Séléctionner" : "Select from dropdown"}}</option>
             <option value="- 1 000">- 1 000</option>
             <option value="1 000 - 10 000">1 000 - 10 000</option>
             <option value="+ 10 000">+ 10 000</option>
           </select>
         </div>
         <div class="wrapper-input">
-          <label for="description">Description of the project (optional)</label>
+          <label for="description">{{ language == 'FRA' ?
+          "Description du projet (optionnel)"
+          :
+          "Description of the project (optional)" }}</label>
           <textarea ref="description" name="description" id="description" cols="30" rows="10"
-            placeholder="Tell me everything..."></textarea>
+            :placeholder="language === 'FRA' ? 'Dis moi tout' : 'Tell me everything...'"></textarea>
         </div>
-        <h4 class="label-title">Extra Services</h4>
+        <h4 class="label-title">{{ language == 'FRA' ?
+          "Services supplémentaires"
+          :
+          "Extra Services" }}</h4>
         <div class="wrapper-input">
           <select ref="extraService" name="services" id="services">
-            <option class="!text-[#9BA3AF]" value="default">Select from dropdown</option>
+            <option class="!text-[#9BA3AF]" value="default">{{ language === "FRA" ? "Séléctionner" : "Select from dropdown"}}</option>
             <option value="Web Design">Web Design</option>
             <option value="Web Development">Web Development</option>
             <option value="branding">Branding</option>
@@ -64,15 +88,15 @@
         </div>
         <h4 class="label-title">Personal Details</h4>
         <div class="wrapper-input">
-          <label for="name">Full Name</label>
+          <label for="name">{{ language == 'FRA' ? "Nom Prénom" : "Full Name" }}</label>
           <input ref="name" type="text" name="name" id="name" placeholder="John Smith">
         </div>
         <div class="wrapper-input">
-          <label for="mail">Email Adresse</label>
+          <label for="mail">{{ language == 'FRA' ? "Adresse mail" : "Email Adresse" }}</label>
           <input ref="email" type="email" name="mail" id="mail" placeholder="john.smith@example.com">
         </div>
         <div class="wrapper-input">
-          <label for="work">How did you find my work ?</label>
+          <label for="work">{{ language == 'FRA' ? "Comment m’as tu découvert ?" : "How did you find my work ?" }}</label>
           <input ref="work" type="text" name="work" id="work" placeholder="Lorem, ipsum dolor...">
         </div>
         <!-- <div class="wrapper-input">
@@ -93,6 +117,9 @@
   </div>
 </template>
 
+<script setup>
+const language = useLanguage();
+</script>
 <script>
 import emailjs from '@emailjs/browser';
 

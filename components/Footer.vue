@@ -2,31 +2,34 @@
   <footer :class="['sticky bottom-0 z-0 w-full h-fit p-paddingMain bg-black', isScrollBottom ? 'block' : 'hidden']">
     <div class="flex grow justify-between gap-[20vw]">
       <div class="flex flex-col gap-5 w-full items-center sm:items-start relative max-w-2xl">
-        <h4 class="text-center sm:text-left">We should<br>work together</h4>
-        <BaseButton @click="$router.push('/contact')" size='medium' color="red">Let's go</BaseButton>
+        <h4 class="text-center sm:text-left">{{ language == "FRA" ? 'Collaborons ensembles' : 'We should work together' }}</h4>
+        <BaseButton @click="$router.push('/contact')" size='medium' color="red">{{ language == "FRA" ? 'Allons-y' : "Let's meet" }}</BaseButton>
         <p class="font-termina-400 uppercase text-white self-end flex items-center gap-1 !text-sm">
           <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.956519 10.8145C0.949676 11.3907 1.41128 11.8634 1.98753 11.8703L11.3782 11.9818C11.9544 11.9886 12.4271 11.527 12.434 10.9508C12.4408 10.3745 11.9792 9.90183 11.403 9.89498L3.05572 9.79586L3.15484 1.44862C3.16169 0.872365 2.70009 0.399669 2.12383 0.392826C1.54757 0.385983 1.07488 0.847584 1.06803 1.42384L0.956519 10.8145ZM9.7319 1.81789L1.27089 10.0803L2.72896 11.5734L11.19 3.31101L9.7319 1.81789Z"
               fill="white" />
           </svg>
-          pick
+          {{ language == "FRA" ? 'choisis' : 'pick' }}
         </p>
       </div>
       <nav class="hidden sm:block">
         <ul class="flex flex-col text-right justify-center gap-5">
           <h4 class="text-right">Menu</h4>
           <li>
-            <NuxtLink class="link link_white inline-block" to="/">Home</NuxtLink>
+            <NuxtLink class="link link_white inline-block" to="/">{{ language == "FRA" ? 'Home' : 'Home' }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link link_white inline-block" to="/about">About</NuxtLink>
+            <NuxtLink class="link link_white inline-block" to="/work">{{ language == "FRA" ? 'Projets' : 'Projects' }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link link_white inline-block" to="/work">Work</NuxtLink>
+            <NuxtLink class="link link_white inline-block" to="/about">{{ language == "FRA" ? 'À propos' : 'About' }}
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink class="link link_white inline-block" to="/contact">Contact</NuxtLink>
+            <NuxtLink class="link link_white inline-block" to="/contact">{{ language == "FRA" ? 'Contact' : 'Contact' }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
@@ -34,13 +37,13 @@
     <div class="flex gap-14 flex-col sm:flex-row items-center">
       <div>
         <h6 class="text-center sm:text-left
-         text-white !capitalize">Join me at</h6>
+         text-white !capitalize">{{ language == "FRA" ? 'Contacte moi' : 'Join me at' }}</h6>
         <a href="mailto:donisaerwan@gmail.com"
           class="link link_white link_underline !lowercase !text-sm">donisaerwan@gmail.com</a>
       </div>
       <div>
         <h6 class="text-center sm:text-left
-         text-white !capitalize">Or</h6>
+         text-white !capitalize">{{ language == "FRA" ? 'ou' : 'or' }}</h6>
         <a href="tel:0658415260" class="link link_white link_underline !text-sm">+33 6 58 41 52 60</a>
       </div>
     </div>
@@ -53,7 +56,7 @@
         <p class="text-sm text-white">2023 © Edition</p>
       </div>
       <div>
-        <h6 class="pb-3 text-white text-right !capitalize">Social media</h6>
+        <h6 class="pb-3 text-white text-right !capitalize">{{ language == "FRA" ? 'Réseaux sociaux' : 'Social media' }}</h6>
         <div class="flex justify-between items-center">
           <a target="_blank" href="https://www.instagram.com/erwand.design/" class="hover:opacity-70">
             <svg class="h-6 sm:h-8" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
@@ -82,8 +85,10 @@
   </footer>
 </template>
 
+<script setup>
+const language = useLanguage()
+</script>
 <script>
-
 export default {
   name: 'Footer',
   data() {
@@ -107,6 +112,4 @@ export default {
 
 </script>
 
-<style scoped lang='scss'>
-@import '@/scss/main.scss';
-</style>
+<style scoped lang='scss'>@import '@/scss/main.scss';</style>

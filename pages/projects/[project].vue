@@ -25,7 +25,10 @@
             class="next-project relative overflow-hidden rounded-radiusMain text-center py-[10vh] flex flex-col justify-between items-center z-10 h-[50vh] w-screen"
             :style="{ '--background-image-next-project': `url('https:${nextProject.coverImage}')` }">
             <div class="z-20">
-              <h3>Next Project</h3>
+              <h3>{{ language == 'FRA' ?
+                "Projet suivant"
+                :
+                "Next Project" }}</h3>
               <p>({{ nextProject.title }})</p>
             </div>
             <BaseButton class="z-20" ref="button" @mouseenter="active = true" @mouseleave="active = false"
@@ -54,6 +57,7 @@
 </template>
 
 <script setup>
+const language = useLanguage();
 const route = useRoute();
 const projects = useProjects();
 let currentIndex = projects.value.findIndex((p) => p.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase());

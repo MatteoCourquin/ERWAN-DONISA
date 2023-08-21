@@ -21,25 +21,29 @@
       <Language class="!absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain" />
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/" :class="['link !text-4xl font-termina-700 link_white']">Home
+          <NuxtLink @click="this.isActive = !this.isActive" to="/"
+            :class="['link !text-4xl font-termina-700 link_white']">{{ language == "FRA" ? 'Home' : 'Home' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/work" :class="['link !text-4xl font-termina-700 link_white']">Work
+          <NuxtLink @click="this.isActive = !this.isActive" to="/work"
+            :class="['link !text-4xl font-termina-700 link_white']">{{ language == "FRA" ? 'Projets' : 'Projects' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/about" :class="['link !text-4xl font-termina-700 link_white']">About
+          <NuxtLink @click="this.isActive = !this.isActive" to="/about"
+            :class="['link !text-4xl font-termina-700 link_white']">{{ language == "FRA" ? 'À propos' : 'About' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/contact" :class="['link !text-4xl font-termina-700 link_white']">Contact
+          <NuxtLink @click="this.isActive = !this.isActive" to="/contact"
+            :class="['link !text-4xl font-termina-700 link_white']">{{ language == "FRA" ? 'Contact' : 'Contact' }}
           </NuxtLink>
         </li>
       </ul>
@@ -76,6 +80,9 @@
   </header>
 </template>
 
+<script setup>
+const language = useLanguage()
+</script>
 <script>
 import { gsap } from 'gsap';
 
@@ -157,5 +164,4 @@ export default {
   .burger-menu-item:nth-child(2) {
     transform: translate(0, -6px) rotate(-45deg);
   }
-}
-</style>
+}</style>

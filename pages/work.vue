@@ -2,7 +2,7 @@
   <div>
     <section
       class="px-paddingMain z-[200] relative pt-44 pb-16 rounded-b-radiusMain bg-white text-black flex flex-col items-center text-center">
-      <h1>My work</h1>
+      <h1>{{ language == "FRA" ? 'Mes projets' : 'MY PROJECTS' }}</h1>
       <ButtonScroll :isDark="true" orientation="bottom" />
     </section>
     <div v-for="(project, index) in useProjects().value" :key="index" class="sticky bottom-0"
@@ -12,11 +12,23 @@
     </div>
     <section v-if="isMore"
       class="sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
-      <BaseButton @click="showMoreProject" size='medium' color="black">more</BaseButton>
+      <h3 class="text-black mb-10">
+        {{ language == 'FRA' ?
+          "Voir les autres"
+          :
+          "CHECK THE OTHERS" }}
+      </h3>
+      <BaseButton @click="showMoreProject" size='medium' color="black">{{ language == 'FRA' ?
+        "Plus"
+        :
+        "More" }}</BaseButton>
     </section>
   </div>
 </template>
 
+<script setup>
+const language = useLanguage();
+</script>
 <script>
 export default {
   name: 'Work',
