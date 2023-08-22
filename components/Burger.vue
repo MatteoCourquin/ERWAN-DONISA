@@ -1,7 +1,7 @@
 <template>
   <header
     :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center rounded-full w-16 h-16 sm:w-20 sm:h-20 transition-all bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active bg-black' : '']">
-    <div @mousemove="(e) => moveMagnet(e, 1)" @mouseout="(e) => resetMagnet(e)" @click="this.isActive = !this.isActive"
+    <div @mousemove="(e) => moveMagnet(e, 1)" @mouseout="(e) => resetMagnet(e)" @click="isActive = !isActive"
       :class="['z-10 w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center cursor-pointer shadow-inner rounded-full active border', isActive ? 'bg-black border-black' : 'bg-white']">
       <div @mousemove="(e) => moveMagnet(e, 0.4)" @mouseout="(e) => resetMagnet(e)"
         class="w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center rounded-full">
@@ -21,28 +21,28 @@
       <Language class="!absolute top-insetMain py-5 md:py-0 md:top-20 left-insetMain" />
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/"
+          <NuxtLink @click="isActive = !isActive" to="/"
             :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'Home' : 'Home' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/work"
+          <NuxtLink @click="isActive = !isActive" to="/work"
             :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'Projets' : 'Projects' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/about"
+          <NuxtLink @click="isActive = !isActive" to="/about"
             :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'À propos' : 'About' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
-          <NuxtLink @click="this.isActive = !this.isActive" to="/contact"
+          <NuxtLink @click="isActive = !isActive" to="/contact"
             :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'Contact' : 'Contact' }}
           </NuxtLink>
         </li>

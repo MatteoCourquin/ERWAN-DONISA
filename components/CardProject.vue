@@ -51,6 +51,9 @@ export default {
   mounted() {
     !useTouchDevive().value && this.initParallax();
   },
+  updated() {
+    !useTouchDevive().value && this.initParallax();
+  },
   methods: {
     initParallax() {
       gsap.utils.toArray('.parallax-image').forEach((image, index) => {
