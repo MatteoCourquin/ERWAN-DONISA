@@ -1,38 +1,38 @@
 // 700
 @font-face {
-  font-family: 'Termina-Bold';
-  src: url('/fonts/Termina-Bold.otf') format('truetype');
+  font-family: 'Loos-Bold';
+  src: url('/fonts/Loos-Bold.otf') format('truetype');
   font-display: auto;
 }
 // 600
 @font-face {
-  font-family: 'Termina-Medium';
-  src: url('/fonts/Termina-Heavy.otf') format('truetype');
+  font-family: 'Loos-SemiBold';
+  src: url('/fonts/Loos-SemiBold.otf') format('truetype');
   font-display: auto;
 }
 //500
 @font-face {
-  font-family: 'Termina-Regular';
-  src: url('/fonts/Termina-Demi.otf') format('truetype');
+  font-family: 'Loos-Regular';
+  src: url('/fonts/Loos-Regular.otf') format('truetype');
   font-display: auto;
 }
 // 400
 @font-face {
-  font-family: 'Termina-Light';
-  src: url('/fonts/Termina-Regular.otf') format('truetype');
+  font-family: 'Loos-Thin';
+  src: url('/fonts/Loos-Thin.otf') format('truetype');
   font-display: auto;
 }
 
 // Colors
 $color-white: #fff;
 $color-black: #000;
-$color-red: #C13228;
+$color-red: #c13228;
 
 // Fonts
-$font-termina-700: 'Termina-Bold';
-$font-termina-600: 'Termina-Medium';
-$font-termina-500: 'Termina-Regular';
-$font-termina-400: 'Termina-Light';
+$font-loos-bold: 'Loos-Bold';
+$font-loos-semiBold: 'Loos-SemiBold';
+$font-loos-regular: 'Loos-Regular';
+$font-loos-thin: 'Loos-Thin';
 
 // transitions
 $transition-main: 0.8s;
@@ -57,9 +57,10 @@ $spacing-m: 10px;
 }
 
 .bounce-transition {
-  transition-timing-function: cubic-bezier(.47,1.64,.41,.8);
+  transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 
 .shadow-inner {
-  box-shadow: inset 0 0 10px rgba(140, 140, 140, 0.05), inset 0 0 10px rgba(140, 140, 140, 0.05) !important;
+  box-shadow: inset 0 0 10px rgba(140, 140, 140, 0.05),
+    inset 0 0 10px rgba(140, 140, 140, 0.05) !important;
 }

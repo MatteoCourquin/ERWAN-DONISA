@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-termina-600;
+  font-family: $font-loos-bold;
   text-transform: uppercase;
 }
 h1 {
@@ -20,27 +20,27 @@ h4 {
   font-size: clamp(1.5rem, 3vw, 3rem);
 }
 p {
-  font-family: $font-termina-400;
+  font-family: $font-loos-thin;
 }
 
-.font-termina-700 {
-  font-family: $font-termina-700 !important;
+.font-loos-bold {
+  font-family: $font-loos-bold !important;
 }
-.font-termina-600 {
-  font-family: $font-termina-600 !important;
+.font-loos-semiBold {
+  font-family: $font-loos-semiBold !important;
 }
-.font-termina-500 {
-  font-family: $font-termina-500 !important;
+.font-loos-regular {
+  font-family: $font-loos-regular !important;
 }
-.font-termina-400 {
-  font-family: $font-termina-400 !important;
+.font-loos-thin {
+  font-family: $font-loos-thin !important;
 }
 
 .description {
   font-size: clamp(1rem, 2vw, 1.8rem);
 }
 .link {
-  font-family: $font-termina-400;
+  font-family: $font-loos-thin;
   font-size: 20px;
   text-transform: uppercase;
   white-space: nowrap;

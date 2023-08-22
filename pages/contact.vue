@@ -172,7 +172,7 @@ export default {
 }
 
 .label-title {
-  font-family: $font-termina-500;
+  font-family: $font-loos-regular;
   padding-top: 50px;
   padding-bottom: 30px;
   font-size: 20px;

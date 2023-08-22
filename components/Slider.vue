@@ -12,7 +12,7 @@
           class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[35vw] shrink-0 min-w-[280px] max-h-[600px] max-w-[350px] h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(service, index) in services" :key="index">
           <div class="flex p-4 py-[5vh] h-full shrink overflow-hidden items-center justify-center flex-col">
-            <h4 class="font-termina-500 !capitalize !text-lg mb-4">{{ service.title }}</h4>
+            <h4 class="font-loos-regular !capitalize !text-lg mb-4">{{ service.title }}</h4>
             <p class="description-slider overflow-hidden">{{ service.description }}</p>
           </div>
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">

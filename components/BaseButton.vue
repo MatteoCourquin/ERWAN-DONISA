@@ -58,7 +58,7 @@ export default {
   border: 0;
   border-radius: 999px;
   text-transform: uppercase;
-  font-family: $font-termina-500;
+  font-family: $font-loos-regular;
   text-decoration: none;
   cursor: pointer;
   position: relative;
