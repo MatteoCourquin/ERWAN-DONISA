@@ -18,14 +18,6 @@
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
             <img class="absolute top-0 object-cover w-full h-full" :src="`/images/${service.urlImage}`"
               alt="description product">
-            <div class="py-8 z-10">
-              <BaseButton @click="$router.push(service.link)" size='small' color="white">
-                {{ language == 'FRA' ?
-                  "En savoir plus"
-                  :
-                  "Learn more" }}
-              </BaseButton>
-            </div>
           </div>
         </div>
       </div>
@@ -63,22 +55,16 @@ export default {
           urlImage: 'image3.jpg'
         },
         {
-          title: 'Nunc vulputate libero',
+          title: 'Fashion design',
           description: 'Ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate mattis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus odio sed nesciunt eveniet placeat nobis corrupti.',
           link: '/',
           urlImage: 'image4.jpg'
         },
         {
-          title: 'Lorem ipsum dolor sit',
+          title: 'web design',
           description: 'Sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
           link: '/',
           urlImage: 'image5.jpg'
-        },
-        {
-          title: 'Consectetur adipiscing elit',
-          description: 'Lorem sit amet, consectetur adipiscing elit. Nunc vulputate velit interdum, ac aliquet odio mattis.',
-          link: '/',
-          urlImage: 'image6.jpg'
         },
       ]
     };

@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        redCustom: "#c13228",
+      },
       padding: {
         paddingMain: "clamp(20px, 10vw, 100px)"
       },

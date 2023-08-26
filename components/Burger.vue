@@ -2,7 +2,7 @@
   <header
     :class="['z-[900] header fixed top-insetMain md:top-14 right-insetMain flex justify-center items-center rounded-full w-16 h-16 sm:w-20 sm:h-20 transition-all bounce-transition', isScrolled || isActive ? 'flex scale-1' : 'flex sm:scale-0 sm:invisible', isActive ? 'active bg-black' : '']">
     <div @mousemove="(e) => moveMagnet(e, 1)" @mouseout="(e) => resetMagnet(e)" @click="isActive = !isActive"
-      :class="['z-10 w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center cursor-pointer shadow-inner rounded-full active border', isActive ? 'bg-black border-black' : 'bg-white']">
+      :class="['z-10 w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center cursor-pointer rounded-full active border', isActive ? 'bg-black border-black' : 'bg-white']">
       <div @mousemove="(e) => moveMagnet(e, 0.4)" @mouseout="(e) => resetMagnet(e)"
         class="w-16 h-16 sm:w-20 sm:h-20 flex justify-center items-center rounded-full">
         <div

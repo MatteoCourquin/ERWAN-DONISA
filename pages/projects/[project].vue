@@ -11,7 +11,7 @@
         <section class="sticky bottom-0 bg-white z-10 rounded-radiusMain overflow-hidden">
           <div class="py-[10vh] text-black text-center px-paddingMain">
             <h2 class="mb-10">{{ project.title }}</h2>
-            <p>{{ project.description }}</p>
+            <p class="md:w-2/3 mx-auto">{{ project.description }}</p>
           </div>
           <div class="flex flex-col gap-5 px-paddingMain pb-[10vh]">
             <div class="rounded-lg hidden lg:block" v-for="(image, index) in project.imagesDesktop" :key="index">

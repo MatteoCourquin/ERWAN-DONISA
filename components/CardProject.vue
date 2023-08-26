@@ -5,9 +5,9 @@
       :class="['card-project-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end', showDescription ? 'sm:flex-row sm:justify-between' : 'sm:flex-col']">
       <div :class="['', showDescription ? 'w-full sm:w-2/3 text-center sm:text-left' : 'text-center']">
         <h2 :class="!showDescription && 'pb-5'">{{ title }}</h2>
-        <p class="my-5" v-if="showDescription">{{ description }}</p>
+        <p class="my-5 lg:w-2/3" v-if="showDescription">{{ description }}</p>
       </div>
-      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="small" color="white"
+      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="medium" color="white"
         class="!w-full sm:!w-auto">{{ language == 'FRA' ?
           "Voir"
           :

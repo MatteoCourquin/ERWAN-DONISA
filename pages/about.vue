@@ -1,6 +1,6 @@
 <template>
   <div class="text-black z-10 sticky bottom-0">
-    <section class="flex pt-44 flex-col h-screen bg-white text-center overflow-hidden">
+    <section class="flex pt-44 flex-col justify-center items-center lg:h-[70vh] bg-white text-center overflow-hidden">
       <div class="sm:px-paddingMain pb-16 px-paddingMain">
         <h1 class="whitespace-nowrap text-center">{{ language == 'FRA' ?
           "Salut, moi c'est"
@@ -11,8 +11,8 @@
           :
           "The Designer you were looking for" }}</p>
       </div>
-      <img class="object-cover w-screen h-full" src="/images/background3.jpg">
     </section>
+    <img class="object-cover w-screen h-screen" src="/images/background3.jpg">
     <section class="bg-white text-center rounded-b-radiusMain px-paddingMain py-[10vh]">
       <h2 class="pb-8">{{ language == 'FRA' ?
           "Qui suis-je"

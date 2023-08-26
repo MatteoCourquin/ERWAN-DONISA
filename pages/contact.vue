@@ -105,14 +105,7 @@
         </div> -->
       </form>
 
-      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' color="red">Submit
-      </BaseButton>
-
-      <p class="pb-4">Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
-        aliquet odio
-        mattis.</p>
-      <p>Class aptent <a class="text-[#6FCAD0]" target="_blank" href="">taciti sociosqu</a> ad litora <a
-          class="text-[#6FCAD0]" target="_blank" href="">torquent</a> per conubia nostra, per inceptos himenaeos.</p>
+      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' color="red">Submit</BaseButton>
     </section>
   </div>
 </template>

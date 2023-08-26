@@ -5,14 +5,14 @@
     ]">
     <div ref="circleButton" :class="['circle-button z-0 rounded-full transition-all absolute',
       isActive && 'active',
-      color === 'white' && 'bg-black',
-      color === 'black' && 'bg-white',
+      color === 'white' && 'bg-redCustom',
+      color === 'black' && 'bg-redCustom',
       color === 'red' && 'bg-white'
     ]">
     </div>
     <div :class="['relative z-10 transition-all',
       isActive && color === 'white' && 'text-white',
-      isActive && color === 'black' && 'text-black',
+      isActive && color === 'black' && 'text-white',
       isActive && color === 'red' && 'text-black'
     ]">
       <slot></slot>
