@@ -16,8 +16,7 @@
             <p class="description-slider overflow-hidden">{{ service.description }}</p>
           </div>
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
-            <img class="absolute top-0 object-cover w-full h-full" :src="`/images/${service.urlImage}`"
-              alt="description product">
+            <NuxtImg :src="`/images/${service.urlImage}`" alt="description product" class="absolute top-0 object-cover w-full h-full" loading="lazy" />
           </div>
         </div>
       </div>

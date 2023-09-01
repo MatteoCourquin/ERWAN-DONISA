@@ -4,7 +4,7 @@
       <div
         v-if="project.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase()">
         <section
-          :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center min-[100vh]: items-center flex-col', isBackground ? 'flex' : 'invisible', load ? 'active' : '']"
+          :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center min-[100vh]: items-center flex-col', isBackground ? 'flex' : 'invisible']"
           :style="{ '--background-image': `url('https:${project.coverImage}')` }">
           <h1 class="z-10">{{ project.title }}</h1>
         </section>
@@ -15,10 +15,12 @@
           </div>
           <div class="flex flex-col gap-5 px-paddingMain pb-[10vh]">
             <div class="rounded-lg hidden lg:block" v-for="(image, index) in project.imagesDesktop" :key="index">
-              <img class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image">
+              <NuxtImg class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image"
+                loading="lazy" />
             </div>
             <div class="rounded-lg block lg:hidden" v-for="(image, index) in project.imagesMobile" :key="index">
-              <img class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image">
+              <NuxtImg class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image"
+                loading="lazy" />
             </div>
           </div>
           <section v-if="nextProject"
@@ -75,7 +77,6 @@ export default {
     return {
       active: false,
       isBackground: true,
-      load: false
     };
   },
   methods: {
@@ -87,11 +88,6 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.checkedScroll)
     useHeaderDark().value = false;
-    setTimeout(() => {
-      this.load = true;
-    }, .5);
-
-
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.checkedScroll)
@@ -134,12 +130,6 @@ export default {
   }
 }
 
-.hero-project.active {
-  &::after {
-    opacity: 0.4;
-  }
-}
-
 .hero-project {
   background: var(--background-image) no-repeat center center;
   background-size: cover;
@@ -154,9 +144,7 @@ export default {
     width: 100%;
     height: 100%;
     background: black;
-    opacity: 0;
+    opacity: 0.2;
   }
-
-  ;
 }
 </style>

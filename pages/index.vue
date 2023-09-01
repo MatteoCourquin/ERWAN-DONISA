@@ -18,7 +18,6 @@
         :urlImage="project.coverImage" />
     </div>
     <div
-      v-if="projects"
       class="bottom-0 anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">
         {{ language == 'FRA' ?

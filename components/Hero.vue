@@ -1,6 +1,8 @@
 <template>
   <section
-    :class="['hero-background fixed pt-[20vh] sm:pt-0 top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100vh] px-paddingMain', isBackground ? 'flex' : 'invisible']">
+    class='hero-background fixed pt-[20vh] sm:pt-0 top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100vh] px-paddingMain flex'>
+    <NuxtImg v-if="isBackground" src='images/background-hero.jpg' alt='Background Hero' preload
+      class="-z-[1] object-cover fixed top-0 left-0 w-screen h-screen" sizes='xs:500 sm:800 md:1000 lg:2000 xl:2300' />
     <h1 class="text-white mb-8 font-loos-bold">
       <span class="anim-text-container block">DESIGNER /</span>
       <span class="anim-text-container">
@@ -11,9 +13,9 @@
     </h1>
     <BaseButton @click="$router.push('/work')" size='big' color="white">
       {{ language == 'FRA' ?
-          "QUI SUIS-JE"
-          :
-          "Let's meet" }}
+        "QUI SUIS-JE"
+        :
+        "Let's meet" }}
     </BaseButton>
     <ButtonScroll :isDark="false" orientation="bottom"
       class="flex items-center !absolute gap-2 link link_white link_underline bottom-[15vh] sm:bottom-[8vh] sm:self-end" />
@@ -72,11 +74,4 @@ export default {
 
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
-
-.hero-background {
-  background-image: url('/images/background-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 </style>

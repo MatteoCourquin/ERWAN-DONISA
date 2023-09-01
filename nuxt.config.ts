@@ -32,6 +32,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  modules: [
+    '@nuxt/image',
+  ],
   css: ['@/css/main.css'],
   postcss: {
     plugins: {
