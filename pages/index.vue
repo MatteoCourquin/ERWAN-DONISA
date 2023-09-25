@@ -2,7 +2,7 @@
   <div id="page-index">
     <Hero />
     <section
-      class="bottom-0 anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
+      class="anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p
         class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-4xl sm:text-5xl lg:text-6xl lg:w-3/4 mx-auto">
         {{ language == 'FRA' ?
@@ -12,13 +12,13 @@
       </p>
       <Slider />
     </section>
-    <div v-for="(project, index) in projects" :key="index" class="bottom-0 anim-curtain-section"
+    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section"
       :style="{ zIndex: 99 - index }">
       <CardProject v-if="index < 3" :title="project.title" :description="project.description"
         :urlImage="project.coverImage" />
     </div>
-    <div
-      class="bottom-0 anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
+    <section
+      class="anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">
         {{ language == 'FRA' ?
           "EN SAVOIR PLUS"
@@ -29,7 +29,7 @@
           "Plus"
           :
           "More" }}</BaseButton>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
     return {};
   },
   methods: {
-    animOpacity() {
+    animParallax() {
       gsap.utils.toArray('.anim-curtain-section').forEach((el, i) => {
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -64,11 +64,11 @@ export default {
     }
   },
   updated() {
-    this.animOpacity();
+    this.animParallax();   
   },
   mounted() {
+    this.animParallax();
     useHeaderDark().value = false;
-    this.animOpacity();
   },
 };
 </script>
@@ -82,6 +82,7 @@ export default {
 
 .anim-curtain-section {
   position: relative;
+  bottom: 0;
 }
 
 .view-more::after {

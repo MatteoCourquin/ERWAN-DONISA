@@ -1,6 +1,6 @@
-<template>
+<template v-if="isLoaded">
   <div class="w-full relative overflow-hidden h-screen min-h-fit flex items-end rounded-b-radiusMain">
-    <NuxtImg :src="`https:${urlImage}`" alt="image project" class="parallax-image object-cover" loading="lazy" sizes='xs:400 sm:700 md:800 lg:1400 xl:1800' />
+    <NuxtImg @load="isLoaded == true" :src="`https:${urlImage}`" alt="image project" class="parallax-image object-cover" loading="lazy" sizes='xs:400 sm:700 md:800 lg:1400 xl:1800' />
     <div
       :class="['card-project-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end', showDescription ? 'sm:flex-row sm:justify-between' : 'sm:flex-col']">
       <div :class="['', showDescription ? 'w-full sm:w-2/3 text-center sm:text-left' : 'text-center']">
@@ -46,7 +46,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      isLoaded: false,
+    };
   },
   mounted() {
     !useTouchDevive().value && this.initParallax();

@@ -36,46 +36,6 @@ export default {
 
 <style scoped lang='scss'>
 
-@keyframes line-loader_big {
-  0% {
-    width: 16px;
-  }
-  50% {
-    width: 32px;
-  }
-  100% {
-    width: 16px;
-  }
-}
-
-@keyframes line-loader_small {
-  0% {
-    width: 16px;
-  }
-  50% {
-    width: 24px;
-  }
-  100% {
-    width: 16px;
-  }
-}
-
-.line-loader_big {
-  animation: line-loader_big 2s infinite;
-}
-.line-loader_small {
-  animation: line-loader_small 2s infinite;
-}
-.line-loader_1 {
-  animation-delay: 0s;
-}
-.line-loader_2 {
-  animation-delay: .15s;
-}
-.line-loader_3 {
-  animation-delay: .3s;
-}
-
 .dot-bounce {
   animation-duration: 1s;
 }

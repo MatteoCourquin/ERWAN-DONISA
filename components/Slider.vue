@@ -10,7 +10,7 @@
         class="px-paddingMain slider w-full snap-mandatory snap-x overflow-x-scroll scroll-smooth flex flex-row gap-8">
         <div
           class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[35vw] shrink-0 min-w-[280px] max-h-[600px] max-w-[350px] h-[60vh] min-h-[400px] rounded-radiusMain"
-          v-for="(service, index) in services" :key="index">
+          v-for="(service, index) in (language == 'FRA' ? servicesFrench : servicesEnglish)" :key="index">
           <div class="flex p-4 py-[5vh] h-full shrink overflow-hidden items-center justify-center flex-col">
             <h4 class="font-loos-regular !capitalize !text-lg mb-4">{{ service.title }}</h4>
             <p class="description-slider overflow-hidden">{{ service.description }}</p>
@@ -34,38 +34,70 @@ export default {
   data() {
     return {
       endScroll: false,
-      services: [
+      servicesFrench: [
         {
-          title: 'Brand identity',
-          description: "Découvrez l'art de la transformation visuelle. Avec mes services je vous créerais une image de marque sur mesure.",
+          title: 'Branding',
+          description: "Découvrez l'art de la transformation visuelle, avec mes services je vous créerais une image de marque sur mesure.",
           link: '/',
           urlImage: 'image1.jpg'
         },
         {
-          title: 'Product Design',
-          description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          title: 'Fashion design',
+          description: "Créez votre style distinctif avec mes designs uniques, fusionnant élégance et créativité pour vous démarquer dans l'univers de la mode.",
           link: '/',
           urlImage: 'image2.jpg'
         },
         {
-          title: 'Illustrations',
-          description: 'Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          title: 'Design de produits',
+          description: "Laissez-moi vous créer des solutions qui marient élégance et utilité, redéfinissant ainsi votre quotidien.",
           link: '/',
           urlImage: 'image3.jpg'
         },
         {
+          title: 'Illustrations',
+          description: 'Je donnerai vie de vos projets en transformant vos idées en oeuvres captivantes.',
+          link: '/',
+          urlImage: 'image3.jpg'
+        },
+        {
+          title: 'Web design',
+          description: 'Façonnez votre présence en ligne avec mon expertise en conception web. Pour créer des expériences digitales engageantes et durable.',
+          link: '/',
+          urlImage: 'image5.jpg'
+        },
+      ],
+      servicesEnglish: [
+        {
+          title: 'Branding',
+          description: "Eng - Découvrez l'art de la transformation visuelle, avec mes services je vous créerais une image de marque sur mesure.",
+          link: '/',
+          urlImage: 'image1.jpg'
+        },
+        {
           title: 'Fashion design',
-          description: 'Ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate mattis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus odio sed nesciunt eveniet placeat nobis corrupti.',
+          description: "Eng - Créez votre style distinctif avec mes designs uniques, fusionnant élégance et créativité pour vous démarquer dans l'univers de la mode.",
+          link: '/',
+          urlImage: 'image2.jpg'
+        },
+        {
+          title: 'Design de produits',
+          description: "Eng - Laissez-moi vous créer des solutions qui marient élégance et utilité, redéfinissant ainsi votre quotidien.",
+          link: '/',
+          urlImage: 'image3.jpg'
+        },
+        {
+          title: 'Illustrations',
+          description: 'Eng - Je donnerai vie de vos projets en transformant vos idées en oeuvres captivantes.',
           link: '/',
           urlImage: 'image4.jpg'
         },
         {
-          title: 'web design',
-          description: 'Sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+          title: 'Web design',
+          description: 'Eng - Façonnez votre présence en ligne avec mon expertise en conception web. Pour créer des expériences digitales engageantes et durable.',
           link: '/',
           urlImage: 'image5.jpg'
         },
-      ]
+      ],
     };
   },
   methods: {
