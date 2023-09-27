@@ -12,7 +12,7 @@
           class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[35vw] shrink-0 min-w-[280px] max-h-[600px] max-w-[350px] h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(service, index) in (language == 'FRA' ? servicesFrench : servicesEnglish)" :key="index">
           <div class="flex p-4 py-[5vh] h-full shrink overflow-hidden items-center justify-center flex-col">
-            <h4 class="font-loos-regular !capitalize !text-lg mb-4">{{ service.title }}</h4>
+            <h4 class="font-loos-regular !normal-case !text-lg mb-4">{{ service.title }}</h4>
             <p class="description-slider overflow-hidden">{{ service.description }}</p>
           </div>
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
@@ -42,13 +42,13 @@ export default {
           urlImage: 'image1.jpg'
         },
         {
-          title: 'Fashion design',
+          title: 'Fashion Design',
           description: "Créez votre style distinctif avec mes designs uniques, fusionnant élégance et créativité pour vous démarquer dans l'univers de la mode.",
           link: '/',
           urlImage: 'image2.jpg'
         },
         {
-          title: 'Design de produits',
+          title: 'Design de Produits',
           description: "Laissez-moi vous créer des solutions qui marient élégance et utilité, redéfinissant ainsi votre quotidien.",
           link: '/',
           urlImage: 'image3.jpg'
@@ -60,7 +60,7 @@ export default {
           urlImage: 'image3.jpg'
         },
         {
-          title: 'Web design',
+          title: 'Web Design',
           description: 'Façonnez votre présence en ligne avec mon expertise en conception web. Pour créer des expériences digitales engageantes et durable.',
           link: '/',
           urlImage: 'image5.jpg'
@@ -74,13 +74,13 @@ export default {
           urlImage: 'image1.jpg'
         },
         {
-          title: 'Fashion design',
+          title: 'Fashion Design',
           description: "Eng - Créez votre style distinctif avec mes designs uniques, fusionnant élégance et créativité pour vous démarquer dans l'univers de la mode.",
           link: '/',
           urlImage: 'image2.jpg'
         },
         {
-          title: 'Design de produits',
+          title: 'Product Design',
           description: "Eng - Laissez-moi vous créer des solutions qui marient élégance et utilité, redéfinissant ainsi votre quotidien.",
           link: '/',
           urlImage: 'image3.jpg'
@@ -92,7 +92,7 @@ export default {
           urlImage: 'image4.jpg'
         },
         {
-          title: 'Web design',
+          title: 'Web Design',
           description: 'Eng - Façonnez votre présence en ligne avec mon expertise en conception web. Pour créer des expériences digitales engageantes et durable.',
           link: '/',
           urlImage: 'image5.jpg'

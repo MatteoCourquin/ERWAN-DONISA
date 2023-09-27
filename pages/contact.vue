@@ -22,9 +22,9 @@
         class="link link_black link_underline !lowercase !text-sm">donisaerwan@gmail.com</a>
 
       <h4 class="label-title text-xs !pb-0">{{ language == 'FRA' ?
-          "Téléphone"
-          :
-          "Phone" }}</h4>
+        "Téléphone"
+        :
+        "Phone" }}</h4>
       <a href="tel:0658415260" class="link link_black link_underline !text-sm">+33 6 58 41 52 60</a>
 
       <form ref="form">
@@ -34,57 +34,37 @@
           "How can i help you ?" }}</h4>
         <div class="wrapper-input">
           <!-- checkbox -->
-          <div class="flex gap-2">
+          <div class="flex gap-2 cursor-pointer">
             <input ref="branding" type="checkbox" id="branding" name="branding" value="Branding">
             <label for="branding">Branding</label>
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-2 cursor-pointer">
             <input ref="productDesign" type="checkbox" id="product-design" name="product-design" value="Product Design">
-            <label for="product-design">Product Design</label>
+            <label for="product-design">{{ language == 'FRA' ?
+              "Design de Produits"
+              :
+              "Product Design" }}</label>
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-2 cursor-pointer">
             <input ref="illustration" type="checkbox" id="illustration" name="illustration" value="Illustration">
-            <label for="illustration">Illustration</label>
+            <label for="illustration">Illustrations</label>
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-2 cursor-pointer">
             <input ref="webDesign" type="checkbox" id="web-design" name="web-design" value="Web Design">
             <label for="web-design">Web Design</label>
           </div>
+          <div class="flex gap-2 cursor-pointer">
+            <input ref="fashionDesign" type="checkbox" id="fashion-design" name="fashion-design" value="Fashion Design">
+            <label for="fashion-design">Fashion Design</label>
+          </div>
         </div>
         <h4 class="label-title">{{ language == 'FRA' ?
-          "Quel est votre budget ?"
-          :
-          "What's your budget ?" }}</h4>
-        <!-- <div class="wrapper-input">
-          <input ref="budget" type='range' id='budget' name='budget' />
-        </div> -->
-        <div class="wrapper-input">
-          <select ref="budget" name="budget" id="services">
-            <option class="!text-[#9BA3AF]" value="default">{{ language === "FRA" ? "Séléctionner" : "Select from dropdown"}}</option>
-            <option value="- 1 000">- 1 000</option>
-            <option value="1 000 - 10 000">1 000 - 10 000</option>
-            <option value="+ 10 000">+ 10 000</option>
-          </select>
-        </div>
-        <div class="wrapper-input">
-          <label for="description">{{ language == 'FRA' ?
           "Description du projet (optionnel)"
           :
-          "Description of the project (optional)" }}</label>
-          <textarea ref="description" name="description" id="description" cols="30" rows="10"
-            :placeholder="language === 'FRA' ? 'Dis moi tout' : 'Tell me everything...'"></textarea>
-        </div>
-        <h4 class="label-title">{{ language == 'FRA' ?
-          "Services supplémentaires"
-          :
-          "Extra Services" }}</h4>
+          "Description of the project (optional)" }}</h4>
         <div class="wrapper-input">
-          <select ref="extraService" name="services" id="services">
-            <option class="!text-[#9BA3AF]" value="default">{{ language === "FRA" ? "Séléctionner" : "Select from dropdown"}}</option>
-            <option value="Web Design">Web Design</option>
-            <option value="Web Development">Web Development</option>
-            <option value="branding">Branding</option>
-          </select>
+          <textarea ref="description" name="description" id="description" cols="30" rows="10"
+            :placeholder="language === 'FRA' ? 'Dis moi tout...' : 'Tell me everything...'"></textarea>
         </div>
         <h4 class="label-title">Personal Details</h4>
         <div class="wrapper-input">
@@ -99,10 +79,6 @@
           <label for="work">{{ language == 'FRA' ? "Comment m’as tu découvert ?" : "How did you find my work ?" }}</label>
           <input ref="work" type="text" name="work" id="work" placeholder="Lorem, ipsum dolor...">
         </div>
-        <!-- <div class="wrapper-input">
-          <label for="phone">Phone</label>
-          <input type="tel" name="phone" id="phone" placeholder="06 00 00 00 00">
-        </div> -->
       </form>
 
       <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' color="red">Submit</BaseButton>
@@ -128,6 +104,7 @@ export default {
       this.$refs.productDesign.checked && typeOfProject.push(this.$refs.productDesign.value)
       this.$refs.illustration.checked && typeOfProject.push(this.$refs.illustration.value)
       this.$refs.webDesign.checked && typeOfProject.push(this.$refs.webDesign.value)
+      this.$refs.fashionDesign.checked && typeOfProject.push(this.$refs.fashionDesign.value)
 
       const templateParams = {
         typeOfProject: typeOfProject.join(', '),

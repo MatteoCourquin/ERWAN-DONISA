@@ -2,6 +2,7 @@
   <div>
     <Header />
     <Burger />
+    <!-- <SceenLoader /> -->
     <SceenLoader :isDisplay="loading" />
     <main>
       <slot />
