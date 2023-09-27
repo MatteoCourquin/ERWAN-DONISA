@@ -5,10 +5,10 @@ export default defineNuxtConfig({
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { charset: 'utf-8' },
-        { name: 'description', content: 'Portfolio Erwan Donisa - Designer / Directeur artistique' },
+        { name: 'description', content: 'Erwan Donisa - Designer / Directeur artistique' },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'og:title', content: 'Erwan Donisa' },
-        { name: 'og:description', content: 'Portfolio Erwan Donisa - Designer / Directeur artistique' },
+        { name: 'og:description', content: 'Erwan Donisa - Designer / Directeur artistique' },
         { name: 'og:image', content: '/images/og-image.jpg' },
         { name: 'og:url', content: 'https://erwandonisa.com' },
         { name: 'og:type', content: 'website' },
