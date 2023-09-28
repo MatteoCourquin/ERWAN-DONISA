@@ -25,7 +25,7 @@
           :
           "CHECK THE OTHERS" }}
       </h3>
-      <BaseButton @click="$router.push('/work')" size='medium' color="black">{{ language == 'FRA' ?
+      <BaseButton @click="$router.push('/work')" size='medium' hover="red" color="black">{{ language == 'FRA' ?
           "Plus"
           :
           "More" }}</BaseButton>

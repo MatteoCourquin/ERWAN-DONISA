@@ -5,14 +5,14 @@
     ]">
     <div ref="circleButton" :class="['circle-button z-0 rounded-full transition-all absolute',
       isActive && 'active',
-      color === 'white' && 'bg-black',
-      color === 'black' && 'bg-white',
-      color === 'red' && 'bg-white'
+      hover === 'black' && 'bg-black',
+      hover === 'white' && 'bg-white',
+      hover === 'red' && 'bg-redCustom'
     ]">
     </div>
     <div :class="['relative z-10 transition-all',
       isActive && color === 'white' && 'text-white',
-      isActive && color === 'black' && 'text-black',
+      isActive && hover === 'black' && 'text-white',
       isActive && color === 'red' && 'text-black'
     ]">
       <slot></slot>
@@ -31,6 +31,10 @@ export default {
     color: {
       type: String,
       default: 'white',
+    },
+    hover: {
+      type: String,
+      default: 'black',
     },
   },
   data() {

@@ -18,7 +18,7 @@
           :
           "CHECK THE OTHERS" }}
       </h3>
-      <BaseButton @click="showMoreProject" size='medium' color="black">{{ language == 'FRA' ?
+      <BaseButton @click="showMoreProject" size='medium' hover="red" color="black">{{ language == 'FRA' ?
         "Plus"
         :
         "More" }}</BaseButton>

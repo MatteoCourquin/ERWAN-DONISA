@@ -11,7 +11,7 @@
           :
           "ART DIRECTOR" }}</span>
     </h1>
-    <BaseButton @click="$router.push('/about')" size='big' color="white">
+    <BaseButton @click="$router.push('/about')" size='big' hover="black" color="white">
       {{ language == 'FRA' ?
         "QUI SUIS-JE"
         :
@@ -40,31 +40,9 @@ export default {
       const scrolledDistance = window.scrollY || window.pageYOffset;
       this.isBackground = scrolledDistance <= window.innerHeight * 1.2
     },
-    animateText() {
-      const textContainers = document.querySelectorAll('.anim-text-container');
-
-      textContainers.forEach((textContainer, index) => {
-        const text = textContainer.innerText;
-        textContainer.innerText = '';
-
-        for (let i = 0; i < text.length; i++) {
-          const letter = document.createElement('span');
-          letter.innerText = text[i];
-          textContainer.appendChild(letter);
-
-          gsap.from(letter, {
-            opacity: 0,
-            duration: 1.4,
-            ease: 'power3.inOut',
-            delay: i * 0.2 + (index === 1 ? 0.5 : 0),
-          });
-        }
-      });
-    },
   },
   mounted() {
     window.addEventListener('scroll', this.checkedScroll)
-    // this.animateText()
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.checkedScroll)

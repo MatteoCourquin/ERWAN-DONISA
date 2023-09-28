@@ -7,7 +7,7 @@
         <h2 :class="!showDescription && 'pb-5'">{{ title }}</h2>
         <p class="my-5 lg:w-2/3" v-if="showDescription">{{ description }}</p>
       </div>
-      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="medium" color="white"
+      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="medium" hover="black" color="white"
         class="!w-full sm:!w-auto">{{ language == 'FRA' ?
           "Voir"
           :

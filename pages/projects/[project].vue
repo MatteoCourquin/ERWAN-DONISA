@@ -35,7 +35,7 @@
             </div>
             <BaseButton class="z-20" ref="button" @mouseenter="active = true" @mouseleave="active = false"
               @click="$router.push(`/projects/${nextProject.title.replace(/\s+/g, '-').toLowerCase()}`)" size='medium'
-              color="white">
+              hover="black" color="white">
               <svg :class="active ? 'hidden' : 'black'" height="40" viewBox="0 0 310 60" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="309.351" height="60" rx="30" fill="transparent" />

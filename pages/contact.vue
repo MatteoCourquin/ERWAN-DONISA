@@ -81,7 +81,7 @@
         </div>
       </form>
 
-      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' color="red">Submit</BaseButton>
+      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' hover="black" color="red">Submit</BaseButton>
     </section>
   </div>
 </template>
@@ -108,9 +108,7 @@ export default {
 
       const templateParams = {
         typeOfProject: typeOfProject.join(', '),
-        budget: this.$refs.budget.value,
         description: this.$refs.description.value,
-        extraService: this.$refs.extraService.value,
         name: this.$refs.name.value,
         email: this.$refs.email.value,
         work: this.$refs.work.value,
