@@ -31,32 +31,37 @@
         <h4 class="label-title">{{ language == 'FRA' ?
           "Comment puis-je vous aider ?"
           :
-          "How can i help you ?" }}</h4>
+          "How can i help you ?" }} <span v-if="isError.typeOfProject" class="text-red-500">*</span></h4>
         <div class="wrapper-input">
           <!-- checkbox -->
           <div class="flex gap-2 cursor-pointer">
-            <input ref="branding" type="checkbox" id="branding" name="branding" value="Branding">
-            <label for="branding">Branding</label>
+            <input class="cursor-pointer" ref="branding" type="checkbox" id="branding" name="branding" value="Branding">
+            <label class="cursor-pointer" for="branding">Branding</label>
           </div>
           <div class="flex gap-2 cursor-pointer">
-            <input ref="productDesign" type="checkbox" id="product-design" name="product-design" value="Product Design">
-            <label for="product-design">{{ language == 'FRA' ?
+            <input class="cursor-pointer" ref="productDesign" type="checkbox" id="product-design" name="product-design" value="Product Design">
+            <label class="cursor-pointer" for="product-design">{{ language == 'FRA' ?
               "Design de Produits"
               :
               "Product Design" }}</label>
           </div>
           <div class="flex gap-2 cursor-pointer">
-            <input ref="illustration" type="checkbox" id="illustration" name="illustration" value="Illustration">
-            <label for="illustration">Illustrations</label>
+            <input class="cursor-pointer" ref="illustration" type="checkbox" id="illustration" name="illustration" value="Illustration">
+            <label class="cursor-pointer" for="illustration">Illustrations</label>
           </div>
           <div class="flex gap-2 cursor-pointer">
-            <input ref="webDesign" type="checkbox" id="web-design" name="web-design" value="Web Design">
-            <label for="web-design">Web Design</label>
+            <input class="cursor-pointer" ref="webDesign" type="checkbox" id="web-design" name="web-design" value="Web Design">
+            <label class="cursor-pointer" for="web-design">Web Design</label>
           </div>
           <div class="flex gap-2 cursor-pointer">
-            <input ref="fashionDesign" type="checkbox" id="fashion-design" name="fashion-design" value="Fashion Design">
-            <label for="fashion-design">Fashion Design</label>
+            <input class="cursor-pointer" ref="fashionDesign" type="checkbox" id="fashion-design" name="fashion-design" value="Fashion Design">
+            <label class="cursor-pointer" for="fashion-design">Fashion Design</label>
           </div>
+          <div class="flex gap-2 cursor-pointer">
+            <input class="cursor-pointer" ref="other" type="checkbox" id="other" name="other" value="Other">
+            <label class="cursor-pointer" for="other">{{ language == 'FRA' ? "Autre" : "Other" }}</label>
+          </div>
+          <p class="text-red-500 text-xs" v-if="isError.typeOfProject">{{ language == 'FRA' ? "Un champ minimum est requis" : "One field minimum is required" }}</p>
         </div>
         <h4 class="label-title">{{ language == 'FRA' ?
           "Description du projet (optionnel)"
@@ -65,23 +70,26 @@
         <div class="wrapper-input">
           <textarea ref="description" name="description" id="description" cols="30" rows="10"
             :placeholder="language === 'FRA' ? 'Dis moi tout...' : 'Tell me everything...'"></textarea>
-        </div>
-        <h4 class="label-title">Personal Details</h4>
-        <div class="wrapper-input">
-          <label for="name">{{ language == 'FRA' ? "Nom Prénom" : "Full Name" }}</label>
-          <input ref="name" type="text" name="name" id="name" placeholder="John Smith">
-        </div>
-        <div class="wrapper-input">
-          <label for="mail">{{ language == 'FRA' ? "Adresse mail" : "Email Adresse" }}</label>
-          <input ref="email" type="email" name="mail" id="mail" placeholder="john.smith@example.com">
+          </div>
+          <h4 class="label-title">Personal Details</h4>
+          <div class="wrapper-input">
+            <label for="name">{{ language == 'FRA' ? "Nom Prénom" : "Full Name" }} <span v-if="isError.name" class="text-red-500">*</span></label>
+            <input required ref="name" type="text" name="name" id="name" placeholder="John Smith">
+            <p class="text-red-500 text-xs" v-if="isError.name">{{ language == 'FRA' ? "Description requise" : "Description required" }}</p>
         </div>
         <div class="wrapper-input">
-          <label for="work">{{ language == 'FRA' ? "Comment m’as tu découvert ?" : "How did you find my work ?" }}</label>
+          <label for="mail">{{ language == 'FRA' ? "Adresse mail" : "Email Adresse" }} <span v-if="isError.email" class="text-red-500">*</span></label>
+          <input required ref="email" type="email" name="mail" id="mail" placeholder="john.smith@example.com">
+          <p class="text-red-500 text-xs" v-if="isError.email">{{ language == 'FRA' ? "Email requis" : "Email required" }}</p>
+        </div>
+        <div class="wrapper-input">
+          <label for="work">{{ language == 'FRA' ? "Comment m’as tu découvert ? (optionnel)" : "How did you find my work ? (optionnal)" }}</label>
           <input ref="work" type="text" name="work" id="work" placeholder="Lorem, ipsum dolor...">
         </div>
       </form>
 
-      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' hover="black" color="red">Submit</BaseButton>
+      <BaseButton class=" my-5 md:!w-fit !w-full" @click="submit" size='medium' hover="black" color="red">Submit
+      </BaseButton>
     </section>
   </div>
 </template>
@@ -95,7 +103,9 @@ import emailjs from '@emailjs/browser';
 export default {
   name: 'Contact',
   data() {
-    return {};
+    return {
+      isError: { typeOfProject: false, name: false, email: false },
+    };
   },
   methods: {
     submit() {
@@ -105,6 +115,7 @@ export default {
       this.$refs.illustration.checked && typeOfProject.push(this.$refs.illustration.value)
       this.$refs.webDesign.checked && typeOfProject.push(this.$refs.webDesign.value)
       this.$refs.fashionDesign.checked && typeOfProject.push(this.$refs.fashionDesign.value)
+      this.$refs.other.checked && typeOfProject.push(this.$refs.other.value)
 
       const templateParams = {
         typeOfProject: typeOfProject.join(', '),
@@ -114,12 +125,20 @@ export default {
         work: this.$refs.work.value,
       };
 
-      emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
-        .then((response) => {
-          this.$refs.form.reset();
-        }, (err) => {
-          throw new Error(err);
-        });
+      !templateParams.typeOfProject ? this.isError.typeOfProject = true : this.isError.typeOfProject = false
+      !templateParams.name ? this.isError.name = true : this.isError.name = false
+      !templateParams.email ? this.isError.email = true : this.isError.email = false
+
+      if (templateParams.name && templateParams.email && templateParams.typeOfProject) {
+        emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+          .then((response) => {
+            this.isError.name = false;
+            this.isError.email = false;
+            this.$refs.form.reset();
+          }, (err) => {
+            throw new Error(err);
+          });
+      }
     }
   },
   mounted() {
