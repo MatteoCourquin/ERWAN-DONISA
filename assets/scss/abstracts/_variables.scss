@@ -1,26 +1,26 @@
-// 700
 @font-face {
   font-family: 'Loos-Bold';
   src: url('/fonts/Loos-Bold.otf') format('truetype');
   font-display: auto;
+  font-display: swap;
 }
-// 600
 @font-face {
   font-family: 'Loos-SemiBold';
   src: url('/fonts/Loos-SemiBold.otf') format('truetype');
   font-display: auto;
+  font-display: swap;
 }
-//500
 @font-face {
   font-family: 'Loos-Regular';
   src: url('/fonts/Loos-Regular.otf') format('truetype');
   font-display: auto;
+  font-display: swap;
 }
-// 400
 @font-face {
   font-family: 'Loos-Thin';
   src: url('/fonts/Loos-Thin.otf') format('truetype');
   font-display: auto;
+  font-display: swap;
 }
 
 // Colors
@@ -55,7 +55,6 @@ $spacing-m: 10px;
 .backdrop-filter {
   backdrop-filter: invert(100%) grayscale(1) contrast(9);
 }
-
 .bounce-transition {
   transition-timing-function: cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }

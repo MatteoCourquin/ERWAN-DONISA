@@ -10,9 +10,6 @@
   </div>
 </template>
 
-<script setup>
-const language = useLanguage()
-</script>
 <script>
 export default {
   data() {
@@ -21,7 +18,9 @@ export default {
     };
   },
   mounted() {
-    this.loading = false;
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
     var langueNavigateur = navigator.language || navigator.userLanguage;
     if (langueNavigateur == 'fr') {
       useLanguage().value = 'FRA';

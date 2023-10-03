@@ -14,11 +14,11 @@
             <p class="md:w-2/3 mx-auto">{{ project.description }}</p>
           </div>
           <div class="flex flex-col gap-5 px-paddingMain pb-[10vh]">
-            <div class="rounded-lg hidden lg:block" v-for="(image, index) in project.imagesDesktop" :key="index">
+            <div class="rounded-lg hidden md:block" v-for="(image, index) in project.imagesDesktop" :key="index">
               <NuxtImg class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image"
                 loading="lazy" />
             </div>
-            <div class="rounded-lg block lg:hidden" v-for="(image, index) in project.imagesMobile" :key="index">
+            <div class="rounded-lg block md:hidden" v-for="(image, index) in project.imagesMobile" :key="index">
               <NuxtImg class="h-full w-full rounded-lg object-cover" :src="`https:${image}`" alt="project image"
                 loading="lazy" />
             </div>

@@ -16,7 +16,7 @@
             <p class="description-slider overflow-hidden">{{ service.description }}</p>
           </div>
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
-            <NuxtImg :src="`/images/${service.urlImage}`" alt="description product" class="absolute top-0 object-cover w-full h-full" loading="lazy" />
+            <NuxtImg :src="`/images/${service.urlImage}`" :alt="service.title" class="absolute top-0 object-cover w-full h-full" loading="lazy" />
           </div>
         </div>
       </div>
@@ -39,31 +39,31 @@ export default {
           title: 'Branding',
           description: "Découvrez l'art de la transformation visuelle, avec mes services je vous créerais une image de marque sur mesure.",
           link: '/',
-          urlImage: 'image1.jpg'
+          urlImage: 'branding.webp'
         },
         {
           title: 'Fashion Design',
           description: "Créez votre style distinctif avec mes designs uniques, fusionnant élégance et créativité pour vous démarquer dans l'univers de la mode.",
           link: '/',
-          urlImage: 'image2.jpg'
+          urlImage: 'fashion-design.webp'
         },
         {
           title: 'Design de Produits',
           description: "Laissez-moi vous créer des solutions qui marient élégance et utilité, redéfinissant ainsi votre quotidien.",
           link: '/',
-          urlImage: 'image3.jpg'
+          urlImage: 'product-design.webp'
         },
         {
           title: 'Illustrations',
           description: 'Je donnerai vie de vos projets en transformant vos idées en oeuvres captivantes.',
           link: '/',
-          urlImage: 'image3.jpg'
+          urlImage: 'illustration.webp'
         },
         {
           title: 'Web Design',
           description: 'Façonnez votre présence en ligne avec mon expertise en conception web. Pour créer des expériences digitales engageantes et durable.',
           link: '/',
-          urlImage: 'image5.jpg'
+          urlImage: 'web-design.webp'
         },
       ],
       servicesEnglish: [
@@ -71,31 +71,31 @@ export default {
           title: 'Branding',
           description: "Discover the art of visual transformation. With my services, I will craft a unique brand identity just for you.",
           link: '/',
-          urlImage: 'image1.jpg'
+          urlImage: 'branding.webp'
         },
         {
           title: 'Fashion Design',
           description: "Create your own style with my unique designs, combining elegance and creativity to make you stand out in the fashion world.",
           link: '/',
-          urlImage: 'image2.jpg'
+          urlImage: 'fashion-design.webp'
         },
         {
           title: 'Product Design',
           description: "Let me create solutions for you that blend elegance and utility, redefining your everyday life.",
           link: '/',
-          urlImage: 'image3.jpg'
+          urlImage: 'product-design.webp'
         },
         {
           title: 'Illustrations',
           description: "I'll bring your projects to life, transforming your ideas into captivating peace of art.",
           link: '/',
-          urlImage: 'image4.jpg'
+          urlImage: 'illustration.webp'
         },
         {
           title: 'Web Design',
           description: 'Shape your online presence with my web design expertise. To create engaging and sustainable digital experiences.',
           link: '/',
-          urlImage: 'image5.jpg'
+          urlImage: 'web-design.webp'
         },
       ],
     };

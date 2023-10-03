@@ -1,8 +1,10 @@
 <template>
   <section
     class='hero-background fixed pt-[20vh] sm:pt-0 top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100vh] px-paddingMain flex'>
-    <NuxtImg v-if="isBackground" src='images/erwan1.webp' alt='Background Hero' preload
-      class="-z-[1] object-cover fixed top-0 left-0 w-screen h-screen" sizes='xs:500 sm:800 md:1000 lg:2000 xl:2300' />
+    <NuxtImg v-if="isBackground" src='images/erwan-hero-desktop.webp' alt='Background Hero' preload
+      class="-z-[1] object-cover hidden md:block fixed top-0 left-0 w-screen h-screen" sizes='xs:500 sm:800 md:1300 lg:2300 xl:2800' />
+    <NuxtImg v-if="isBackground" src='images/erwan-hero-mobile.webp' alt='Background Hero' preload
+      class="-z-[1] object-cover block md:hidden fixed top-0 left-0 w-screen h-screen" sizes='xs:500 sm:800 md:1000 lg:2000 xl:2300' />
     <h1 class="text-white mb-8 font-loos-bold">
       <span class="anim-text-container block">DESIGNER /</span>
       <span class="anim-text-container">
