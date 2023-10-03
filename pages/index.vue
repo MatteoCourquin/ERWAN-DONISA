@@ -1,6 +1,6 @@
 <template>
   <div id="page-index">
-    <Hero />
+    <Hero v-if="isBackground" />
     <section
       class="anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
       <p
@@ -12,8 +12,7 @@
       </p>
       <Slider />
     </section>
-    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section"
-      :style="{ zIndex: 99 - index }">
+    <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section" :style="{ zIndex: 99 - index }">
       <CardProject v-if="index < 3" :title="project.title" :description="project.description"
         :urlImage="project.coverImage" />
     </div>
@@ -26,9 +25,9 @@
           "CHECK THE OTHERS" }}
       </h3>
       <BaseButton @click="$router.push('/work')" size='medium' hover="red" color="black">{{ language == 'FRA' ?
-          "Plus"
-          :
-          "More" }}</BaseButton>
+        "Plus"
+        :
+        "More" }}</BaseButton>
     </section>
   </div>
 </template>
@@ -46,7 +45,9 @@ export default {
   name: 'index',
   layout: 'default',
   data() {
-    return {};
+    return {
+      isBackground: true,
+    };
   },
   methods: {
     animParallax() {
@@ -54,21 +55,33 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: el,
-            start: '-20% bottom',
-            end: '20% top',
+            start: '-20px bottom',
+            end: '20px top',
             toggleActions: 'play reverse play reverse',
           },
         });
         tl.to(el, { position: 'sticky' });
+        tl.reverse()
+          .eventCallback('onReverseComplete', () => {
+            gsap.set(el, { position: 'relative' });
+          });
       });
-    }
+    },
+    checkedScroll() {
+      const scrolledDistance = window.scrollY || window.pageYOffset;
+      this.isBackground = scrolledDistance <= window.innerHeight * 1.2
+    },
   },
   updated() {
-    this.animParallax();   
+    this.animParallax();
   },
   mounted() {
     this.animParallax();
     useHeaderDark().value = false;
+    window.addEventListener('scroll', this.checkedScroll)
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.checkedScroll)
   },
 };
 </script>
