@@ -69,31 +69,31 @@ export default {
       servicesEnglish: [
         {
           title: 'Branding',
-          description: "Eng - Découvrez l'art de la transformation visuelle, avec mes services je vous créerais une image de marque sur mesure.",
+          description: "Discover the art of visual transformation. With my services, I will craft a unique brand identity just for you.",
           link: '/',
           urlImage: 'image1.jpg'
         },
         {
           title: 'Fashion Design',
-          description: "Eng - Créez votre style distinctif avec mes designs uniques, fusionnant élégance et créativité pour vous démarquer dans l'univers de la mode.",
+          description: "Create your own style with my unique designs, combining elegance and creativity to make you stand out in the fashion world.",
           link: '/',
           urlImage: 'image2.jpg'
         },
         {
           title: 'Product Design',
-          description: "Eng - Laissez-moi vous créer des solutions qui marient élégance et utilité, redéfinissant ainsi votre quotidien.",
+          description: "Let me create solutions for you that blend elegance and utility, redefining your everyday life.",
           link: '/',
           urlImage: 'image3.jpg'
         },
         {
           title: 'Illustrations',
-          description: 'Eng - Je donnerai vie de vos projets en transformant vos idées en oeuvres captivantes.',
+          description: "I'll bring your projects to life, transforming your ideas into captivating peace of art.",
           link: '/',
           urlImage: 'image4.jpg'
         },
         {
           title: 'Web Design',
-          description: 'Eng - Façonnez votre présence en ligne avec mon expertise en conception web. Pour créer des expériences digitales engageantes et durable.',
+          description: 'Shape your online presence with my web design expertise. To create engaging and sustainable digital experiences.',
           link: '/',
           urlImage: 'image5.jpg'
         },

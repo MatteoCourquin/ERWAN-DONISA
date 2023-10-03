@@ -2,7 +2,7 @@
   <div ref="screenLoaderWrapper" class="fixed top-0 left-0 w-screen h-screen z-[999] flex items-center justify-center">
     <div ref="screenLoaderBackground" class="absolute bg-black w-full z-0 rounded-full aspect-square scale-[3]">
     </div>
-    <div class='flex items-center z-10'>
+    <div class='flex items-center z-10 md:scale-75 lg:scale-100'>
       <h1 class="text-5xl pr-6 pb-2 inline-block">
         <span ref="letter1">L</span>
         <span ref="letter2">O</span>
