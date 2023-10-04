@@ -4,7 +4,7 @@
       <div
         v-if="project.title.replace(/\s+/g, '-').toLowerCase() === route.params.project.replace(/\s+/g, '-').toLowerCase()">
         <section
-          :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center min-[100vh]: items-center flex-col', isBackground ? 'flex' : 'invisible']"
+          :class="['hero-project text-center h-screen fixed top-0 z-0 w-screen justify-center min-[100lvh]: items-center flex-col', isBackground ? 'flex' : 'invisible']"
           :style="{ '--background-image': `url('https:${project.coverImage}')` }">
           <h1 class="z-10">{{ project.title }}</h1>
         </section>

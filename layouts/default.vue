@@ -22,7 +22,9 @@ export default {
       this.loading = false;
     }, 1000);
     var langueNavigateur = navigator.language || navigator.userLanguage;
-    if (langueNavigateur == 'fr') {
+    if (localStorage.getItem("langage")) {
+      useLanguage().value = localStorage.getItem("langage");
+    } else if (langueNavigateur == 'fr') {
       useLanguage().value = 'FRA';
     } else {
       useLanguage().value = 'ENG';

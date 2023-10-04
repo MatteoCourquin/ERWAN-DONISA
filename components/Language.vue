@@ -1,6 +1,5 @@
 <template>
-  <div ref="cube" :class="['cube', language == 'FRA' ? 'rotate' : '']"
-    @click="language = language === 'FRA' ? 'ENG' : 'FRA'">
+  <div ref="cube" :class="['cube', useLanguage().value == 'FRA' ? 'rotate' : '']" @click="changeLanguage">
     <div class="face front">
       <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">ENG</p>
     </div>
@@ -10,9 +9,6 @@
   </div>
 </template>
 
-<script setup>
-const language = useLanguage()
-</script>
 <script>
 export default {
   name: 'Language',
@@ -25,7 +21,17 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    changeLanguage() {
+      if (useLanguage().value === 'FRA') {
+        useLanguage().value = 'ENG';
+        localStorage.setItem("langage", "ENG");
+      } else {
+        useLanguage().value = 'FRA';
+        localStorage.setItem("langage", "FRA");
+      }
+    },
+  }
 }
 
 </script>
@@ -54,4 +60,5 @@ export default {
 
 .rotate {
   transform: rotateX(90deg);
-}</style>
+}
+</style>
