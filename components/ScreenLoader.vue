@@ -24,9 +24,9 @@
         <path ref="letter7"
           d="M326.473 0.344272H329.262C342.812 0.344272 352.718 5.80959 352.718 16.0571H342.47C342.47 12.0719 337.973 8.94076 329.262 8.94076H326.473C317.933 8.94076 313.151 12.4704 313.151 18.6759V21.0669C313.151 27.6139 317.933 30.9159 326.473 30.9159H329.262C337.916 30.9159 342.641 27.8416 342.641 23.2872H353.059V39H344.406V34.4456H342.47C338.997 37.7475 333.817 39.5124 327.839 39.5124H325.049C312.866 39.5124 302.847 33.7624 302.847 21.0669V18.6759C302.847 6.03731 313.493 0.344272 326.473 0.344272Z"
           fill="white" />
-        <circle ref="dot1" cx="373" cy="33" r="6" fill="white" />
-        <circle ref="dot2" cx="391" cy="33" r="6" fill="white" />
-        <circle ref="dot3" cx="409" cy="33" r="6" fill="white" />
+        <circle ref="dot1" class="dot-bounce dot-bounce_1" cx="373" cy="33" r="6" fill="white" />
+        <circle ref="dot2" class="dot-bounce dot-bounce_2" cx="391" cy="33" r="6" fill="white" />
+        <circle ref="dot3" class="dot-bounce dot-bounce_3" cx="409" cy="33" r="6" fill="white" />
       </svg>
     </div>
   </div>
@@ -70,8 +70,9 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+@import '@/scss/main.scss';
 .dot-bounce {
-  animation-duration: 1s;
+  animation: bounce-loader 1s infinite;
 }
 
 .dot-bounce_1 {
