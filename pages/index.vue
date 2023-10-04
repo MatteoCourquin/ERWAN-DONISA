@@ -55,8 +55,8 @@ export default {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: el,
-            start: '-100px bottom',
-            end: '100px top',
+            start: 'top bottom',
+            end: 'bottom top',
             toggleActions: 'play reverse play reverse',
           },
         });
