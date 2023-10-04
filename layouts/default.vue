@@ -21,8 +21,9 @@ export default {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
+  },
+  beforeMount() {
     var langueNavigateur = navigator.language || navigator.userLanguage;
-    console.log(langueNavigateur)
     if (localStorage.getItem("langage")) {
       useLanguage().value = localStorage.getItem("langage");
     } else if (langueNavigateur == 'fr' || langueNavigateur == 'FR' || langueNavigateur == 'fr-FR') {
