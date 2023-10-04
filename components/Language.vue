@@ -1,14 +1,17 @@
 <template>
-  <div ref="cube" :class="['cube', useLanguage().value == 'FRA' ? 'rotate' : '']" @click="changeLanguage">
+  <div ref="cube" :class="['cube', language == 'FRA' ? 'rotate' : '']" @click="changeLanguage">
     <div class="face front">
-      <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">ENG</p>
+      <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">FRA</p>
     </div>
     <div class="face top">
-      <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">FRA</p>
+      <p :class="['link link_underline', isDark ? 'link_black' : 'link_white']">ENG</p>
     </div>
   </div>
 </template>
 
+<script setup>
+const language = useLanguage();
+</script>
 <script>
 export default {
   name: 'Language',
@@ -31,7 +34,7 @@ export default {
         localStorage.setItem("langage", "FRA");
       }
     },
-  }
+  },
 }
 
 </script>

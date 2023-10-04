@@ -2,7 +2,10 @@
   <div id="page-index">
     <Hero v-if="isBackground" />
     <section
-      class="anim-curtain-section rounded-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
+      class="anim-curtain-section section-slider rounded-b-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
+      <div ref="grapScroll" @mousedown="startScrolling"
+        class="grap-scroll absolute cursor-grab z-10 -top-10 left-1/2 -translate-x-1/2 h-[6px] w-24 rounded-full bg-slate-200">
+      </div>
       <p
         class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-4xl sm:text-5xl lg:text-6xl lg:w-3/4 mx-auto">
         {{ language == 'FRA' ?
@@ -37,46 +40,44 @@ const projects = useProjects();
 const language = useLanguage();
 </script>
 <script>
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-
 export default {
   name: 'index',
   layout: 'default',
   data() {
     return {
       isBackground: true,
+      scrollSpeed: 1.3,
     };
   },
   methods: {
-    animParallax() {
-      gsap.utils.toArray('.anim-curtain-section').forEach((el, i) => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: el,
-            start: 'top bottom',
-            end: 'bottom top',
-            toggleActions: 'play reverse play reverse',
-          },
-        });
-        tl.to(el, { position: 'sticky' });
-        tl.reverse()
-          .eventCallback('onReverseComplete', () => {
-            gsap.set(el, { position: 'relative' });
-          });
-      });
-    },
     checkedScroll() {
       const scrolledDistance = window.scrollY || window.pageYOffset;
       this.isBackground = scrolledDistance <= window.innerHeight * 1.2
     },
-  },
-  updated() {
-    this.animParallax();
+    startScrolling(event) {
+      document.body.style.userSelect = 'none';
+      document.body.style.pointerEvents = 'none';
+
+      let lastY = event.clientY;
+
+      const onMouseMove = (e) => {
+        const deltaY = lastY - e.clientY;
+        window.scrollTo(0, window.scrollY + deltaY * this.scrollSpeed);
+        lastY = e.clientY;
+      };
+
+      const onMouseUp = () => {
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+        document.body.style.userSelect = '';
+        document.body.style.pointerEvents = '';
+      };
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    }
   },
   mounted() {
-    this.animParallax();
     useHeaderDark().value = false;
     window.addEventListener('scroll', this.checkedScroll)
   },
@@ -94,8 +95,18 @@ export default {
 }
 
 .anim-curtain-section {
-  position: relative;
+  position: sticky;
   bottom: 0;
+}
+
+.section-slider::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  height: 50px;
+  width: 100vw;
+  border-radius: $radius-main $radius-main 0 0;
+  background: $color-white;
 }
 
 .view-more::after {
