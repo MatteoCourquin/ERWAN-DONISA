@@ -3,8 +3,10 @@
     <Hero v-if="isBackground" />
     <section
       class="anim-curtain-section section-slider rounded-b-radiusMain h-[200vh] bg-white w-full grid grid-rows-2 z-[100] !text-black">
-      <div ref="grapScroll" @mousedown="startScrolling"
-        class="grap-scroll absolute cursor-grab z-10 -top-10 left-1/2 -translate-x-1/2 h-[6px] w-24 rounded-full bg-slate-200">
+      <div ref="grapScroll" @mousedown="startScrolling" class="cursor-pointer p-4 absolute z-10 -top-14 left-1/2 -translate-x-1/2">
+        <div
+          class="h-[6px] w-24 rounded-full bg-slate-200">
+        </div>
       </div>
       <p
         class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-4xl sm:text-5xl lg:text-6xl lg:w-3/4 mx-auto">
