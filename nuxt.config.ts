@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
-  ssr: true,
+  routeRules: {
+    '/**': { prerender: true }
+  },
   app: {
     head: {
       title: 'Erwan Donisa',
