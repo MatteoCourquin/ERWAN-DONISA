@@ -7,6 +7,14 @@
 </template>
 
 <script setup>
+const data2 = useAsyncData('myKey', async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  return await res.json()
+})
+
+console.log(data2);
+
+
 const fetchData = async ($client, language) => {
   try {
     const data = await $client.getEntries({ content_type: 'project' });
