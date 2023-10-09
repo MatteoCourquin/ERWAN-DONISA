@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  ssr: true,
   app: {
     head: {
       title: 'Erwan Donisa',
