@@ -25,7 +25,7 @@
       </ul>
     </nav>
     <div class="hidden md:flex flex-col justify-center items-center gap-4 w-8">
-      <a href="https://www.instagram.com/erwand.design/" target="_blank" class="hover:opacity-70">
+      <a href="https://www.instagram.com/erwand.design/" target="_blank" class="hover:opacity-70" aria-label="Link to Instagram">
         <svg :class="['w-8', isHeaderDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path
@@ -33,7 +33,7 @@
           </path>
         </svg>
       </a>
-      <a href="https://www.linkedin.com/in/erwan-donisa/" target="_blank" class="hover:opacity-70">
+      <a href="https://www.linkedin.com/in/erwan-donisa/" target="_blank" class="hover:opacity-70" aria-label="Link to LinkedIn">
         <svg :class="['w-8', isHeaderDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path
@@ -41,7 +41,7 @@
           </path>
         </svg>
       </a>
-      <a href="https://www.behance.net/erwandonisa" target="_blank" class="hover:opacity-70">
+      <a href="https://www.behance.net/erwandonisa" target="_blank" class="hover:opacity-70" aria-label="Link to Behance">
         <svg :class="['w-8', isHeaderDark ? 'fill-black' : 'fill-white']" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
           <path
