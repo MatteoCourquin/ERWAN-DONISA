@@ -9,7 +9,7 @@
         </div>
       </div>
       <p
-        class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-4xl sm:text-5xl lg:text-6xl lg:w-3/4 mx-auto">
+        class="px-paddingMain flex justify-center h-screen items-center text-center flex-col overflow-hidden text-3xl sm:text-4xl lg:text-5xl lg:w-3/4 mx-auto">
         {{ language == 'FRA' ?
           "Mon job, donner vie à votre marque à travers chaque création. Pour faire de vous la référence de votre domaine."
           :
