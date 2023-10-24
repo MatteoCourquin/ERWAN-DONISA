@@ -106,7 +106,7 @@ export default {
   position: absolute;
   top: -50px;
   height: 50px;
-  width: 100vw;
+  width: 100%;
   border-radius: $radius-main $radius-main 0 0;
   background: $color-white;
 }
