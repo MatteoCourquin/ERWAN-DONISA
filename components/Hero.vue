@@ -1,6 +1,6 @@
 <template>
   <section
-    class='hero-background fixed pt-[20vh] sm:pt-0 top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100lvh] px-paddingMain flex'>
+    class='hero-background fixed z-10 pt-[20vh] sm:pt-0 top-0 justify-center sm:items-start items-center flex-col sm:text-left text-center w-full h-[100lvh] px-paddingMain flex'>
     <NuxtImg src='images/erwan-hero-desktop.webp' alt='Background Hero' preload
       class="-z-[1] object-cover hidden md:block fixed top-0 left-0 w-screen h-screen"
       sizes='xs:500 sm:800 md:1300 lg:2300 xl:2800' />

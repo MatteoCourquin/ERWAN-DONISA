@@ -1,12 +1,13 @@
 input,
 select,
 textarea {
-  border: 1px solid $color-black;
-  border-radius: 0.5rem;
-  padding: 10px;
+  border-bottom: 1px solid $color-black;
+  padding: 10px 0;
+  height: 45px;
   font-family: $font-loos-thin;
   background: white;
   white-space: nowrap;
+  border-radius: 0px;
   &::placeholder {
     color: #9ba3af;
   }
