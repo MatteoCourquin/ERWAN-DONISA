@@ -1,12 +1,21 @@
 <template>
   <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <Lenis :options="options" root>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </Lenis>
   </div>
 </template>
 
 <script setup>
+
+const options = {
+  duration: 1.5,
+  orientation: "vertical",
+  gestureOrientation: "vertical",
+}
+
 const fetchData = async ($client, language) => {
   try {
     const data = await $client.getEntries({ content_type: 'project' });
