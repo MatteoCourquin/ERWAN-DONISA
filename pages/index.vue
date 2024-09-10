@@ -19,7 +19,7 @@
     </section>
     <div v-for="(project, index) in projects" :key="index" class="anim-curtain-section" :style="{ zIndex: 99 - index }">
       <CardProject v-if="index < 3" :title="project.title" :description="project.description"
-        :urlImage="project.coverImage" />
+        :urlImage="project.coverImage" :showDescription="false" />
     </div>
     <section
       class="anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">

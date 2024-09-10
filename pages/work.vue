@@ -7,10 +7,10 @@
     </section>
     <div v-for="(project, index) in useProjects().value" :key="index" class="sticky bottom-0"
       :style="{ zIndex: 99 - index }">
-      <CardProject :class="[index < showProject ? 'visible' : 'invisible']" v-if="index < showProject" :title="project.title"
-        :description="project.description" :urlImage="project.coverImage" :showDescription="false" />
+      <CardProject :title="project.title" :description="project.description" :urlImage="project.coverImage"
+        :showDescription="false" />
     </div>
-    <section v-if="isMore"
+    <!-- <section v-if="isMore"
       class="sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">
         {{ language == 'FRA' ?
@@ -22,7 +22,7 @@
         "Plus"
         :
         "More" }}</BaseButton>
-    </section>
+    </section> -->
   </div>
 </template>
 

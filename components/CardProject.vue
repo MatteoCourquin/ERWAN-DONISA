@@ -1,14 +1,15 @@
 <template v-if="isLoaded">
   <div class="w-full relative overflow-hidden h-screen min-h-fit flex items-end rounded-b-radiusMain">
-    <NuxtImg @load="isLoaded == true" :src="`https:${urlImage}`" alt="image project" class="parallax-image object-cover" sizes='xs:400 sm:700 md:800 lg:1400 xl:1800' />
+    <NuxtImg @load="isLoaded == true" :src="`https:${urlImage}`" alt="image project"
+      class="object-cover w-full h-full absolute inset-0" sizes='xs:400 sm:700 md:800 lg:1400 xl:1800' />
     <div
       :class="['card-project-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end', showDescription ? 'sm:flex-row sm:justify-between' : 'sm:flex-col']">
       <div :class="['', showDescription ? 'w-full sm:w-2/3 text-center sm:text-left' : 'text-center']">
         <h2 :class="!showDescription && 'pb-5'">{{ title }}</h2>
         <p class="my-5 lg:w-2/3" v-if="showDescription">{{ description }}</p>
       </div>
-      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="medium" hover="black" color="white"
-        class="!w-full sm:!w-auto">{{ language == 'FRA' ?
+      <BaseButton @click="$router.push(`projects/${title.replace(/\s+/g, '-').toLowerCase()}`)" size="medium"
+        hover="black" color="white" class="!w-full sm:!w-auto">{{ language == 'FRA' ?
           "Voir"
           :
           "View" }}</BaseButton>
@@ -50,49 +51,38 @@ export default {
       isLoaded: false,
     };
   },
-  mounted() {
-    !useTouchDevive().value && this.initParallax();
-  },
-  updated() {
-    !useTouchDevive().value && this.initParallax();
-  },
-  methods: {
-    initParallax() {
-      gsap.utils.toArray('.parallax-image').forEach((image, index) => {
-        gsap.set(image, { transformOrigin: 'center' });
-        gsap.timeline({
-          scrollTrigger: {
-            id: `parallax-trigger-${index}`,
-            trigger: image,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-            onUpdate: (self) => {
-              const translateY = -(self.progress - 0.5) * 100 * (index === 2 ? 0.25 : 0.1);
-              gsap.set(image, { y: `${translateY}%` });
-            },
-          },
-        });
-      });
-    },
-  },
+  // mounted() {
+  // !useTouchDevive().value && this.initParallax();
+  // },
+  // updated() {
+  // !useTouchDevive().value && this.initParallax();
+  // },
+  // methods: {
+  // initParallax() {
+  //   gsap.utils.toArray('.parallax-image').forEach((image, index) => {
+  //     gsap.set(image, { transformOrigin: 'center' });
+  //     gsap.timeline({
+  //       scrollTrigger: {
+  //         id: `parallax-trigger-${index}`,
+  //         trigger: image,
+  //         start: 'top bottom',
+  //         end: 'bottom top',
+  //         scrub: true,
+  //         onUpdate: (self) => {
+  //           const translateY = -(self.progress - 0.5) * 100 * (index === 2 ? 0.25 : 0.1);
+  //           gsap.set(image, { y: `${translateY}%` });
+  //         },
+  //       },
+  //     });
+  //   });
+  // },
+  // },
 };
 
 </script>
 
 <style scoped lang='scss'>
 @import '@/scss/main.scss';
-
-.parallax-image {
-  position: absolute;
-  top: -10%;
-  left: 0;
-  width: 100%;
-  height: 130%;
-  transform: translateY(0%);
-  background: var(--background-image) no-repeat center center;
-  background-size: cover;
-}
 
 .card-project-description {
   background: linear-gradient(to top, #00000090 0%, transparent 100%);
