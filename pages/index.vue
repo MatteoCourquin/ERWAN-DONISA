@@ -25,14 +25,14 @@
       class="anim-curtain-section w-full view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
       <h3 class="text-black mb-10">
         {{ language == 'FRA' ?
-          "EN SAVOIR PLUS"
+          "VOIR PLUS"
           :
-          "CHECK THE OTHERS" }}
+          "VIEW MORE" }}
       </h3>
       <BaseButton @click="$router.push('/work')" size='medium' hover="red" color="black">{{ language == 'FRA' ?
-        "Plus"
+        "VOIR"
         :
-        "More" }}</BaseButton>
+        "VIEW" }}</BaseButton>
     </section>
   </div>
 </template>

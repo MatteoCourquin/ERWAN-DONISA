@@ -2,7 +2,7 @@
   <footer class='sticky bottom-0 z-0 w-full h-fit p-paddingMain bg-black block'>
     <div class="flex grow justify-between gap-[20vw]">
       <div class="flex flex-col gap-5 w-full items-center sm:items-start relative max-w-2xl pb-8">
-        <h4 class="text-center sm:text-left">{{ language == "FRA" ? 'Collaborons ensembles' : 'We should work together' }}</h4>
+        <h4 class="text-center sm:text-left">{{ language == "FRA" ? 'Collaboron ensembles' : 'We should work together' }}</h4>
         <BaseButton @click="$router.push('/contact')" size='medium' hover="white" color="red">{{ language == "FRA" ? 'Allons-y' : "Let's meet" }}</BaseButton>
         <p class="font-loos-thin uppercase hidden text-white self-end sm:flex items-center gap-1 !text-sm">
           <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
