@@ -13,16 +13,18 @@
       </div>
     </section>
     <NuxtImg class="object-cover w-screen h-screen" src="/images/erwan-about.webp" loading="lazy" />
-    <section class="bg-white text-center rounded-b-radiusMain px-paddingMain py-[10vh]">
-      <h2 class="pb-8">{{ language == 'FRA' ?
-          "Qui suis-je"
-          :
-          "Who I am" }}</h2>
-      <p class="pb-paddingMain lg:w-2/3 mx-auto">{{ language == 'FRA' ?
-          "Un Designer basé à Paris qui s'épanouit dans la création de produit digitaux et physique. Ce qui m’anime ? Concevoir et imaginer les objets qui nous entourent avec ma vision artistique ! En temps que passionné par le fashion design, mon objectif est de concevoir un jour une collection de vêtements pour une marque renommée."
-          :
-          "A Paris-based designer who thrives on creating digital and physical products. What drives me? Designing and imagining the objects that surround us with my artistic vision! As a passionate fashion designer, my goal is to one day design a clothing collection for a renowned brand." }}</p>
-      <NuxtImg class="rounded-lg object-cover w-screen h-[60vh]" src="/images/erwan-about-drawing.webp" laoding="lazy" />
+    <section class="bg-white md:grid md:grid-cols-2 gap-gapMain rounded-b-radiusMain px-paddingMain py-[10vh]">
+      <div class="flex flex-col pb-10 md:pb-0 justify-center">
+        <h2 class="pb-8">{{ language == 'FRA' ?
+            "Qui suis-je"
+            :
+            "Who I am" }}</h2>
+        <p>{{ language == 'FRA' ?
+            "Je suis un Designer basé à Paris qui s'épanouit dans la création de produit digitaux et physique. Ce qui m’anime ? Concevoir et imaginer les objets qui nous entourent avec ma vision artistique ! En tant que passionné par le design, mon but est de donner vie à des idées en créant des visuels clairs et attractifs pour les marques."
+            :
+            "I'm a Paris-based designer who thrives on creating digital and physical products. What drives me? Designing and imagining the objects that surround us with my artistic vision ! As a passionate designer, my goal is to bring ideas to life by creating clear, attractive visuals for brands." }}</p>
+      </div>
+      <NuxtImg class="rounded-lg object-cover w-full" src="/images/erwan-about-drawing.webp" laoding="lazy" />
     </section>
   </div>
 </template>

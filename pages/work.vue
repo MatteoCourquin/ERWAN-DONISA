@@ -7,8 +7,8 @@
     </section>
     <div v-for="(project, index) in useProjects().value" :key="index" class="sticky bottom-0"
       :style="{ zIndex: 99 - index }">
-      <CardProject :title="project.title" :description="project.description" :urlImage="project.coverImage"
-        :showDescription="false" />
+      <CardProject :title="project.title" :projectTypes="project.projectTypes" :description="project.description"
+        :urlImage="project.coverImage" :showDescription="false" />
     </div>
     <!-- <section v-if="isMore"
       class="sticky bottom-0 w-screen view-more z-10 rounded-b-radiusMain p-paddingMain bg-white flex items-center justify-center flex-col text-center">
@@ -48,7 +48,7 @@ export default {
   },
   mounted() {
     useHeaderDark().value = true;
-  }
+  },
 }
 </script>
 

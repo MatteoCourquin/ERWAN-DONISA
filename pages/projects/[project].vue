@@ -9,9 +9,26 @@
           <h1 class="z-10">{{ project.title }}</h1>
         </section>
         <section class="sticky bottom-0 bg-white z-10 rounded-radiusMain overflow-hidden">
-          <div class="py-[10vh] text-black text-center px-paddingMain">
-            <h2 class="mb-10">{{ project.title }}</h2>
-            <p class="md:w-2/3 mx-auto">{{ project.description }}</p>
+          <div class="px-paddingMain py-[10vh] flex flex-col gap-8">
+            <div class="text-black gap-6 flex md:flex-row flex-col">
+              <h5 class="md:w-1/3">{{ language == 'FRA' ?
+                "Contexte"
+                :
+                "Context" }}</h5>
+              <p class="md:w-2/3 mx-auto text-grey">{{ project.description }}</p>
+            </div>
+            <div class="text-black gap-6 flex md:flex-row flex-col">
+              <h5 class="md:w-1/3">{{ language == 'FRA' ?
+                "Services"
+                :
+                "Services" }}</h5>
+              <div class="flex gap-4 md:w-2/3">
+                <p v-for="(type, index) in project.projectTypes" :key="index">
+                  <Tag :isDark="true">{{ type.fields.name }}</Tag>
+                </p>
+              </div>
+              <!-- <p class="md:w-2/3 mx-auto">{{ project.description }}</p> -->
+            </div>
           </div>
           <div class="flex flex-col gap-5 px-paddingMain pb-[10vh]">
             <div class="rounded-lg hidden md:block" v-for="(image, index) in project.imagesDesktop" :key="index">
