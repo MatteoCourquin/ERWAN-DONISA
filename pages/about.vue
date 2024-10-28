@@ -14,7 +14,7 @@
     </section>
     <NuxtImg class="object-cover w-screen h-screen" src="/images/erwan-about.webp" loading="lazy" />
     <section class="bg-white md:grid md:grid-cols-2 gap-gapMain rounded-b-radiusMain px-paddingMain py-[10vh]">
-      <div class="flex flex-col pb-10 md:pb-0 justify-center">
+      <div class="flex flex-col pb-10 md:pb-0 justify-center md:px-paddingMain">
         <h2 class="pb-8">{{ language == 'FRA' ?
             "Qui suis-je"
             :

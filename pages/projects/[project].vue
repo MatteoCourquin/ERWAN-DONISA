@@ -15,7 +15,7 @@
                 "Contexte"
                 :
                 "Context" }}</h5>
-              <p class="md:w-2/3 mx-auto text-grey">{{ project.description }}</p>
+              <p class="md:w-2/3 mx-auto  text-grey">{{ project.description }}</p>
             </div>
             <div class="text-black gap-6 flex md:flex-row flex-col">
               <h5 class="md:w-1/3">{{ language == 'FRA' ?
@@ -27,7 +27,6 @@
                   <Tag :isDark="true">{{ type.fields.name }}</Tag>
                 </p>
               </div>
-              <!-- <p class="md:w-2/3 mx-auto">{{ project.description }}</p> -->
             </div>
           </div>
           <div class="flex flex-col gap-5 px-paddingMain pb-[10vh]">

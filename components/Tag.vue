@@ -25,6 +25,7 @@ export default {
   backdrop-filter: blur(10px);
   border-radius: 999px;
   border: 1px solid #ffffff15;
+  width: fit-content;
 }
 
 .tag_dark {

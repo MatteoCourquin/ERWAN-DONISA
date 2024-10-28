@@ -5,7 +5,7 @@
     <div
       :class="['card-project-description px-paddingMain py-[10vh] w-full h-1/2 z-10 flex flex-col items-center justify-end', showDescription ? 'sm:flex-row sm:justify-between' : 'sm:flex-col']">
       <div :class="['', showDescription ? 'w-full sm:w-2/3 text-center sm:text-left' : 'text-center']">
-        <div v-if="projectTypes" class="flex gap-4 justify-center pb-4">
+        <div v-if="projectTypes" class="flex gap-4 justify-center pb-4 flex-col sm:flex-row items-center">
           <p v-for="(type, index) in projectTypes" :key="index">
             <Tag :isDark="false">{{ type.fields.name }}</Tag>
           </p>
