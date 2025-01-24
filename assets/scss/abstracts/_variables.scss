@@ -1,21 +1,21 @@
 @font-face {
-  font-family: 'Loos-Bold';
-  src: url('/fonts/Loos-Bold.otf') format('truetype');
+  font-family: 'Archivo-Bold';
+  src: url('/fonts/Archivo-Bold.ttf') format('truetype');
   font-display: auto;
 }
 @font-face {
-  font-family: 'Loos-SemiBold';
-  src: url('/fonts/Loos-SemiBold.otf') format('truetype');
+  font-family: 'Archivo-SemiBold';
+  src: url('/fonts/Archivo-SemiBold.ttf') format('truetype');
   font-display: auto;
 }
 @font-face {
-  font-family: 'Loos-Regular';
-  src: url('/fonts/Loos-Regular.otf') format('truetype');
+  font-family: 'Archivo-Regular';
+  src: url('/fonts/Archivo-Regular.ttf') format('truetype');
   font-display: auto;
 }
 @font-face {
-  font-family: 'Loos-Thin';
-  src: url('/fonts/Loos-Thin.otf') format('truetype');
+  font-family: 'Archivo-Thin';
+  src: url('/fonts/Archivo-Thin.ttf') format('truetype');
   font-display: auto;
 }
 
@@ -26,10 +26,10 @@ $color-grey: #9A9A9A;
 $color-red: #c13228;
 
 // Fonts
-$font-loos-bold: 'Loos-Bold';
-$font-loos-semiBold: 'Loos-SemiBold';
-$font-loos-regular: 'Loos-Regular';
-$font-loos-thin: 'Loos-Thin';
+$font-archivo-bold: 'Archivo-Bold';
+$font-archivo-semiBold: 'Archivo-SemiBold';
+$font-archivo-regular: 'Archivo-Regular';
+$font-archivo-thin: 'Archivo-Thin';
 
 // transitions
 $transition-main: 0.8s;

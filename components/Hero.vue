@@ -7,7 +7,7 @@
     <NuxtImg src='images/erwan-hero-mobile.webp' alt='Background Hero' preload
       class="-z-[1] object-cover block md:hidden fixed top-0 left-0 w-screen h-screen"
       sizes='xs:500 sm:800 md:1000 lg:2000 xl:2300' />
-    <h1 class="text-white mb-8 font-loos-bold">
+    <h1 class="text-white mb-8 font-archivo-bold">
       <span class="anim-text-container block">DESIGNER /</span>
       <span class="anim-text-container">
         {{ language == 'FRA' ?

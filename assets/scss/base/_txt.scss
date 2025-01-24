@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-loos-bold;
+  font-family: $font-archivo-bold;
   text-transform: uppercase;
 }
 h1 {
@@ -24,27 +24,27 @@ h5 {
   line-height: clamp(1rem, 2.5vw, 2rem);
 }
 p {
-  font-family: $font-loos-thin;
+  font-family: $font-archivo-thin;
 }
 
-.font-loos-bold {
-  font-family: $font-loos-bold !important;
+.font-archivo-bold {
+  font-family: $font-archivo-bold !important;
 }
-.font-loos-semiBold {
-  font-family: $font-loos-semiBold !important;
+.font-archivo-semiBold {
+  font-family: $font-archivo-semiBold !important;
 }
-.font-loos-regular {
-  font-family: $font-loos-regular !important;
+.font-archivo-regular {
+  font-family: $font-archivo-regular !important;
 }
-.font-loos-thin {
-  font-family: $font-loos-thin !important;
+.font-archivo-thin {
+  font-family: $font-archivo-thin !important;
 }
 
 .description {
   font-size: clamp(1rem, 2vw, 1.8rem);
 }
 .link {
-  font-family: $font-loos-thin;
+  font-family: $font-archivo-thin;
   font-size: 20px;
   text-transform: uppercase;
   white-space: nowrap;

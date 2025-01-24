@@ -4,7 +4,7 @@
       <div class="flex flex-col gap-5 w-full items-center sm:items-start relative max-w-2xl pb-8">
         <h4 class="text-center sm:text-left">{{ language == "FRA" ? 'Collaboron ensembles' : 'We should work together' }}</h4>
         <BaseButton @click="$router.push('/contact')" size='medium' hover="white" color="red">{{ language == "FRA" ? 'Allons-y' : "Let's meet" }}</BaseButton>
-        <p class="font-loos-thin uppercase hidden text-white self-end sm:flex items-center gap-1 !text-sm">
+        <p class="font-archivo-thin uppercase hidden text-white self-end sm:flex items-center gap-1 !text-sm">
           <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.956519 10.8145C0.949676 11.3907 1.41128 11.8634 1.98753 11.8703L11.3782 11.9818C11.9544 11.9886 12.4271 11.527 12.434 10.9508C12.4408 10.3745 11.9792 9.90183 11.403 9.89498L3.05572 9.79586L3.15484 1.44862C3.16169 0.872365 2.70009 0.399669 2.12383 0.392826C1.54757 0.385983 1.07488 0.847584 1.06803 1.42384L0.956519 10.8145ZM9.7319 1.81789L1.27089 10.0803L2.72896 11.5734L11.19 3.31101L9.7319 1.81789Z"
