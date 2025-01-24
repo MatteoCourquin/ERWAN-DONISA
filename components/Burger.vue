@@ -22,28 +22,28 @@
       <ul>
         <li>
           <NuxtLink @click="isActive = !isActive" to="/"
-            :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'Home' : 'Home' }}
+            :class="['link !text-4xl font-archivo-bold link_white']">{{ language == "FRA" ? 'Home' : 'Home' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
           <NuxtLink @click="isActive = !isActive" to="/work"
-            :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'Projets' : 'Projects' }}
+            :class="['link !text-4xl font-archivo-bold link_white']">{{ language == "FRA" ? 'Projets' : 'Projects' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
           <NuxtLink @click="isActive = !isActive" to="/about"
-            :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'À propos' : 'About' }}
+            :class="['link !text-4xl font-archivo-bold link_white']">{{ language == "FRA" ? 'À propos' : 'About' }}
           </NuxtLink>
         </li>
       </ul>
       <ul>
         <li>
           <NuxtLink @click="isActive = !isActive" to="/contact"
-            :class="['link !text-4xl font-loos-bold link_white']">{{ language == "FRA" ? 'Contact' : 'Contact' }}
+            :class="['link !text-4xl font-archivo-bold link_white']">{{ language == "FRA" ? 'Contact' : 'Contact' }}
           </NuxtLink>
         </li>
       </ul>

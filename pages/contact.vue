@@ -122,7 +122,7 @@ export default {
 }
 
 .label-title {
-  font-family: $font-loos-regular;
+  font-family: $font-archivo-regular;
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;

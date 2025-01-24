@@ -18,6 +18,10 @@ export default {
     };
   },
   mounted() {
+  console.log(
+    '%c Code by Matteo Courquin: https://matteocourquin.com/',
+    'border: 1px solid #ccc; padding: 4px;',
+  );
     setTimeout(() => {
       this.loading = false;
     }, 1000);

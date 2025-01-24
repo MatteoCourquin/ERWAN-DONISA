@@ -62,7 +62,7 @@ export default {
   border: 0;
   border-radius: 999px;
   text-transform: uppercase;
-  font-family: $font-loos-regular;
+  font-family: $font-archivo-regular;
   text-decoration: none;
   cursor: pointer;
   position: relative;

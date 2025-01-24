@@ -12,7 +12,7 @@
           class="relative overflow-hidden border snap-center border-black flex flex-col justify-between w-[35vw] shrink-0 min-w-[280px] max-h-[600px] max-w-[350px] h-[60vh] min-h-[400px] rounded-radiusMain"
           v-for="(service, index) in (language == 'FRA' ? servicesFrench : servicesEnglish)" :key="index">
           <div class="flex p-4 py-[5vh] h-full shrink overflow-hidden items-center justify-center flex-col">
-            <p class="font-loos-regular !normal-case !text-lg mb-4">{{ service.title }}</p>
+            <p class="font-archivo-regular !normal-case !text-lg mb-4">{{ service.title }}</p>
             <p class="description-slider overflow-hidden">{{ service.description }}</p>
           </div>
           <div class="relative flex items-end shrink-0 justify-center min-h-max w-full h-1/2">
